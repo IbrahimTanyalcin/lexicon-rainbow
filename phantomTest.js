@@ -1,5 +1,5 @@
 var page = require('webpage').create();
-page.viewportSize = {width: 1550,height: 380};
+page.viewportSize = {width: 2000,height: 380};
 page.open('./index_v3.html', function(status) {
   console.log("Status: " + status);
   if(status === "success") {
