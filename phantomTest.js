@@ -8,7 +8,7 @@ page.open('./index_v3.html', function(status) {
 		var base64 = page.renderBase64("PNG");
 		console.log(base64);
 		console.log("Test png rendered, exiting phantom..");
+		phantom.exit();
 	},10000)
   }
-  phantom.exit();
 });
