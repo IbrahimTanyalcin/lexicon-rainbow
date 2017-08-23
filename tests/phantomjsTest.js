@@ -1,7 +1,7 @@
 var page = require('webpage').create();
 page.viewportSize = {width: 1000,height: 500};
 var runner = new taskRunner;
-taskRunner
+runner
 .queue('./index_v3.html')
 .queue('./index_v4.html')
 .run();
