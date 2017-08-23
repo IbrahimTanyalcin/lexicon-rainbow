@@ -1,8 +1,9 @@
 var page = require('webpage').create();
-page.open('./index_v33.html', function(status) {
+page.open('./index_v3.html', function(status) {
   console.log("Status: " + status);
   if(status === "success") {
-    page.render('test.png');
+    page.render('./test.png');
+	console.log("OK")
   }
   phantom.exit();
 });
