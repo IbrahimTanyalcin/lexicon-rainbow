@@ -9,6 +9,6 @@ page.open('./index_v3.html', function(status) {
 		console.log(base64);
 		console.log("Test png rendered, exiting phantom..");
 		phantom.exit();
-	},90000)
+	},120000)
   }
 });
