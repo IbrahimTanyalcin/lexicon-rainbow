@@ -17,8 +17,7 @@ function taskRunner () {
 				return this.tasks.pop();
 			},
 			enumerable:true,
-			configurable:true,
-			writable:false
+			configurable:false,
 		}
 	)
 	this.queue = function(q){this.tasks.push(q); testCount++; return this;};
