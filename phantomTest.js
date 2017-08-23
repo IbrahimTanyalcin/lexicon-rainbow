@@ -1,5 +1,5 @@
 var page = require('webpage').create();
-page.viewportSize = {width: 1520,height: 338};
+page.viewportSize = {width: 1800,height: 360};
 page.open('./index_v3.html', function(status) {
   console.log("Status: " + status);
   if(status === "success") {
@@ -9,6 +9,6 @@ page.open('./index_v3.html', function(status) {
 		console.log(base64);
 		console.log("Test png rendered, exiting phantom..");
 		phantom.exit();
-	},90000)
+	},120000)
   }
 });
