@@ -2,8 +2,8 @@ var page = require('webpage').create();
 page.viewportSize = {width: 1000,height: 500};
 var runner = new taskRunner;
 runner
-.queue('./index_v3.html')
-.queue('./index_v4.html')
+.queue('./tests/index_v3.html')
+.queue('./tests/index_v4.html')
 .run();
 
 function taskRunner () {
@@ -19,7 +19,7 @@ function taskRunner () {
 			enumerable:true,
 			configurable:false,
 		}
-	)
+	);
 	this.queue = function(q){this.tasks.push(q); testCount++; return this;};
 	this.run = function(){
 		page.open(that.fetch, function(status) {
@@ -38,6 +38,8 @@ function taskRunner () {
 						phantom.exit();
 					}
 				},120000)
+			} else {
+				phantom.exit(1);
 			}
 		});
 	}
