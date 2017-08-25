@@ -19,6 +19,7 @@
 * [Usage](#usage)
 * [Installation](#installation)
 * [Youtube](#youtube)
+* [Acknowledgement](#acknowledgement)
 * [Support](#support)
 
 <hr>
@@ -265,6 +266,11 @@ The general pattern for invoking lexicon-rainbow is as follows:
 ## Youtube
 
 <br>
+
+## Acknowledgement
+  [Tuncer Can](https://www.linkedin.com/in/tuncercan/) for server side maintanance and file hoisting
+  [IBsquare](http://ibsquare.be/) for a fruitfull project that lead to development of [Mutaframe](http://deogen2.mutaframe.com/) and many other micro libraries.
+  [Mike Bostock](https://d3js.org/) for D3.
 
 ## Support
 
