@@ -55,7 +55,7 @@ For the latest development version:
 		<td>d3v3</td>
 		<td>
 			<code>
-				&lt;script src="//ibrahimtanyalcin.com/lexiconRainbow.d3v3.dev.js"&gt;&lt;/script&gt;
+				<sub>&lt;script src="//ibrahimtanyalcin.com/lexiconRainbow.d3v3.dev.js"&gt;&lt;/script&gt;</sub>
 			</code>
 		</td>
 	</tr>
@@ -85,7 +85,7 @@ For the latest development version:
 		</td>
 	</tr>
 	<tr>
-		<td rowspan="2">Minified version</td>
+		<td rowspan="2"><b>Minified version</b></td>
 		<td>d3v3</td>
 		<td>
 			<code>
