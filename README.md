@@ -2,7 +2,7 @@
 
 <br>
 
-[<img src="https://raw.githubusercontent.com/IbrahimTanyalcin/lexicon-rainbow/master/examples/AminoAcids/aminoAcids.jpg">][MAIN]
+[<img src="./examples/AminoAcids/aminoAcids.jpg">][MAIN]
 
 
 ### Legends
