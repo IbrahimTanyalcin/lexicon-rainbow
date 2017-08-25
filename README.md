@@ -102,7 +102,9 @@ root
 |	|-- phantomjsTest.js <sub>(Render ./index.*\.html and print base64 data uri)</sub>
 |	`-- nodejsTest.js <sub>(Test with node and log enumerabl properties)</sub>
 |-- .gitignore <sub>(Ignore .\private\*)</sub>
-|-- .travis.yml <sub>(For testing with PhantomJS)</sub> [:link:](./.travis.yml)
+|-- .travis.yml <sub>(For testing with PhantomJS)</sub>
+
+[:link:](./.travis.yml)
 |-- CODE_OF_CONDUCT.md
 |-- LICENSE
 `-- README.md 
