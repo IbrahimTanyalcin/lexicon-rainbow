@@ -44,6 +44,40 @@ There are 2 versions of lexicon-rainbow, one compatible with d3.v3 **(3.5.17)** 
 Drop one of the script tags below in your html file.
 For the latest development version:
 
+<table>
+	<tr>
+		<td></td>
+		<td>Your version of d3</td>
+		<td>Script tag to use</td>
+	</tr>
+	<tr>
+		<td rowspan="2">Development version</td>
+		<td>d3v3</td>
+		<td>
+			```html
+				<script src="https://ibrahimtanyalcin.com/lexiconRainbow.d3v3.dev.js"></script>
+			```
+		</td>
+	</tr>
+	<tr>
+		
+	</tr>
+	<tr>
+		<td rowspan="2">Pretty version</td>
+		<td>Your version of d3</td>
+		<td>Script tag to use</td>
+	</tr>
+	<tr>
+	</tr>
+	<tr>
+		<td rowspan="2">Minified version</td>
+		<td>Your version of d3</td>
+		<td>Script tag to use</td>
+	</tr>
+	<tr>
+	</tr>
+<table/>
+
   if you are using d3 v3 in your project:
   
 ```html
