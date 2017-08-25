@@ -1,6 +1,6 @@
 # <a id="h1" href="#h1">Lexicon-Rainbow [:rainbow:](MAIN)</a>
 <br/>
-[<img alt="test" src="./examples/AminoAcids/aminoAcids.jpg">](https://github.com/IbrahimTanyalcin/LEXICON)
+[<img src="./examples/AminoAcids/aminoAcids.jpg">](https://github.com/IbrahimTanyalcin/LEXICON)  
 [<img src="./examples/Minimal/minimal.jpg">][MAIN] 
 [<img src="./examples/RandomDataset/randomDataset.jpg">][MAIN] 
 [<img src="./examples/ServerDownTime/serverDownTime.jpg">][MAIN] 
