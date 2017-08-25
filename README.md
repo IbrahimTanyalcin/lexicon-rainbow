@@ -1,6 +1,6 @@
 # <a id="h1" href="#h1">Lexicon-Rainbow [:rainbow:](MAIN)</a>
 <br/>
-> [<img src="./examples/AminoAcids/aminoAcids.jpg" width="300" height ="150"/>][MAIN]  [<img src="./examples/Minimal/minimal.jpg" width="300" height ="150"/>][MAIN] [<img src="./examples/RandomDataset/randomDataset.jpg" width="300" height ="150"/>][MAIN] [<img src="./examples/ServerDownTime/serverDownTime.jpg" width="300" height ="150"/>][MAIN] [<img src="./examples/USvotes/USvotes.jpg" width="300" height ="150"/>][MAIN] 
+> [<img src="./examples/AminoAcids/aminoAcids.jpg">][MAIN]  [<img src="./examples/Minimal/minimal.jpg">][MAIN] [<img src="./examples/RandomDataset/randomDataset.jpg">][MAIN] [<img src="./examples/ServerDownTime/serverDownTime.jpg">][MAIN] [<img src="./examples/USvotes/USvotes.jpg">][MAIN] 
 
 ### Legends
 Phrase | Definition
@@ -24,4 +24,4 @@ It is written in ES5. You do __NOT__ need Babel and Browserify.
 There are 2 versions of lexicon-rainbow, one compatible with d3.v3 **(3.5.17)** and the other with
 d3.v4 (**latest**).
 
-[MAIN] : https://github.com/IbrahimTanyalcin/LEXICON
+[MAIN]: https://github.com/IbrahimTanyalcin/LEXICON
