@@ -1,6 +1,8 @@
 # <a id="h1" href="#h1">Lexicon-Rainbow [:rainbow:](MAIN)</a>
 <br>
 
+<hr>
+* [API](#api)
 * [Examples](#minimal-example)
 * [Legends](#legends)
 * [What is it ?](#what-is-it-)
@@ -9,6 +11,8 @@
 * [Which dependencies ?](#which-dependencies-)
 * [Usage](#usage)
 * [Installation](#installation)
+* [How do I use it ?](#how-do-i-use-it-)
+<hr>
 
 >## Minimal example:
 >[<img src="./examples/Minimal/minimal.jpg">][MAIN] 
@@ -24,7 +28,6 @@
 
 >## 2016 US elections:
 >[<img src="./examples/USvotes/USvotes.jpg">][MAIN] 
-
 
 ### Legends
 Phrase | Definition
@@ -109,5 +112,9 @@ For the latest development version:
 		</td>
 	</tr>
 </table>
+
+## Installation
+
+## API
 
 [MAIN]: https://github.com/IbrahimTanyalcin/LEXICON
