@@ -1,6 +1,8 @@
 # <a id="h1" href="#h1">Lexicon-Rainbow [:rainbow:](MAIN)</a>
 <br>
 
+[Skip the examples :point_down:](#what-is-it-)
+
 >## Minimal example:
 >[<img src="./examples/Minimal/minimal.jpg">][MAIN] 
 
