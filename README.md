@@ -222,25 +222,39 @@ The general pattern for invoking lexicon-rainbow is as follows:
 
 ```js
 (new LexiconRainbow) //initiate a new instance
+
 .container("#containerDiv") //pass a node or id
+
 .forceStyle() //take advantage of embedded style
+
 .w(600) //set width of the viewbox
+
 .h(200) //set height of the viewbox
+
 .sW("1000px") //set css style width of the viewport
+
 .sH("auto") //set css style height of the viewport
+
 .position("relative") //set css style position
+
 .sTop("0px") //set css style top property of the viewport
+
 .sLeft("0px") //set css style left property of the viewport
+
 .sMargin("100px auto 0px auto") //set css style margin property of the viewport
+
 .lexID("lexiconRainbow") //set an id for the generated SVG
+
 .input(sample) //provide the data
+
 .append(true) //initialize internal variables
+
 .render(); //render scene
 ```
 
 >Note:
->_Viewport means the space taken up by the ```ownerSVGElement``` in document coordinates. Think of the values returned by ```SVGElement.getBoundingClientRect()```.
->The Viewbox on the other hand is the user defined coordinate system in units of **userSpaceOnUse**_
+>_Viewport means the space taken up by the ```ownerSVGElement``` in document coordinates. Think of it as the values returned by ```SVGElement.getBoundingClientRect()```.
+>(Space excluding the SVG's border) The Viewbox on the other hand is the user defined coordinate system in units of **userSpaceOnUse**_
 
 <br>
 
