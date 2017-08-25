@@ -1,7 +1,7 @@
 # <a id="h1" href="#h1">Lexicon-Rainbow [:rainbow:](MAIN)</a>
 <br>
 
->## Minimal example:
+>### Minimal example:
 >[<img src="./examples/Minimal/minimal.jpg">][MAIN] 
 
 >## Comparing 2 tables:
@@ -13,7 +13,7 @@
 >## Server down time report:
 >[<img src="./examples/ServerDownTime/serverDownTime.jpg">][MAIN] 
 
->##2016 US elections:
+>## 2016 US elections:
 >[<img src="./examples/USvotes/USvotes.jpg">][MAIN] 
 
 
