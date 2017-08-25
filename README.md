@@ -1,7 +1,14 @@
 # <a id="h1" href="#h1">Lexicon-Rainbow [:rainbow:](MAIN)</a>
 <br>
 
-[Skip the examples :point_down:](#what-is-it-)
+* [Examples](#minimal-example)
+* [Legends](#legends)
+* [What is it ?](#what-is-it-)
+* [Which browsers ?](#which-browsers-)
+* [Which version of Javascript](#which-version-of-javascript-)
+* [Which dependencies ?](#which-dependencies-)
+* [Usage](#usage)
+* [Installation](#installation)
 
 >## Minimal example:
 >[<img src="./examples/Minimal/minimal.jpg">][MAIN] 
@@ -102,23 +109,5 @@ For the latest development version:
 		</td>
 	</tr>
 </table>
-
-  if you are using d3 v3 in your project:
-  
-```html
-<script src="https://ibrahimtanyalcin.com/lexiconRainbow.d3v3.dev.js"></script>
-```
-  else with d3 v4:
-```html
-<script src="https://ibrahimtanyalcin.com/lexiconRainbow.d3v4.dev.js"></script>
-```
-For the latest minified version:
-```html
-<script src="https://ibrahimtanyalcin.com/lexiconRainbow.d3v3.min.js"></script>
-```
-For the latest beautified version:
-```html
-<script src="https://ibrahimtanyalcin.com/lexiconRainbow.d3v3.pretty.js"></script>
-```
 
 [MAIN]: https://github.com/IbrahimTanyalcin/LEXICON
