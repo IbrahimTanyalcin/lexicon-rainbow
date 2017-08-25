@@ -7,6 +7,7 @@
 
 <hr>
 
+* [How do I use it ?](#how-do-i-use-it-)
 * [API](#api)
 * [UMD](#umd)
 * [Examples](#minimal-example)
@@ -17,7 +18,7 @@
 * [Which dependencies ?](#which-dependencies-)
 * [Usage](#usage)
 * [Installation](#installation)
-* [How do I use it ?](#how-do-i-use-it-)
+* [Youtube](#youtube)
 * [Support](#support)
 
 <hr>
@@ -138,6 +139,11 @@ There are 2 versions of lexicon-rainbow, one compatible with d3.v3 **(3.5.17)** 
 
 <br>
 
+## How do I use it ? 
+Refer to [usage](#usage) and [API Reference](#api)
+
+<br>
+
 ## Usage 
 Drop one of the script tags below in your html file.
 
@@ -205,5 +211,7 @@ Drop one of the script tags below in your html file.
 ## Testing
 
 ## API
+
+##UMD
 
 [MAIN]: https://github.com/IbrahimTanyalcin/LEXICON
