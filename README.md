@@ -43,7 +43,9 @@ There are 2 versions of lexicon-rainbow, one compatible with d3.v3 **(3.5.17)** 
 ## Usage 
 Drop one of the script tags below in your html file.
 For the latest development version:
+
   if you are using d3 v3 in your project:
+  
 ```html
 <script src="https://ibrahimtanyalcin.com/lexiconRainbow.d3v3.dev.js"></script>
 ```
