@@ -55,6 +55,7 @@ xyz.(a[,b[,c]])|optinal arguments *b* and *c*
 {x} | a variable *y* with typeof *y* === "x"
 
 ### Repository folder structure
+Lexicon-rainbow: minimal data visualization module between a single ordinal scale and a single linear scale with in-built GUI Edit
 
 <pre>
 root
@@ -62,34 +63,34 @@ root
 |	|-- lexiconRainbow.d3v3.dev.js
 |	`-- lexiconRainbow.d3v4.dev.js
 |-- min
-|   |-- lexiconRainbow.d3v3.min.js  
+|	|-- lexiconRainbow.d3v3.min.js  
 |	`-- lexiconRainbow.d3v4.min.js  
 |-- pretty
-|   |-- lexiconRainbow.d3v3.pretty.js 
-|   `-- lexiconRainbow.d3v4.pretty.js 
+|	|-- lexiconRainbow.d3v3.pretty.js 
+|	`-- lexiconRainbow.d3v4.pretty.js 
 |-- examples
-|   |-- AminoAcids
-|   |   |-- AAColorScheme.png
-|   |   |-- aminoAcids.png
-|   |   |-- droplet.png
-|   |   |-- index_v3.html
-|   |   |-- index_v4.html
-|   |   `-- loadData.js
-|   |-- Minimal
+|	|-- AminoAcids
+|	|	|-- AAColorScheme.png
+|	|	|-- aminoAcids.png
+|	|	|-- droplet.png
+|	|	|-- index_v3.html
+|	|	|-- index_v4.html
+|	|	`-- loadData.js
+|	|-- Minimal
 |	|	|-- index_v3.html
 |	|	|-- index_v4.html
 |	|	`-- minimal.jpg
-|   |-- RandomDataset
+|	|-- RandomDataset
 |	|	|-- index_v3.html
 |	|	|-- index_v4.html
 |	|	|-- droplet.png
 |	|	`-- randomDataset.jpg
-|   |-- ServerDownTime
+|	|-- ServerDownTime
 |	|	|-- index_v3.html
 |	|	|-- index_v4.html
 |	|	|-- server.png
 |	|	`-- serverDownTime.jpg
-|   `-- USvotes
+|	`-- USvotes
 |		|-- index_v3.html
 |		|-- index_v4.html
 |		|-- server.png
