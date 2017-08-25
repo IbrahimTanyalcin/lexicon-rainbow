@@ -3,8 +3,10 @@
 
 >## **Minimal example:**
 >[<img src="./examples/Minimal/minimal.jpg">][MAIN] 
-Comparing 2 tables.
-[<img src="./examples/AminoAcids/aminoAcids.jpg">][MAIN]
+
+>## Comparing 2 tables.
+>[<img src="./examples/AminoAcids/aminoAcids.jpg">][MAIN]
+
 Some random data.
 [<img src="./examples/RandomDataset/randomDataset.jpg">][MAIN] 
 Server down time report.
