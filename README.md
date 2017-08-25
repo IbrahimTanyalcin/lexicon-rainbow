@@ -1,6 +1,7 @@
 # <a id="h1" href="#h1">Lexicon-Rainbow [:rainbow:](MAIN)</a>
 <br/>
-[<img src="./examples/AminoAcids/aminoAcids.jpg">](https://github.com/IbrahimTanyalcin/LEXICON)
+Some text.
+
 [<img src="https://raw.githubusercontent.com/IbrahimTanyalcin/lexicon-rainbow/master/examples/AminoAcids/aminoAcids.jpg">](http://i-pv.org/)
 
 
