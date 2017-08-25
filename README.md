@@ -63,7 +63,7 @@ For the latest development version:
 		<td>d3v4</td>
 		<td>
 			<code>
-				&lt;script src="//ibrahimtanyalcin.com/lexiconRainbow.d3v4.dev.js"&gt;&lt;/script&gt;
+				<sub>&lt;script src="//ibrahimtanyalcin.com/lexiconRainbow.d3v4.dev.js"&gt;&lt;/script&gt;</sub>
 			</code>
 		</td>
 	</tr>
