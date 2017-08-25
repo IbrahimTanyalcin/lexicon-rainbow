@@ -220,9 +220,6 @@ Drop one of the script tags below in your html file.
 ## API
 The general pattern for invoking lexicon-rainbow is as follows:
 
-(Viewport means the space taken up by the ```ownerSVGElement``` in document coordinates. Think of the values returned by ```SVGElement.getBoundingClientRect()```.
-The Viewbox on the other hand is the user defined coordinate system in units of **userSpaceOnUse**)
-
 ```js
 (new LexiconRainbow) //initiate a new instance
 .container("#containerDiv") //pass a node or id
@@ -240,6 +237,10 @@ The Viewbox on the other hand is the user defined coordinate system in units of 
 .append(true) //initialize internal variables
 .render(); //render scene
 ```
+
+>Note:
+>_Viewport means the space taken up by the ```ownerSVGElement``` in document coordinates. Think of the values returned by ```SVGElement.getBoundingClientRect()```.
+>The Viewbox on the other hand is the user defined coordinate system in units of **userSpaceOnUse**_
 
 <br>
 
