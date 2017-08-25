@@ -61,43 +61,44 @@ xyz.(a[,b[,c]])|optinal arguments *b* and *c*
 <pre>
 root
 |-- dev
-|   |-- lexiconRainbow.d3v3.dev.js
-|   `-- lexiconRainbow.d3v4.dev.js
+|   |-- lexiconRainbow.d3v3.dev.js <sub>(development version of the library for d3 v3)</sub> <a href="./dev/lexiconRainbow.d3v3.dev.js">🔍</a>
+|   `-- lexiconRainbow.d3v4.dev.js <sub>(development version of the library for d3 v4)</sub> <a href="./dev/lexiconRainbow.d3v4.dev.js">🔍</a>
 |-- min
-|   |-- lexiconRainbow.d3v3.min.js  
-|   `-- lexiconRainbow.d3v4.min.js  
+|   |-- lexiconRainbow.d3v3.min.js <sub>(minified version of the library for d3 v3)</sub> <a href="./min/lexiconRainbow.d3v3.min.js">🔍</a>
+|   `-- lexiconRainbow.d3v4.min.js <sub>(minified version of the library for d3 v4)</sub> <a href="./min/lexiconRainbow.d3v4.min.js">🔍</a>
 |-- pretty
-|   |-- lexiconRainbow.d3v3.pretty.js 
-|   `-- lexiconRainbow.d3v4.pretty.js 
+|   |-- lexiconRainbow.d3v3.pretty.js <sub>(beautified version of the library for d3 v3)</sub> <a href="./pretty/lexiconRainbow.d3v3.pretty.js">🔍</a>
+|   `-- lexiconRainbow.d3v4.pretty.js <sub>(beautified version of the library for d3 v4)</sub> <a href="./pretty/lexiconRainbow.d3v4.pretty.js">🔍</a>
 |-- examples
 |   |-- AminoAcids
-|   |   |-- AAColorScheme.png
-|   |   |-- aminoAcids.png
-|   |   |-- droplet.png
-|   |   |-- index_v3.html
-|   |   |-- index_v4.html
-|   |   `-- loadData.js
+|   |   |-- AAColorScheme.png <sub>(Glyph)</sub> <a href="./examples/AminoAcids/AAColorScheme.png">🔍</a>
+|   |   |-- aminoAcids.jpg <sub>(Output of the example)</sub> <a href="./examples/AminoAcids/aminoAcids.jpg">🔍</a>
+|   |   |-- droplet.png <sub>(Glyph)</sub> <a href="./examples/AminoAcids/droplet.png">🔍</a>
+|   |   |-- index_v3.html <sub>(d3 v4 example)</sub> <a href="./examples/AminoAcids/index_v3.html">🔍</a>
+|   |   |-- index_v4.html <sub>(d3 v4 example)</sub> <a href="./examples/AminoAcids/index_v4.html">🔍</a>
+|   |   `-- loadData.js <sub>(Load data via script tag)</sub> <a href="./examples/AminoAcids/loadData.js">🔍</a>
 |   |-- Minimal
-|   |   |-- index_v3.html
-|   |   |-- index_v4.html
-|   |   `-- minimal.jpg
+|   |   |-- index_v3.html <sub>(d3 v3 example)</sub> <a href="./examples/Minimal/index_v3.html">🔍</a>
+|   |   |-- index_v4.html <sub>(d3 v4 example)</sub> <a href="./examples/Minimal/index_v4.html">🔍</a>
+|   |   `-- minimal.jpg <sub>(Output of the example)</sub> <a href="./examples/Minimal/minimal.jpg">🔍</a>
 |   |-- RandomDataset
-|   |   |-- index_v3.html
-|   |   |-- index_v4.html
-|   |   |-- droplet.png
-|   |   `-- randomDataset.jpg
+|   |   |-- index_v3.html <sub>(d3 v3 example)</sub> <a href="./examples/RandomDataset/index_v3.html">🔍</a>
+|   |   |-- index_v4.html <sub>(d3 v4 example)</sub> <a href="./examples/RandomDataset/index_v4.html">🔍</a>
+|   |   |-- droplet.png <sub>(Glyph)</sub> <a href="./examples/RandomDataset/droplet.png">🔍</a>
+|   |   `-- randomDataset.jpg <sub>(Output of the example)</sub> <a href="./examples/RandomDataset/randomDataset.jpg">🔍</a>
 |   |-- ServerDownTime
-|   |   |-- index_v3.html
-|   |   |-- index_v4.html
-|   |   |-- server.png
-|   |   `-- serverDownTime.jpg
+|   |   |-- index_v3.html <sub>(d3 v3 example)</sub> <a href="./examples/ServerDownTime/index_v3.html">🔍</a>
+|   |   |-- index_v4.html <sub>(d3 v4 example)</sub> <a href="./examples/ServerDownTime/index_v4.html">🔍</a>
+|   |   |-- server.png <sub>(Glyph)</sub> <a href="./examples/ServerDownTime/server.png">🔍</a>
+|   |   `-- serverDownTime.jpg <sub>(Output of the example)</sub> <a href="./examples/ServerDownTime/serverDownTime.jpg">🔍</a>
 |   `-- USvotes
-|      |-- index_v3.html
-|      |-- index_v4.html
-|      |-- server.png
-|      `-- serverDownTime.jpg
+|      |-- index_v3.html <sub>(d3 v3 example)</sub> <a href="./examples/USvotes/index_v3.html">🔍</a>
+|      |-- index_v4.html <sub>(d3 v4 example)</sub> <a href="./examples/USvotes/index_v4.html">🔍</a>
+|      |-- loadData.js <sub>(Load data via script tag)</sub> <a href="./examples/USvotes/loadData.js">🔍</a>
+|      |-- usFlag.png <sub>(Glyph)</sub> <a href="./examples/USvotes/usFlag.png">🔍</a>
+|      `-- USvotes.jpg <sub>(Output of the example)</sub> <a href="./examples/USvotes/USvotes.jpg">🔍</a>
 |-- img
-|   `-- anatomy.png
+|   `-- anatomy.png <sub>(Parts of the visualization)</sub> <a href="./img/anatomy.png">🔍</a>
 |-- tests
 |   |-- index_v3.html <sub>(Page for headless testing with d3 v3)</sub> <a href="./tests/index_v3.html">🔍</a>
 |   |-- index_v4.html <sub>(Page for headless testing with d3 v4)</sub> <a href="./tests/index_v4.html">🔍</a>
@@ -223,21 +224,21 @@ The general pattern for invoking lexicon-rainbow is as follows:
 The Viewbox on the other hand is the user defined coordinate system in units of **userSpaceOnUse**)
 
 ```js
-(new LexiconRainbow) *//initiate a new instance*
-.container("#containerDiv") *//pass a node or id*
-.forceStyle() *//take advantage of embedded style*
-.w(600) *//set width of the viewbox*
-.h(200) *//set height of the viewbox*
-.sW("1000px") *//set css style width of the viewport*
-.sH("auto") *//set css style height of the viewport*
-.position("relative") *//set css style position *
-.sTop("0px") *//set css style top property of the viewport*
-.sLeft("0px") *//set css style left property of the viewport*
-.sMargin("100px auto 0px auto") *//set css style margin property of the viewport*
-.lexID("lexiconRainbow") *//set an id for the generated SVG*
-.input(sample) *//provide the data*
-.append(true) *//initialize internal variables*
-.render(); *//render scene*
+(new LexiconRainbow) //initiate a new instance
+.container("#containerDiv") //pass a node or id
+.forceStyle() //take advantage of embedded style
+.w(600) //set width of the viewbox
+.h(200) //set height of the viewbox
+.sW("1000px") //set css style width of the viewport
+.sH("auto") //set css style height of the viewport
+.position("relative") //set css style position
+.sTop("0px") //set css style top property of the viewport
+.sLeft("0px") //set css style left property of the viewport
+.sMargin("100px auto 0px auto") //set css style margin property of the viewport
+.lexID("lexiconRainbow") //set an id for the generated SVG
+.input(sample) //provide the data
+.append(true) //initialize internal variables
+.render(); //render scene
 ```
 
 <br>
