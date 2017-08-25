@@ -60,53 +60,53 @@ Lexicon-rainbow: minimal data visualization module between a single ordinal scal
 <pre>
 root
 |-- dev
-|	|-- lexiconRainbow.d3v3.dev.js
-|	`-- lexiconRainbow.d3v4.dev.js
+|   |-- lexiconRainbow.d3v3.dev.js
+|   `-- lexiconRainbow.d3v4.dev.js
 |-- min
-|	|-- lexiconRainbow.d3v3.min.js  
-|	`-- lexiconRainbow.d3v4.min.js  
+|   |-- lexiconRainbow.d3v3.min.js  
+|   `-- lexiconRainbow.d3v4.min.js  
 |-- pretty
-|	|-- lexiconRainbow.d3v3.pretty.js 
-|	`-- lexiconRainbow.d3v4.pretty.js 
+|   |-- lexiconRainbow.d3v3.pretty.js 
+|   `-- lexiconRainbow.d3v4.pretty.js 
 |-- examples
-|	|-- AminoAcids
-|	|	|-- AAColorScheme.png
-|	|	|-- aminoAcids.png
-|	|	|-- droplet.png
-|	|	|-- index_v3.html
-|	|	|-- index_v4.html
-|	|	`-- loadData.js
-|	|-- Minimal
-|	|	|-- index_v3.html
-|	|	|-- index_v4.html
-|	|	`-- minimal.jpg
-|	|-- RandomDataset
-|	|	|-- index_v3.html
-|	|	|-- index_v4.html
-|	|	|-- droplet.png
-|	|	`-- randomDataset.jpg
-|	|-- ServerDownTime
-|	|	|-- index_v3.html
-|	|	|-- index_v4.html
-|	|	|-- server.png
-|	|	`-- serverDownTime.jpg
-|	`-- USvotes
-|		|-- index_v3.html
-|		|-- index_v4.html
-|		|-- server.png
-|		`-- serverDownTime.jpg
+|   |-- AminoAcids
+|   |   |-- AAColorScheme.png
+|   |   |-- aminoAcids.png
+|   |   |-- droplet.png
+|   |   |-- index_v3.html
+|   |   |-- index_v4.html
+|   |   `-- loadData.js
+|   |-- Minimal
+|   |   |-- index_v3.html
+|   |   |-- index_v4.html
+|   |   `-- minimal.jpg
+|   |-- RandomDataset
+|   |   |-- index_v3.html
+|   |   |-- index_v4.html
+|   |   |-- droplet.png
+|   |   `-- randomDataset.jpg
+|   |-- ServerDownTime
+|   |   |-- index_v3.html
+|   |   |-- index_v4.html
+|   |   |-- server.png
+|   |   `-- serverDownTime.jpg
+|   `-- USvotes
+|      |-- index_v3.html
+|      |-- index_v4.html
+|      |-- server.png
+|      `-- serverDownTime.jpg
 |-- img
-|	`-- anatomy.png
+|   `-- anatomy.png
 |-- tests
-|	|-- index_v3.html
-|	|-- index_v4.html
-|	|-- phantomjsTest.js <sub>(Render ./index.*\.html and print base64 data uri)</sub>
-|	`-- nodejsTest.js <sub>(Test with node and log enumerabl properties)</sub>
-|-- .gitignore <sub>(Ignore .\private\*)</sub>
+|   |-- index_v3.html
+|   |-- index_v4.html
+|   |-- phantomjsTest.js <sub>(Render ./index.*\.html and print base64 data uri)</sub>
+|   `-- nodejsTest.js <sub>(test for node, npm install)</sub> <a href="nodejsTest.js">🔍</a>
+|-- .gitignore <sub>(Ignore ./private)</sub> <a href="./.gitignore">🔍</a>
 |-- .travis.yml <sub>(For testing with PhantomJS)</sub> <a href="./.travis.yml">🔍</a>
 |-- CODE_OF_CONDUCT.md <a href="./CODE_OF_CONDUCT.md">🔍</a>
-|-- LICENSE <sub>(license)</sub> <a href="./LICENSE">🔍</a>
-`-- README.md <sub>(readme)</sub> <a href="./README.md">🔍</a>
+|-- LICENSE <sub>(License)</sub> <a href="./LICENSE">🔍</a>
+`-- README.md <sub>(Readme)</sub> <a href="./README.md">🔍</a>
 </pre>
 
 <br>
