@@ -1,7 +1,7 @@
 # <a id="h1" href="#h1">Lexicon-Rainbow [:rainbow:](MAIN)</a>
 <br>
 
->### Minimal example:
+>**Minimal example:**
 >___
 >[<img src="./examples/Minimal/minimal.jpg">][MAIN] 
 
