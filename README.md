@@ -1,7 +1,7 @@
 # <a id="h1" href="#h1">Lexicon-Rainbow [:rainbow:](MAIN)</a>
 <br/>
 [<img src="./examples/AminoAcids/aminoAcids.jpg">](https://github.com/IbrahimTanyalcin/LEXICON)
-[<img src="https://github.com/IbrahimTanyalcin/lexicon-rainbow/blob/master/examples/AminoAcids/aminoAcids.jpg">](https://github.com/IbrahimTanyalcin/LEXICON)
+[<img src="https://github.com/IbrahimTanyalcin/lexicon-rainbow/blob/master/examples/AminoAcids/aminoAcids.jpg">](http://i-pv.org/)
 
 
 ### Legends
