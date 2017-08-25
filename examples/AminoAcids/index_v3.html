@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="../../dev/lexiconRainbow.d3v3.dev.js"></script>
+<script src="./loadData.js"></script>
+<style type ="text/css">
+html {
+	background-color:White;
+}
+html * {
+	box-sizing:border-box;
+}
+body{
+	margin: 0px;
+	background-color:White;
+}
+body:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+.row {
+	float:left;
+	width:100%;
+	font-size:16px;
+	position:relative;
+	overflow:hidden;
+	background-color:transparent;
+}
+.row:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+.row:first-child, .row:last-of-type {
+	min-height:300px;
+	text-align:center;
+	font-size:30px;
+	font-family:advent-pro,Sans Serif,Arial;
+}
+.row:first-child span {
+	display:inline-block;
+	width:90%;
+	position:absolute;
+	left:0;
+	right:0;
+	bottom:20px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.row:first-child span:first-child {
+	bottom:100px;
+	white-space:pre;
+}
+.row:last-of-type span {
+	display:inline-block;
+	width:90%;
+	position:absolute;
+	left:0;
+	right:0;
+	top:20px;
+	margin-left:auto;
+	margin-right:auto;
+}
+#containerDiv {
+	width:70%;
+	margin:auto;
+	position:relative;
+}
+#containerDiv>canvas {
+	width:100%;
+	height:auto;
+	visibility:hidden;
+}
+#containerDiv>svg {
+	position:absolute !important;
+	top:0;
+	left:0;
+	width:100%;
+}
+</style>
+</head>
+<body>
+<div class="row">
+	<span id="moverSpan">&nbsp;</span>
+	<span id="topSpan"></span>
+</div>
+<div class="row">
+	<div id="containerDiv">
+		<canvas width="600" height="200"></canvas>
+	</div>
+</div>
+<div class="row">
+	<span id="botSpan"></span>
+</div>
+<script type="text/javascript">
+
+!function(){
+	
+	////////////////////////////////////////////////////////////////////
+	/////////////////CREATE INSTANCE OF LEXICON RAINBOW/////////////////
+	////////////////////////////////////////////////////////////////////
+
+	(new LexiconRainbow)
+		.container("#containerDiv")
+		.dispersion(0)
+		.forceStyle()
+		.w(600).h(200)
+		.sW("100%").sH("auto")
+		.position("relative")
+		.sTop("0px")
+		.sLeft("0px")
+		.sMargin("0px auto 0px auto")
+		.handleEvent(handleEvent)
+		.lexID("lexiconRainbow")
+		.input(sample)
+		.append()
+		.render();
+
+	////////////////////////////////////////////////////////////////////
+	/////////////////////////ATTACH THE HANDLER/////////////////////////
+	////////////////////////////////////////////////////////////////////
+	
+	var topspan = document.getElementById("topSpan");
+	var botspan = document.getElementById("botSpan");
+	var moverspan = document.getElementById("moverSpan");
+	
+	function handleEvent (data,type,eventType) {
+		switch (type) {
+			case "onload":
+				topSpan.textContent = data.ordinal.Info;
+				botSpan.textContent = data.linear.Info;
+				return;
+			case "onhighlight":
+				if(eventType==="mouseover") {
+					var dd = typeof data.item === "object" ? "Value: "+Math.abs(data.item[1]-data.item[0]) : "Value: "+data.item;
+					var name = typeof data.name !== undefined ? "Name: "+data.name+", " : "";
+					moverspan.textContent = name+dd;
+				} else {
+					moverspan.textContent = " ";
+				}
+				return;
+			case "onrenderLinear":
+				botSpan.textContent = data.Info;
+				return;
+			case "onrenderOrdinal":
+				topSpan.textContent = data.Info;
+				return;
+		}
+	}
+}()
+</script>
+</body>
+</html>

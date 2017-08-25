@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="../../dev/lexiconRainbow.d3v3.dev.js"></script>
+<style type ="text/css">
+</style>
+</head>
+<body>
+<div id="containerDiv" style="margin:auto;"></div>
+<script type="text/javascript">
+
+////////////////////////////////////////////////////////////////////
+//////////////////////////////THE DATA//////////////////////////////
+////////////////////////////////////////////////////////////////////
+
+var sample = {
+	"ordinal": [
+		{
+			"colors": {
+				"X": "#f93333",
+				"Y": "#e3f9ad",
+				"Z":["Teal","Red","Blue","Yellow","Teal"],
+				"T":"Black",
+			},
+			"name": "Test-1",
+			"categories": {
+				"T": {intervals:[
+					"4.35"
+				],names:["test"]},
+				"Y": {intervals:[
+					"4.65"
+				],names:["test"]},
+				"X": {intervals:[
+					"4.29"
+				],names:["test2"]},
+				"Z":[1,10,[-10]]
+			},
+			"glyph": "./droplet.png",
+			"mode":"stack",
+			"partition":"color"
+		},
+		{
+			"colors": {
+				"X": "#f93333",
+				"Y": "#e3f9ad",
+				"Z":["Teal","Red","Blue","Yellow","Teal"],
+				"T":"Black",
+			},
+			"name": "Test-2",
+			"categories": {
+				"T": {intervals:[
+					"4.35"
+				],names:["test"]},
+				"Y": {intervals:[
+					"4.65"
+				],names:["test"]},
+				"X": {intervals:[
+					"4.29"
+				],names:["test2"]},
+				"Z":[1,10,[-10]]
+			},
+			"glyph": "./droplet.png",
+			"mode":"stack",
+			"partition":true
+		},
+		{
+			"colors": {
+				"X": "#f93333",
+				"Y": "#e3f9ad",
+				"Z":["Teal","Red","Blue","Yellow","Teal"],
+				"T":"Black",
+			},
+			"name": "Test-2",
+			"categories": {
+				"T": {intervals:[
+					"4.35"
+				],names:["test"]},
+				"Y": {intervals:[
+					"4.65"
+				],names:["test"]}
+			},
+			"glyph": "./droplet.png",
+			"mode":"stackEqual",
+			"partition":false
+		}
+	],
+	"linear": [
+		{
+			"domain": [
+				-5,
+				5
+			],
+			"name": "Test-1",
+			"categories": {
+				"T": {intervals:[
+					"-5",[4.4,5]
+				],names:["t1","t2"]},
+				"Y": {intervals:[
+					"4.65"
+				],names:["y1"]},
+				"X": {intervals:
+					"4.29",names:"x1"},
+				"Z":{intervals:[[4,4.1],-3,5],names:"z"}
+			},
+			"gMode":"justify",
+			"mode":"intervalize"
+		},
+		{
+			"domain": [
+				-5,
+				5
+			],
+			"axis":false,
+			"name": "Test-2",
+			"categories": {
+				"T": "0",
+				"Y": "0",
+				"X": "0",
+				"Z":"0"
+			},
+			"gMode":"justify",
+			"mode":"intervalize"
+		},
+		{
+			"domain": [
+				-10,
+				10
+			],
+			"name": "Test-2.1",
+			"categories": {
+				"T": "0",
+				"Y": "0",
+				"X": "0",
+				"Z":"0"
+			},
+			"gMode":"justify",
+			"mode":"intervalize"
+		},
+		{
+			"domain": [
+				-10,
+				10
+			],
+			"name": "Test-2.2",
+			"categories": {
+				"T": "0",
+				"Y": "0",
+				"X": "0",
+				"Z":"0"
+			},
+			"gMode":"justify",
+			"mode":["intervalize",5]
+		},
+		{
+			"domain": [
+				-5,
+				5
+			],
+			"axis":"pink",
+			"name": "Test-3",
+			"categories": {
+				"T": "0",
+				"Y": "0",
+				"X": "0",
+				"Z":"0"
+			},
+			"gMode":"justify",
+		},
+		{
+			"domain": [
+				-5,
+				40
+			],
+			"name": "Test-4",
+			"categories": {
+				"T": "0",
+				"Y": "0",
+				"X": "0",
+				"Z":"0"
+			},
+			"glyph": "./droplet.png",
+			"gMode":true,
+		},
+		{
+			"domain": [
+				-5,
+				5
+			],
+			"name": "Test-5",
+			"categories": {
+				"T": "0",
+				"Y": "0",
+				"X": "0",
+				"Z":"0"
+			},
+			"glyph": "./droplet.png",
+			"gMode":false,
+		}
+	]
+};
+
+////////////////////////////////////////////////////////////////////
+///////CREATE 2 INSTANCES OF LEXICON RAINBOW ON THE SAME DATA///////
+////////////////////////////////////////////////////////////////////
+
+Array.apply(null,Array(2)).forEach(function(d,i){
+	(window["lexiconRainbow"+(i ? i+1 : "")] = new LexiconRainbow)
+	.container("#containerDiv")
+	.forceStyle()
+	.w(600)
+	.h(200)
+	.sW("1000px")
+	.sH("auto")
+	.position("relative")
+	.sTop("0px")
+	.sLeft("0px")
+	.sMargin("100px auto 0px auto")
+	/*If u want to see what is passed to the handler, uncomment the function below*/
+	/*.handleEvent(function(data,type,eventType){console.log(data);console.log(type);})*/
+	.lexID("lexiconRainbow"+(i ? i+1 : ""))
+	.input(sample)
+	.append(true)
+	.render();
+})
+
+</script>
+</body>
+</html>
