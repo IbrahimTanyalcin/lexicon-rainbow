@@ -2,7 +2,6 @@
 <br>
 
 >## Minimal example:
-___
 >[<img src="./examples/Minimal/minimal.jpg">][MAIN] 
 
 >## Comparing 2 tables:
