@@ -140,7 +140,7 @@ There are 2 versions of lexicon-rainbow, one compatible with d3.v3 **(3.5.17)** 
 <br>
 
 ## How do I use it ? 
-Refer to [usage](#usage) and [API Reference](#api)
+Refer to [Usage](#usage) and [API Reference](#api)
 
 <br>
 
@@ -206,12 +206,53 @@ Drop one of the script tags below in your html file.
 	</tr>
 </table>
 
+<br>
+
 ## Installation
+
+<br>
 
 ## Testing
 
-## API
+<br>
 
-##UMD
+## API
+The general pattern for invoking lexicon-rainbow is as follows:
+
+(Viewport means the space taken up by the ```ownerSVGElement``` in document coordinates. Think of the values returned by ```SVGElement.getBoundingClientRect()```.
+The Viewbox on the other hand is the user defined coordinate system in units of **userSpaceOnUse**)
+
+```js
+(new LexiconRainbow) *//initiate a new instance*
+.container("#containerDiv") *//pass a node or id*
+.forceStyle() *//take advantage of embedded style*
+.w(600) *//set width of the viewbox*
+.h(200) *//set height of the viewbox*
+.sW("1000px") *//set css style width of the viewport*
+.sH("auto") *//set css style height of the viewport*
+.position("relative") *//set css style position *
+.sTop("0px") *//set css style top property of the viewport*
+.sLeft("0px") *//set css style left property of the viewport*
+.sMargin("100px auto 0px auto") *//set css style margin property of the viewport*
+.lexID("lexiconRainbow") *//set an id for the generated SVG*
+.input(sample) *//provide the data*
+.append(true) *//initialize internal variables*
+.render(); *//render scene*
+```
+
+<br>
+
+## UMD
+
+<br>
+
+## Youtube
+
+<br>
+
+## Support
+
+<br>
+
 
 [MAIN]: https://github.com/IbrahimTanyalcin/LEXICON
