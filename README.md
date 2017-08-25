@@ -76,7 +76,7 @@ For the latest development version:
 	</tr>
 	<tr>
 	</tr>
-<table/>
+</table>
 
   if you are using d3 v3 in your project:
   
