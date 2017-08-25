@@ -47,6 +47,7 @@ xyz.(a[,b[,c]])|optinal arguments *b* and *c*
 
 ## Anatomy 
 Below is an summary of different parts of the visualization.
+
 ![Anatomy](./img/anatomy.png)
 
 ## What is it ?
