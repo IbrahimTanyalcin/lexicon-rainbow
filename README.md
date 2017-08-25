@@ -1,6 +1,6 @@
 # <a id="h1" href="#h1">Lexicon-Rainbow [:rainbow:](MAIN)</a>
 <br/>
-> [<img src="./examples/AminoAcids/aminoAcids.jpg" style="max-width:200px;max-height:200px"/>](MAIN "LEXICON")  [<img src="./examples/Minimal/minimal.jpg" style="max-width:200px;max-height:200px"/>](MAIN "LEXICON") [<img src="./examples/RandomDataset/randomDataset.jpg" style="max-width:200px;max-height:200px"/>](MAIN "LEXICON") [<img src="./examples/ServerDownTime/serverDownTime.jpg" style="max-width:200px;max-height:200px"/>](MAIN "LEXICON") [<img src="./examples/USvotes/USvotes.jpg" style="max-width:200px;max-height:200px"/>](MAIN "LEXICON") 
+> [<img src="./examples/AminoAcids/aminoAcids.jpg" width="300" height ="150"/>][MAIN]  [<img src="./examples/Minimal/minimal.jpg" width="300" height ="150"/>][MAIN] [<img src="./examples/RandomDataset/randomDataset.jpg" width="300" height ="150"/>][MAIN] [<img src="./examples/ServerDownTime/serverDownTime.jpg" width="300" height ="150"/>][MAIN] [<img src="./examples/USvotes/USvotes.jpg" width="300" height ="150"/>][MAIN] 
 
 ### Legends
 Phrase | Definition
