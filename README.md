@@ -55,31 +55,51 @@ For the latest development version:
 		<td>d3v3</td>
 		<td>
 			<code>
-				&lt;script src="https://ibrahimtanyalcin.com/lexiconRainbow.d3v3.dev.js"&gt;&lt;/script&gt;
+				&lt;script src="//ibrahimtanyalcin.com/lexiconRainbow.d3v3.dev.js"&gt;&lt;/script&gt;
 			</code>
 		</td>
 	</tr>
 	<tr>
-		<td>d3v3</td>
-		<td>test</td>
+		<td>d3v4</td>
+		<td>
+			<code>
+				&lt;script src="//ibrahimtanyalcin.com/lexiconRainbow.d3v4.dev.js"&gt;&lt;/script&gt;
+			</code>
+		</td>
 	</tr>
 	<tr>
-		<td rowspan="2">Pretty version</td>
-		<td>Your version of d3</td>
-		<td>Script tag to use</td>
+		<td rowspan="2"><b>Pretty version</b></td>
+		<td>d3v3</td>
+		<td>
+			<code>
+				&lt;script src="//ibrahimtanyalcin.com/lexiconRainbow.d3v3.pretty.js"&gt;&lt;/script&gt;
+			</code>
+		</td>
 	</tr>
 	<tr>
-		<td>d3v3</td>
-		<td>test</td>
+		<td>d3v4</td>
+		<td>
+			<code>
+				&lt;script src="//ibrahimtanyalcin.com/lexiconRainbow.d3v4.pretty.js"&gt;&lt;/script&gt;
+			</code>
+		</td>
 	</tr>
 	<tr>
 		<td rowspan="2">Minified version</td>
-		<td>Your version of d3</td>
-		<td>Script tag to use</td>
+		<td>d3v3</td>
+		<td>
+			<code>
+				&lt;script src="//ibrahimtanyalcin.com/lexiconRainbow.d3v3.min.js"&gt;&lt;/script&gt;
+			</code>
+		</td>
 	</tr>
 	<tr>
-		<td>d3v3</td>
-		<td>test</td>
+		<td>d3v4</td>
+		<td>
+			<code>
+				&lt;script src="//ibrahimtanyalcin.com/lexiconRainbow.d3v3.min.js"&gt;&lt;/script&gt;
+			</code>
+		</td>
 	</tr>
 </table>
 
