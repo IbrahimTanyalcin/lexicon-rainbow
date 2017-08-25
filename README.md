@@ -54,13 +54,12 @@ For the latest development version:
 		<td rowspan="2">Development version</td>
 		<td>d3v3</td>
 		<td>
-			```html
-				<script src="https://ibrahimtanyalcin.com/lexiconRainbow.d3v3.dev.js"></script>
-			```
+			test
 		</td>
 	</tr>
 	<tr>
-		
+		<td>d3v3</td>
+		<td>test</td>
 	</tr>
 	<tr>
 		<td rowspan="2">Pretty version</td>
@@ -68,6 +67,8 @@ For the latest development version:
 		<td>Script tag to use</td>
 	</tr>
 	<tr>
+		<td>d3v3</td>
+		<td>test</td>
 	</tr>
 	<tr>
 		<td rowspan="2">Minified version</td>
@@ -75,6 +76,8 @@ For the latest development version:
 		<td>Script tag to use</td>
 	</tr>
 	<tr>
+		<td>d3v3</td>
+		<td>test</td>
 	</tr>
 </table>
 
