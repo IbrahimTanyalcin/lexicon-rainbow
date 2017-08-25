@@ -273,6 +273,8 @@ The general pattern for invoking lexicon-rainbow is as follows:
 * [Mike Bostock](https://d3js.org/) for D3.
 
 ## Support
+I work on several small to medium sized projects. Development in one can also lead to development of the others. So if you would like to show your
+support for this project you can contribute to my [PATREON](https://www.patreon.com/ibrahimTanyalcin) page.
 
 <br>
 
