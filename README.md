@@ -3,6 +3,10 @@
 <br>
 
 [<img src="./examples/AminoAcids/aminoAcids.jpg">][MAIN]
+[<img src="./examples/Minimal/minimal.jpg">][MAIN] 
+[<img src="./examples/RandomDataset/randomDataset.jpg">][MAIN] 
+[<img src="./examples/ServerDownTime/serverDownTime.jpg">][MAIN] 
+[<img src="./examples/USvotes/USvotes.jpg">][MAIN] 
 
 
 ### Legends
