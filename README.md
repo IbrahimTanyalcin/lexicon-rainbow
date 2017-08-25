@@ -47,14 +47,16 @@ For the latest development version:
 <table>
 	<tr>
 		<td></td>
-		<td>Your version of d3</td>
-		<td>Script tag to use</td>
+		<td><b>Your version of d3</b></td>
+		<td><b>Script tag to use</b></td>
 	</tr>
 	<tr>
 		<td rowspan="2"><b>Development version</b></td>
 		<td>d3v3</td>
 		<td>
-			test
+			<code>
+				&lt;script src="https://ibrahimtanyalcin.com/lexiconRainbow.d3v3.dev.js"&gt;&lt;/script&gt;
+			</code>
 		</td>
 	</tr>
 	<tr>
