@@ -56,7 +56,6 @@ xyz.(a[,b[,c]])|optinal arguments *b* and *c*
 {x} | a variable *y* with typeof *y* === "x"
 
 ### Repository folder structure
-Lexicon-rainbow: minimal data visualization module between a single ordinal scale and a single linear scale with in-built GUI Edit
 
 <pre>
 root
