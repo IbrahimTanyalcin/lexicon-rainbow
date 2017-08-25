@@ -51,7 +51,7 @@ For the latest development version:
 		<td>Script tag to use</td>
 	</tr>
 	<tr>
-		<td rowspan="2">**Development version**</td>
+		<td rowspan="2"><b>Development version</b></td>
 		<td>d3v3</td>
 		<td>
 			test
