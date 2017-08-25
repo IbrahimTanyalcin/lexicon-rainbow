@@ -1,8 +1,8 @@
 # <a id="h1" href="#h1">Lexicon-Rainbow [:rainbow:](MAIN)</a>
 <br>
 
->###### **Minimal example:**
-[<img src="./examples/Minimal/minimal.jpg">][MAIN] 
+>## **Minimal example:**
+>[<img src="./examples/Minimal/minimal.jpg">][MAIN] 
 Comparing 2 tables.
 [<img src="./examples/AminoAcids/aminoAcids.jpg">][MAIN]
 Some random data.
