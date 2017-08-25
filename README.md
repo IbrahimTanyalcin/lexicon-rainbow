@@ -5,6 +5,7 @@
 <hr>
 
 * [API](#api)
+* [UMD](#umd)
 * [Examples](#minimal-example)
 * [Legends](#legends)
 * [What is it ?](#what-is-it-)
@@ -14,6 +15,7 @@
 * [Usage](#usage)
 * [Installation](#installation)
 * [How do I use it ?](#how-do-i-use-it-)
+* [Support](#support)
 
 <hr>
 
