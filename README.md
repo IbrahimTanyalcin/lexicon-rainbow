@@ -2,6 +2,7 @@
 <br>
 
 <hr>
+
 * [API](#api)
 * [Examples](#minimal-example)
 * [Legends](#legends)
@@ -12,6 +13,7 @@
 * [Usage](#usage)
 * [Installation](#installation)
 * [How do I use it ?](#how-do-i-use-it-)
+
 <hr>
 
 >## Minimal example:
