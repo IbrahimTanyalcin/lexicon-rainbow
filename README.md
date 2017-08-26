@@ -65,14 +65,14 @@ So the ones you should care about are marked with :white_check_mark:
 <pre>
 root
 |-- dev
-|   |-- lexiconRainbow.d3v3.dev.js <sub>(development version of the library for d3 v3)</sub> <a href="./dev/lexiconRainbow.d3v3.dev.js">🔍</a>:white_check_mark:
-|   `-- lexiconRainbow.d3v4.dev.js <sub>(development version of the library for d3 v4)</sub> <a href="./dev/lexiconRainbow.d3v4.dev.js">🔍</a>:white_check_mark:
+|   |-- lexiconRainbow.d3v3.dev.js <sub>(development version of the library for d3 v3)</sub> <a href="./dev/lexiconRainbow.d3v3.dev.js">🔍</a> &#10004;
+|   `-- lexiconRainbow.d3v4.dev.js <sub>(development version of the library for d3 v4)</sub> <a href="./dev/lexiconRainbow.d3v4.dev.js">🔍</a> &#10004;
 |-- min
-|   |-- lexiconRainbow.d3v3.min.js <sub>(minified version of the library for d3 v3)</sub> <a href="./min/lexiconRainbow.d3v3.min.js">🔍</a>:white_check_mark:
-|   `-- lexiconRainbow.d3v4.min.js <sub>(minified version of the library for d3 v4)</sub> <a href="./min/lexiconRainbow.d3v4.min.js">🔍</a>:white_check_mark:
+|   |-- lexiconRainbow.d3v3.min.js <sub>(minified version of the library for d3 v3)</sub> <a href="./min/lexiconRainbow.d3v3.min.js">🔍</a> &#10004;
+|   `-- lexiconRainbow.d3v4.min.js <sub>(minified version of the library for d3 v4)</sub> <a href="./min/lexiconRainbow.d3v4.min.js">🔍</a> &#10004;
 |-- pretty
-|   |-- lexiconRainbow.d3v3.pretty.js <sub>(beautified version of the library for d3 v3)</sub> <a href="./pretty/lexiconRainbow.d3v3.pretty.js">🔍</a>:white_check_mark:
-|   `-- lexiconRainbow.d3v4.pretty.js <sub>(beautified version of the library for d3 v4)</sub> <a href="./pretty/lexiconRainbow.d3v4.pretty.js">🔍</a>:white_check_mark:
+|   |-- lexiconRainbow.d3v3.pretty.js <sub>(beautified version of the library for d3 v3)</sub> <a href="./pretty/lexiconRainbow.d3v3.pretty.js">🔍</a> &#10004;
+|   `-- lexiconRainbow.d3v4.pretty.js <sub>(beautified version of the library for d3 v4)</sub> <a href="./pretty/lexiconRainbow.d3v4.pretty.js">🔍</a> &#10004;
 |-- examples
 |   |-- AminoAcids
 |   |   |-- AAColorScheme.png <sub>(Glyph)</sub> <a href="./examples/AminoAcids/AAColorScheme.png">🔍</a>
@@ -227,6 +227,22 @@ $ npm install lexicon-rainbow
 <br>
 
 ## Testing
+Once you install the module you can call from the **root** of your project:
+
+```shell
+$ node node_modules/lexicon-rainbow/tests/nodejsTest.js
+```
+
+or you can move to the directory of the lexicon rainbow and call:
+
+```shell
+$ node run test
+```
+
+The test file ```requires``` module and prints out all enumerable properties of the exported object.
+This library is not for use on server side (because you cannot manipulate the DOM). 
+The test file is just there to control if the object can be exported.
+To use this library with other libraries on the server side to be later used for client consumption you shoulduse a tool like Browserify.
 
 <br>
 
