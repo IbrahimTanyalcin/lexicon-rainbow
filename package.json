@@ -1,0 +1,45 @@
+{
+  "name": "lexicon-rainbow",
+  "version": "0.0.8",
+  "description": "Lexicon-Rainbow Visualization Module",
+    "keywords": [
+    "visualization",
+	"parallel coordinates",
+	"sankey",
+    "svg",
+    "lexicon",
+    "interactive",
+	"mapping",
+	"d3",
+	"javascript"
+  ],
+  "main": "dev/lexiconRainbow.d3v4.dev.js",
+  "jsnext:main": "dev/lexiconRainbow.d3v4.dev.js",
+  "scripts": {
+	"prepublishOnly": "node tests/nodejsTest.js",
+    "test": "node tests/nodejsTest.js",
+	"postinstall": "node tests/nodejsTest.js"
+  },
+  "repository": {
+	  "type": "git",
+	  "url": "https://github.com/IbrahimTanyalcin/lexicon-rainbow.git"
+  },
+  "author": {
+	  "name": "ibrahim Tanyalcin",
+	  "url": "ibrahimtanyalcin.com",
+	  "email": "tanyalcin.ibrahim@gmail.com"
+  },
+  "license": "Adapted BSD 3-Clause License",
+  "devDependencies": {
+    "eslint": "^4.3.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "uglify-js": "^3.0.28"
+  },
+  "dependencies": {
+	"d3": "^4.10.0"  
+  }
+}
