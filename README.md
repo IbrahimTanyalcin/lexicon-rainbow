@@ -59,17 +59,20 @@ xyz.(a[,b[,c]])|optinal arguments *b* and *c*
 
 ### Repository folder structure
 
+As a developer, you are probably more interested in just getting the script and dropping in your html file. 
+So the ones you should care about are marked with :white_check_mark:
+
 <pre>
 root
 |-- dev
-|   |-- lexiconRainbow.d3v3.dev.js <sub>(development version of the library for d3 v3)</sub> <a href="./dev/lexiconRainbow.d3v3.dev.js">🔍</a>
-|   `-- lexiconRainbow.d3v4.dev.js <sub>(development version of the library for d3 v4)</sub> <a href="./dev/lexiconRainbow.d3v4.dev.js">🔍</a>
+|   |-- lexiconRainbow.d3v3.dev.js <sub>(development version of the library for d3 v3)</sub> <a href="./dev/lexiconRainbow.d3v3.dev.js">🔍</a>:white_check_mark:
+|   `-- lexiconRainbow.d3v4.dev.js <sub>(development version of the library for d3 v4)</sub> <a href="./dev/lexiconRainbow.d3v4.dev.js">🔍</a>:white_check_mark:
 |-- min
-|   |-- lexiconRainbow.d3v3.min.js <sub>(minified version of the library for d3 v3)</sub> <a href="./min/lexiconRainbow.d3v3.min.js">🔍</a>
-|   `-- lexiconRainbow.d3v4.min.js <sub>(minified version of the library for d3 v4)</sub> <a href="./min/lexiconRainbow.d3v4.min.js">🔍</a>
+|   |-- lexiconRainbow.d3v3.min.js <sub>(minified version of the library for d3 v3)</sub> <a href="./min/lexiconRainbow.d3v3.min.js">🔍</a>:white_check_mark:
+|   `-- lexiconRainbow.d3v4.min.js <sub>(minified version of the library for d3 v4)</sub> <a href="./min/lexiconRainbow.d3v4.min.js">🔍</a>:white_check_mark:
 |-- pretty
-|   |-- lexiconRainbow.d3v3.pretty.js <sub>(beautified version of the library for d3 v3)</sub> <a href="./pretty/lexiconRainbow.d3v3.pretty.js">🔍</a>
-|   `-- lexiconRainbow.d3v4.pretty.js <sub>(beautified version of the library for d3 v4)</sub> <a href="./pretty/lexiconRainbow.d3v4.pretty.js">🔍</a>
+|   |-- lexiconRainbow.d3v3.pretty.js <sub>(beautified version of the library for d3 v3)</sub> <a href="./pretty/lexiconRainbow.d3v3.pretty.js">🔍</a>:white_check_mark:
+|   `-- lexiconRainbow.d3v4.pretty.js <sub>(beautified version of the library for d3 v4)</sub> <a href="./pretty/lexiconRainbow.d3v4.pretty.js">🔍</a>:white_check_mark:
 |-- examples
 |   |-- AminoAcids
 |   |   |-- AAColorScheme.png <sub>(Glyph)</sub> <a href="./examples/AminoAcids/AAColorScheme.png">🔍</a>
@@ -109,7 +112,13 @@ root
 |-- .travis.yml <sub>(For testing with PhantomJS)</sub> <a href="./.travis.yml">🔍</a>
 |-- CODE_OF_CONDUCT.md <sub>(CoC)</sub> <a href="./CODE_OF_CONDUCT.md">🔍</a>
 |-- LICENSE <sub>(License)</sub> <a href="./LICENSE">🔍</a>
-`-- README.md <sub>(Readme)</sub> <a href="./README.md">🔍</a>
+|-- README.md <sub>(Readme)</sub> <a href="./README.md">🔍</a>
+|-- CONTRIBUTING.md <sub>(Contribution guideline)</sub> <a href="./CONTRIBUTING.md">🔍</a>
+|-- package.json <sub>(Package json file for npm)</sub> <a href="./package.json">🔍</a>
+|-- .eslintrc.json <sub>(Custom linting rules :trollface:)</sub> <a href="./.eslintrc.json">🔍</a>
+`-- .jsbeautifyrc.json <sub>(Rules for jsbeautify)</sub> <a href="./.eslintrc.json">🔍</a>
+
+
 </pre>
 
 <br>
@@ -211,6 +220,9 @@ Drop one of the script tags below in your html file.
 <br>
 
 ## Installation
+```shell
+$ npm install lexicon-rainbow
+```
 
 <br>
 
