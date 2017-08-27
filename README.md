@@ -27,19 +27,19 @@
 <br>
 
 >## Minimal example:
->[<img src="./examples/Minimal/minimal.jpg">][MAIN] 
+>[<img src="./examples/Minimal/minimal.jpg" hspace="400" align="left">][MAIN] 
 
 >## Comparing 2 tables:
->[<img src="./examples/AminoAcids/aminoAcids.jpg">][MAIN]
+>[<img src="./examples/AminoAcids/aminoAcids.jpg" hspace="400" align="left">][MAIN]
 
 >## Some random data:
->[<img src="./examples/RandomDataset/randomDataset.jpg">][MAIN] 
+>[<img src="./examples/RandomDataset/randomDataset.jpg" hspace="400" align="left">][MAIN] 
 
 >## Server down time report:
->[<img src="./examples/ServerDownTime/serverDownTime.jpg">][MAIN] 
+>[<img src="./examples/ServerDownTime/serverDownTime.jpg" hspace="400" align="left">][MAIN] 
 
 >## 2016 US elections:
->[<img src="./examples/USvotes/USvotes.jpg">][MAIN] 
+>[<img src="./examples/USvotes/USvotes.jpg" hspace="400" align="left">][MAIN] 
 
 <br>
 
