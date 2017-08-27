@@ -108,13 +108,15 @@ root
 |   |-- index_v4.html <sub>(Page for headless testing with d3 v4)</sub> <a href="./tests/index_v4.html">🔍</a>
 |   |-- phantomjsTest.js <sub>(Render ./index.*\.html and print base64 data uri)</sub> <a href="./tests/phantomjsTest.js">🔍</a>
 |   `-- nodejsTest.js <sub>(test for node, npm install)</sub> <a href="./tests/nodejsTest.js">🔍</a>
+|-- md
+|   |-- CODE_OF_CONDUCT.md <sub>(CoC)</sub> <a href="./md/CODE_OF_CONDUCT.md">🔍</a>
+|   |-- LICENSE <sub>(License)</sub> <a href="./md/LICENSE">🔍</a>
+|   |-- README.md <sub>(Readme)</sub> <a href="./md/README.md">🔍</a> &#10004;
+|   |-- API.md <sub>(Readme)</sub> <a href="./md/API.md">🔍</a> &#10004;
+|   `-- CONTRIBUTING.md <sub>(Contribution guideline)</sub> <a href="./md/CONTRIBUTING.md">🔍</a>
 |-- .gitignore <sub>(Ignore ./private)</sub> <a href="./.gitignore">🔍</a>
-|-- .travis.yml <sub>(For testing with PhantomJS)</sub> <a href="./.travis.yml">🔍</a>
-|-- CODE_OF_CONDUCT.md <sub>(CoC)</sub> <a href="./CODE_OF_CONDUCT.md">🔍</a>
-|-- LICENSE <sub>(License)</sub> <a href="./LICENSE">🔍</a>
-|-- README.md <sub>(Readme)</sub> <a href="./README.md">🔍</a>
-|-- CONTRIBUTING.md <sub>(Contribution guideline)</sub> <a href="./CONTRIBUTING.md">🔍</a>
 |-- package.json <sub>(Package json file for npm)</sub> <a href="./package.json">🔍</a>
+|-- .travis.yml <sub>(For testing with PhantomJS)</sub> <a href="./.travis.yml">🔍</a>
 |-- .eslintrc.json <sub>(Custom linting rules :trollface:)</sub> <a href="./.eslintrc.json">🔍</a>
 `-- .jsbeautifyrc.json <sub>(Rules for jsbeautify)</sub> <a href="./.eslintrc.json">🔍</a>
 
@@ -288,10 +290,12 @@ The general pattern for invoking lexicon-rainbow is as follows:
 <br>
 
 ## UMD
+The library is wrapped inside UMD. You should be able to use it with CommonJS or AMD. In browser environment you will have ```LexiconRainbow``` **constructor** as global variable.
 
 <br>
 
 ## Youtube
+Static figures only gives an idea. You can go to my [youtube channel](https://www.youtube.com/channel/UCmtQOhFPZ7FH_jVwtv4-GFw) and start from [this](about:blank) video to have a better overview. 
 
 <br>
 
