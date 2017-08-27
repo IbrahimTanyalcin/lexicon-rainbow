@@ -27,19 +27,19 @@
 <br>
 
 >## Minimal example:
->[<img src="./examples/Minimal/minimal.jpg">][MAIN] 
+>[<img src="../examples/Minimal/minimal.jpg">][MAIN] 
 
 >## Comparing 2 tables:
->[<img src="./examples/AminoAcids/aminoAcids.jpg">][MAIN]
+>[<img src="../examples/AminoAcids/aminoAcids.jpg">][MAIN]
 
 >## Some random data:
->[<img src="./examples/RandomDataset/randomDataset.jpg">][MAIN] 
+>[<img src="../examples/RandomDataset/randomDataset.jpg">][MAIN] 
 
 >## Server down time report:
->[<img src="./examples/ServerDownTime/serverDownTime.jpg">][MAIN] 
+>[<img src="../examples/ServerDownTime/serverDownTime.jpg">][MAIN] 
 
 >## 2016 US elections:
->[<img src="./examples/USvotes/USvotes.jpg">][MAIN] 
+>[<img src="../examples/USvotes/USvotes.jpg">][MAIN] 
 
 <br>
 
@@ -65,60 +65,60 @@ So the ones you should care about are marked with :white_check_mark:
 <pre>
 root
 |-- dev
-|   |-- lexiconRainbow.d3v3.dev.js <sub>(development version of the library for d3 v3)</sub> <a href="./dev/lexiconRainbow.d3v3.dev.js">🔍</a> &#10004;
-|   `-- lexiconRainbow.d3v4.dev.js <sub>(development version of the library for d3 v4)</sub> <a href="./dev/lexiconRainbow.d3v4.dev.js">🔍</a> &#10004;
+|   |-- lexiconRainbow.d3v3.dev.js <sub>(development version of the library for d3 v3)</sub> <a href="../dev/lexiconRainbow.d3v3.dev.js">🔍</a> &#10004;
+|   `-- lexiconRainbow.d3v4.dev.js <sub>(development version of the library for d3 v4)</sub> <a href="../dev/lexiconRainbow.d3v4.dev.js">🔍</a> &#10004;
 |-- min
-|   |-- lexiconRainbow.d3v3.min.js <sub>(minified version of the library for d3 v3)</sub> <a href="./min/lexiconRainbow.d3v3.min.js">🔍</a> &#10004;
-|   `-- lexiconRainbow.d3v4.min.js <sub>(minified version of the library for d3 v4)</sub> <a href="./min/lexiconRainbow.d3v4.min.js">🔍</a> &#10004;
+|   |-- lexiconRainbow.d3v3.min.js <sub>(minified version of the library for d3 v3)</sub> <a href="../min/lexiconRainbow.d3v3.min.js">🔍</a> &#10004;
+|   `-- lexiconRainbow.d3v4.min.js <sub>(minified version of the library for d3 v4)</sub> <a href="../min/lexiconRainbow.d3v4.min.js">🔍</a> &#10004;
 |-- pretty
-|   |-- lexiconRainbow.d3v3.pretty.js <sub>(beautified version of the library for d3 v3)</sub> <a href="./pretty/lexiconRainbow.d3v3.pretty.js">🔍</a> &#10004;
-|   `-- lexiconRainbow.d3v4.pretty.js <sub>(beautified version of the library for d3 v4)</sub> <a href="./pretty/lexiconRainbow.d3v4.pretty.js">🔍</a> &#10004;
+|   |-- lexiconRainbow.d3v3.pretty.js <sub>(beautified version of the library for d3 v3)</sub> <a href="../pretty/lexiconRainbow.d3v3.pretty.js">🔍</a> &#10004;
+|   `-- lexiconRainbow.d3v4.pretty.js <sub>(beautified version of the library for d3 v4)</sub> <a href="../pretty/lexiconRainbow.d3v4.pretty.js">🔍</a> &#10004;
 |-- examples
 |   |-- AminoAcids
-|   |   |-- AAColorScheme.png <sub>(Glyph)</sub> <a href="./examples/AminoAcids/AAColorScheme.png">🔍</a>
-|   |   |-- aminoAcids.jpg <sub>(Output of the example)</sub> <a href="./examples/AminoAcids/aminoAcids.jpg">🔍</a>
-|   |   |-- droplet.png <sub>(Glyph)</sub> <a href="./examples/AminoAcids/droplet.png">🔍</a>
-|   |   |-- index_v3.html <sub>(d3 v4 example)</sub> <a href="./examples/AminoAcids/index_v3.html">🔍</a>
-|   |   |-- index_v4.html <sub>(d3 v4 example)</sub> <a href="./examples/AminoAcids/index_v4.html">🔍</a>
-|   |   `-- loadData.js <sub>(Load data via script tag)</sub> <a href="./examples/AminoAcids/loadData.js">🔍</a>
+|   |   |-- AAColorScheme.png <sub>(Glyph)</sub> <a href="../examples/AminoAcids/AAColorScheme.png">🔍</a>
+|   |   |-- aminoAcids.jpg <sub>(Output of the example)</sub> <a href="../examples/AminoAcids/aminoAcids.jpg">🔍</a>
+|   |   |-- droplet.png <sub>(Glyph)</sub> <a href="../examples/AminoAcids/droplet.png">🔍</a>
+|   |   |-- index_v3.html <sub>(d3 v4 example)</sub> <a href="../examples/AminoAcids/index_v3.html">🔍</a>
+|   |   |-- index_v4.html <sub>(d3 v4 example)</sub> <a href="../examples/AminoAcids/index_v4.html">🔍</a>
+|   |   `-- loadData.js <sub>(Load data via script tag)</sub> <a href="../examples/AminoAcids/loadData.js">🔍</a>
 |   |-- Minimal
-|   |   |-- index_v3.html <sub>(d3 v3 example)</sub> <a href="./examples/Minimal/index_v3.html">🔍</a>
-|   |   |-- index_v4.html <sub>(d3 v4 example)</sub> <a href="./examples/Minimal/index_v4.html">🔍</a>
-|   |   `-- minimal.jpg <sub>(Output of the example)</sub> <a href="./examples/Minimal/minimal.jpg">🔍</a>
+|   |   |-- index_v3.html <sub>(d3 v3 example)</sub> <a href="../examples/Minimal/index_v3.html">🔍</a>
+|   |   |-- index_v4.html <sub>(d3 v4 example)</sub> <a href="../examples/Minimal/index_v4.html">🔍</a>
+|   |   `-- minimal.jpg <sub>(Output of the example)</sub> <a href="../examples/Minimal/minimal.jpg">🔍</a>
 |   |-- RandomDataset
-|   |   |-- index_v3.html <sub>(d3 v3 example)</sub> <a href="./examples/RandomDataset/index_v3.html">🔍</a>
-|   |   |-- index_v4.html <sub>(d3 v4 example)</sub> <a href="./examples/RandomDataset/index_v4.html">🔍</a>
-|   |   |-- droplet.png <sub>(Glyph)</sub> <a href="./examples/RandomDataset/droplet.png">🔍</a>
-|   |   `-- randomDataset.jpg <sub>(Output of the example)</sub> <a href="./examples/RandomDataset/randomDataset.jpg">🔍</a>
+|   |   |-- index_v3.html <sub>(d3 v3 example)</sub> <a href="../examples/RandomDataset/index_v3.html">🔍</a>
+|   |   |-- index_v4.html <sub>(d3 v4 example)</sub> <a href="../examples/RandomDataset/index_v4.html">🔍</a>
+|   |   |-- droplet.png <sub>(Glyph)</sub> <a href="../examples/RandomDataset/droplet.png">🔍</a>
+|   |   `-- randomDataset.jpg <sub>(Output of the example)</sub> <a href="../examples/RandomDataset/randomDataset.jpg">🔍</a>
 |   |-- ServerDownTime
-|   |   |-- index_v3.html <sub>(d3 v3 example)</sub> <a href="./examples/ServerDownTime/index_v3.html">🔍</a>
-|   |   |-- index_v4.html <sub>(d3 v4 example)</sub> <a href="./examples/ServerDownTime/index_v4.html">🔍</a>
-|   |   |-- server.png <sub>(Glyph)</sub> <a href="./examples/ServerDownTime/server.png">🔍</a>
-|   |   `-- serverDownTime.jpg <sub>(Output of the example)</sub> <a href="./examples/ServerDownTime/serverDownTime.jpg">🔍</a>
+|   |   |-- index_v3.html <sub>(d3 v3 example)</sub> <a href="../examples/ServerDownTime/index_v3.html">🔍</a>
+|   |   |-- index_v4.html <sub>(d3 v4 example)</sub> <a href="../examples/ServerDownTime/index_v4.html">🔍</a>
+|   |   |-- server.png <sub>(Glyph)</sub> <a href="../examples/ServerDownTime/server.png">🔍</a>
+|   |   `-- serverDownTime.jpg <sub>(Output of the example)</sub> <a href="../examples/ServerDownTime/serverDownTime.jpg">🔍</a>
 |   `-- USvotes
-|      |-- index_v3.html <sub>(d3 v3 example)</sub> <a href="./examples/USvotes/index_v3.html">🔍</a>
-|      |-- index_v4.html <sub>(d3 v4 example)</sub> <a href="./examples/USvotes/index_v4.html">🔍</a>
-|      |-- loadData.js <sub>(Load data via script tag)</sub> <a href="./examples/USvotes/loadData.js">🔍</a>
-|      |-- usFlag.png <sub>(Glyph)</sub> <a href="./examples/USvotes/usFlag.png">🔍</a>
-|      `-- USvotes.jpg <sub>(Output of the example)</sub> <a href="./examples/USvotes/USvotes.jpg">🔍</a>
+|      |-- index_v3.html <sub>(d3 v3 example)</sub> <a href="../examples/USvotes/index_v3.html">🔍</a>
+|      |-- index_v4.html <sub>(d3 v4 example)</sub> <a href="../examples/USvotes/index_v4.html">🔍</a>
+|      |-- loadData.js <sub>(Load data via script tag)</sub> <a href="../examples/USvotes/loadData.js">🔍</a>
+|      |-- usFlag.png <sub>(Glyph)</sub> <a href="../examples/USvotes/usFlag.png">🔍</a>
+|      `-- USvotes.jpg <sub>(Output of the example)</sub> <a href="../examples/USvotes/USvotes.jpg">🔍</a>
 |-- img
-|   `-- anatomy.png <sub>(Parts of the visualization)</sub> <a href="./img/anatomy.png">🔍</a>
+|   `-- anatomy.png <sub>(Parts of the visualization)</sub> <a href="../img/anatomy.png">🔍</a>
 |-- tests
-|   |-- index_v3.html <sub>(Page for headless testing with d3 v3)</sub> <a href="./tests/index_v3.html">🔍</a>
-|   |-- index_v4.html <sub>(Page for headless testing with d3 v4)</sub> <a href="./tests/index_v4.html">🔍</a>
-|   |-- phantomjsTest.js <sub>(Render ./index.*\.html and print base64 data uri)</sub> <a href="./tests/phantomjsTest.js">🔍</a>
-|   `-- nodejsTest.js <sub>(test for node, npm install)</sub> <a href="./tests/nodejsTest.js">🔍</a>
-|-- md
-|   |-- CODE_OF_CONDUCT.md <sub>(CoC)</sub> <a href="./md/CODE_OF_CONDUCT.md">🔍</a>
-|   |-- LICENSE <sub>(License)</sub> <a href="./md/LICENSE">🔍</a>
-|   |-- README.md <sub>(Readme)</sub> <a href="./md/README.md">🔍</a> &#10004;
-|   |-- API.md <sub>(Readme)</sub> <a href="./md/API.md">🔍</a> &#10004;
-|   `-- CONTRIBUTING.md <sub>(Contribution guideline)</sub> <a href="./md/CONTRIBUTING.md">🔍</a>
-|-- .gitignore <sub>(Ignore ./private)</sub> <a href="./.gitignore">🔍</a>
-|-- package.json <sub>(Package json file for npm)</sub> <a href="./package.json">🔍</a>
-|-- .travis.yml <sub>(For testing with PhantomJS)</sub> <a href="./.travis.yml">🔍</a>
-|-- .eslintrc.json <sub>(Custom linting rules :trollface:)</sub> <a href="./.eslintrc.json">🔍</a>
-`-- .jsbeautifyrc.json <sub>(Rules for jsbeautify)</sub> <a href="./.eslintrc.json">🔍</a>
+|   |-- index_v3.html <sub>(Page for headless testing with d3 v3)</sub> <a href="../tests/index_v3.html">🔍</a>
+|   |-- index_v4.html <sub>(Page for headless testing with d3 v4)</sub> <a href="../tests/index_v4.html">🔍</a>
+|   |-- phantomjsTest.js <sub>(Render ../index.*\.html and print base64 data uri)</sub> <a href="../tests/phantomjsTest.js">🔍</a>
+|   `-- nodejsTest.js <sub>(test for node, npm install)</sub> <a href="../tests/nodejsTest.js">🔍</a>
+|-- docs
+|   |-- CODE_OF_CONDUCT.md <sub>(CoC)</sub> <a href="./CODE_OF_CONDUCT.md">🔍</a>
+|   |-- LICENSE <sub>(License)</sub> <a href="./LICENSE">🔍</a>
+|   |-- README.md <sub>(Readme)</sub> <a href="./README.md">🔍</a> &#10004;
+|   |-- API.md <sub>(Readme)</sub> <a href="./API.md">🔍</a> &#10004;
+|   `-- CONTRIBUTING.md <sub>(Contribution guideline)</sub> <a href="./CONTRIBUTING.md">🔍</a>
+|-- .gitignore <sub>(Ignore ./private)</sub> <a href="../.gitignore">🔍</a>
+|-- package.json <sub>(Package json file for npm)</sub> <a href="../package.json">🔍</a>
+|-- .travis.yml <sub>(For testing with PhantomJS)</sub> <a href="../.travis.yml">🔍</a>
+|-- .eslintrc.json <sub>(Custom linting rules :trollface:)</sub> <a href="../.eslintrc.json">🔍</a>
+`-- .jsbeautifyrc.json <sub>(Rules for jsbeautify)</sub> <a href="../.jsbeautifyrc.json">🔍</a>
 
 
 </pre>
@@ -128,7 +128,7 @@ root
 ## Anatomy 
 Below is an summary of different parts of the visualization.
 
-![Anatomy](./img/anatomy.png)
+![Anatomy](../img/anatomy.png)
 
 <br>
 
@@ -226,6 +226,9 @@ Drop one of the script tags below in your html file.
 $ npm install lexicon-rainbow
 ```
 
+:warning: WARNING: The install assumes that you will be using d3 version 4 by default. If not, you have to remove the default d3, install d3 version ^3.5.17
+and use one of the d3 version 3 compatible scripts within dev/ pretty/ or min/ folders.
+
 <br>
 
 ## Testing
@@ -249,6 +252,8 @@ To use this library with other libraries on the server side to be later used for
 <br>
 
 ## API
+For a detailed list of available methods, refer to [API.md](./docs/API.md).
+
 The general pattern for invoking lexicon-rainbow is as follows:
 
 ```js
