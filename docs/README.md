@@ -1,4 +1,4 @@
-# <a id="h1" href="#h1">Lexicon-Rainbow [:rainbow:](MAIN)</a>
+# <a id="h1" href="#h1">Lexicon-Rainbow [:rainbow:](https://github.com/IbrahimTanyalcin/LEXICON)</a>
 
 [![Build Status](https://travis-ci.org/IbrahimTanyalcin/lexicon-rainbow.svg?branch=master)](https://travis-ci.org/IbrahimTanyalcin/lexicon-rainbow) 
 [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/lexicon-rainbow)
@@ -26,20 +26,20 @@
 
 <br>
 
->## Minimal example:
->[<img src="../examples/Minimal/minimal.jpg">][MAIN] 
+>## [Minimal example][MINIMAL]:
+>[<img src="../examples/Minimal/minimal.jpg">][MINIMAL] 
 
->## Comparing 2 tables:
->[<img src="../examples/AminoAcids/aminoAcids.jpg">][MAIN]
+>## [Comparing 2 tables][AMINOACIDS]:
+>[<img src="../examples/AminoAcids/aminoAcids.jpg">][AMINOACIDS]
 
->## Some random data:
->[<img src="../examples/RandomDataset/randomDataset.jpg">][MAIN] 
+>## [Some random data][RANDOMDATA]:
+>[<img src="../examples/RandomDataset/randomDataset.jpg">][RANDOMDATA] 
 
->## Server down time report:
->[<img src="../examples/ServerDownTime/serverDownTime.jpg">][MAIN] 
+>## [Server down time report][SERVER]:
+>[<img src="../examples/ServerDownTime/serverDownTime.jpg">][SERVER] 
 
->## 2016 US elections:
->[<img src="../examples/USvotes/USvotes.jpg">][MAIN] 
+>## [2016 US elections][VOTES]:
+>[<img src="../examples/USvotes/USvotes.jpg">][VOTES] 
 
 <br>
 
@@ -171,6 +171,8 @@ Drop one of the script tags below in your html file.
 		<td>d3v3</td>
 		<td>
 			<code>
+				<sub>&lt;script src="//cdn.rawgit.com/IbrahimTanyalcin/lexicon-rainbow/5a8fc102/dev/lexiconRainbow.d3v3.dev.js"&gt;&lt;/script&gt;</sub>
+				<br>
 				<sub>&lt;script src="//ibrahimtanyalcin.com/lexiconRainbow.d3v3.dev.js"&gt;&lt;/script&gt;</sub>
 			</code>
 		</td>
@@ -179,6 +181,8 @@ Drop one of the script tags below in your html file.
 		<td>d3v4</td>
 		<td>
 			<code>
+				<sub>&lt;script src="//cdn.rawgit.com/IbrahimTanyalcin/lexicon-rainbow/5a8fc102/dev/lexiconRainbow.d3v4.dev.js"&gt;&lt;/script&gt;</sub>
+				<br>
 				<sub>&lt;script src="//ibrahimtanyalcin.com/lexiconRainbow.d3v4.dev.js"&gt;&lt;/script&gt;</sub>
 			</code>
 		</td>
@@ -188,6 +192,8 @@ Drop one of the script tags below in your html file.
 		<td>d3v3</td>
 		<td>
 			<code>
+				<sub>&lt;script src="//cdn.rawgit.com/IbrahimTanyalcin/lexicon-rainbow/5a8fc102/pretty/lexiconRainbow.d3v3.pretty.js"&gt;&lt;/script&gt;</sub>
+				<br>
 				<sub>&lt;script src="//ibrahimtanyalcin.com/lexiconRainbow.d3v3.pretty.js"&gt;&lt;/script&gt;</sub>
 			</code>
 		</td>
@@ -196,6 +202,8 @@ Drop one of the script tags below in your html file.
 		<td>d3v4</td>
 		<td>
 			<code>
+				<sub>&lt;script src="//cdn.rawgit.com/IbrahimTanyalcin/lexicon-rainbow/5a8fc102/pretty/lexiconRainbow.d3v4.pretty.js"&gt;&lt;/script&gt;</sub>
+				<br>
 				<sub>&lt;script src="//ibrahimtanyalcin.com/lexiconRainbow.d3v4.pretty.js"&gt;&lt;/script&gt;</sub>
 			</code>
 		</td>
@@ -205,6 +213,8 @@ Drop one of the script tags below in your html file.
 		<td>d3v3</td>
 		<td>
 			<code>
+				<sub>&lt;script src="//cdn.rawgit.com/IbrahimTanyalcin/lexicon-rainbow/5a8fc102/min/lexiconRainbow.d3v3.min.js"&gt;&lt;/script&gt;</sub>
+				<br>
 				<sub>&lt;script src="//ibrahimtanyalcin.com/lexiconRainbow.d3v3.min.js"&gt;&lt;/script&gt;</sub>
 			</code>
 		</td>
@@ -213,13 +223,19 @@ Drop one of the script tags below in your html file.
 		<td>d3v4</td>
 		<td>
 			<code>
-				<sub>&lt;script src="//ibrahimtanyalcin.com/lexiconRainbow.d3v3.min.js"&gt;&lt;/script&gt;</sub>
+				<sub>&lt;script src="//cdn.rawgit.com/IbrahimTanyalcin/lexicon-rainbow/5a8fc102/min/lexiconRainbow.d3v4.min.js"&gt;&lt;/script&gt;</sub>
+				<br>
+				<sub>&lt;script src="//ibrahimtanyalcin.com/lexiconRainbow.d3v4.min.js"&gt;&lt;/script&gt;</sub>
 			</code>
 		</td>
 	</tr>
 </table>
 
 <br>
+
+:warning: WARNING: The rawgit cache expires every 24 hours. In case there is a new version pushed to master branch, you might need to wait until
+the cache expires. Alternatively you can use ibrahimtanyalcin.com which will be active in a week (waiting for SSL). The cache expiration time on 
+ibrahimtanyalcin.com will be 10 minutes.
 
 ## Installation
 ```shell
@@ -305,9 +321,11 @@ Static figures only gives an idea. You can go to my [youtube channel](https://ww
 <br>
 
 ## Acknowledgement
-* [Tuncer Can](https://www.linkedin.com/in/tuncercan/) for server side maintanance and file hoisting
-* [IBsquare](http://ibsquare.be/) for a fruitfull project that lead to development of [Mutaframe](http://deogen2.mutaframe.com/) and many other micro libraries.
-* [Mike Bostock](https://d3js.org/) for D3.
+People
+  * [Tuncer Can](https://www.linkedin.com/in/tuncercan/) for server side maintanance and file hosting
+  * [Mike Bostock](https://d3js.org/) for D3.
+Organizations
+  * [IBsquare](http://ibsquare.be/) for a fruitfull project that lead to development of [Mutaframe](http://deogen2.mutaframe.com/) and many other micro libraries.
 
 ## Support
 I work on several small to medium sized projects. Development in one can also lead to development of the others. So if you would like to show your
@@ -316,4 +334,8 @@ support for this project you can contribute to my [PATREON](https://www.patreon.
 <br>
 
 
-[MAIN]: https://github.com/IbrahimTanyalcin/LEXICON
+[MINIMAL]: http://bl.ocks.org/ibrahimtanyalcin/6e2e775cb954ecf89e6b379b5fa4c510
+[AMINOACIDS]: http://bl.ocks.org/ibrahimtanyalcin/3ec054bc6dc485c46631c5ef1d28dbe9
+[RANDOMDATA]: http://bl.ocks.org/ibrahimtanyalcin/35d404d513420d84570eb0a418c87856
+[SERVER]: http://bl.ocks.org/ibrahimtanyalcin/2e478e178470c385656a90d3a4629220
+[VOTES]: http://bl.ocks.org/ibrahimtanyalcin/f0bf54f88c6859c985ee98bc5e56ae6f
