@@ -8,7 +8,7 @@ Refer to the [API][QUICSTART] section of the [README][README] to have an idea of
 
 ## METHODS
 
-### toggleGUI [:link:](#toggleGUI) <a href="../examples/AminoAcids/AAColorScheme.png">??</a>
+### toggleGUI [:link:](#togglegui-link)<a href="../dev/lexiconRainbow.d3v4.dev.js#L112-L134">🔍</a>
 
 ```js
 lexiconRainbow.toggleGUI([bool]) {Boolean}
