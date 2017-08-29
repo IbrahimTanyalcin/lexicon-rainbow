@@ -18,7 +18,8 @@ Refer to the [API][QUICSTART] section of the [README][README] to have an idea of
 #### toggleGUI [:link:](#togglegui-link)[🔍][toggleGUI]
 
 ```js
-lexiconRainbow.toggleGUI([bool]) {Boolean} //ex: lexiconRainbow.toggleGUI(false) --> turns off the gui
+lexiconRainbow.toggleGUI([bool]) {Boolean} 
+//ex: lexiconRainbow.toggleGUI(false) --> turns off the gui
 ```
 
 * Togges the [GUI][GUI] on or off. 
@@ -28,30 +29,33 @@ lexiconRainbow.toggleGUI([bool]) {Boolean} //ex: lexiconRainbow.toggleGUI(false)
 #### toggleAxis [:link:](#toggleaxis-link)[🔍][toggleAxis]
 
 ```js
-lexiconRainbow.toggleAxis([bool]) {Boolean|String} //ex: lexiconRainbow.toggleAxis("Red") --> paints the axis red
+lexiconRainbow.toggleAxis([bool]) {Boolean|String} 
+//ex: lexiconRainbow.toggleAxis("Red") --> paints the axis red
 ```
 
 * Togges the axis on or off. 
 * No argument supplied means as if `false` has been specified.
 * If the argument is a truthy value AND a color string(hex, rgb, rgba or one of html color names), then the axis is turned on with that color.
-* :warnin: This is not meant to be called by the developer but it actually called by [`lexiconRainbow.changeScale`][changeScale]
+* :warning: This is not meant to be called by the developer but it actually called by [`lexiconRainbow.changeScale`][changeScale]
 which is dynamically added after calling [`lexiconRainbow.append`][append].
 
 #### setViewBox [:link:](#setviewbox-link)[🔍][setViewBox]
 
 ```js
-lexiconRainbow.setViewBox([x,y,w,h]) {Number, Number, Number, Number} //ex: lexiconRainbow.setViewBox(0,0,600,200) --> registeres a function to set viewBox
+lexiconRainbow.setViewBox([x,y,w,h]) {Number, Number, Number, Number} 
+//ex: lexiconRainbow.setViewBox(0,0,600,200) --> registeres a function to set viewBox
 //x and y are origin, w stands for width, h stands for height
 ```
 
-* Registeres a function to set the svg [viewBox][w3c-viewbox]. 
-* This is not meant to be called by the developer but it actually called by [`lexiconRainbow.GUI`][.GUI].
+* Registers a function to set the svg [viewBox][w3c-viewbox]. 
+* This is not meant to be called by the developer but it is actually called by [`lexiconRainbow.GUI`][.GUI].
 * :warning: Nothing will happen when you call this, a new function will be registered waiting to be called by some other higher level function.
 
 #### setCanvasDims [:link:](#setcanvasdims-link)[🔍][setCanvasDims]
 
 ```js
-lexiconRainbow.setCanvasDims([w,h]) {Number, Number} //ex: lexiconRainbow.setCanvasDims(600,200) --> registeres a function to set canvas dimensions
+lexiconRainbow.setCanvasDims([w,h]) {Number, Number} 
+//ex: lexiconRainbow.setCanvasDims(600,200) --> registeres a function to set canvas dimensions
 //w stands for width, h stands for height
 ```
 
@@ -59,12 +63,13 @@ lexiconRainbow.setCanvasDims([w,h]) {Number, Number} //ex: lexiconRainbow.setCan
 * This is not meant to be called by the developer but it actually called by [`lexiconRainbow.GUI`][.GUI].
 * :warning: Nothing will happen when you call this, a new function will be registered waiting to be called by some other higher level function.
 * In versions of IE, svg cannot be scaled properly, so the aim is to force the position css property of the svg to absolute while forcing the 
-browser to scale based on the width and height of the canvas element which the display property set to "hidden". 
+browser to scale based on the width and height of the canvas element with the css display property set to "hidden". 
 
 #### lexID [:link:](#lexid-link)[🔍][lexID]
 
 ```js
-lexiconRainbow.lexID([id]) {String} //ex: lexiconRainbow.lexID("someInstance") --> the created svg will have an id attribute of "someInstance"
+lexiconRainbow.lexID([id]) {String} 
+//ex: lexiconRainbow.lexID("someInstance") --> the created svg will have an id attribute of "someInstance"
 ```
 
 * Gives the created svg the specified id string and returns the `lexiconRainbow` instace.
@@ -73,7 +78,8 @@ lexiconRainbow.lexID([id]) {String} //ex: lexiconRainbow.lexID("someInstance") -
 #### x [:link:](#x-link)[🔍][x]
 
 ```js
-lexiconRainbow.x([x]) {Number} //ex: lexiconRainbow.x(10) --> the created svg will have an origin x-offset of 10 in units of userSpaceOnUse"
+lexiconRainbow.x([x]) {Number} 
+//ex: lexiconRainbow.x(10) --> the created svg will have an origin x-offset of 10 in units of userSpaceOnUse"
 ```
 
 * Not calling this at all implies the default value of x which is 0.
@@ -84,7 +90,8 @@ you deliberately want to offset.
 #### y [:link:](#y-link)[🔍][y]
 
 ```js
-lexiconRainbow.y([y]) {Number} //ex: lexiconRainbow.y(10) --> the created svg will have an origin y-offset of 10 in units of userSpaceOnUse"
+lexiconRainbow.y([y]) {Number} 
+//ex: lexiconRainbow.y(10) --> the created svg will have an origin y-offset of 10 in units of userSpaceOnUse"
 ```
 
 * Not calling this at all implies the default value of y which is 0.
@@ -95,7 +102,8 @@ you deliberately want to offset.
 #### w [:link:](#w-link)[🔍][w]
 
 ```js
-lexiconRainbow.w([w]) {Number} //ex: lexiconRainbow.w(600) --> the created svg will have a width of 600 in units of userSpaceOnUse"
+lexiconRainbow.w([w]) {Number} 
+//ex: lexiconRainbow.w(600) --> the created svg will have a width of 600 in units of userSpaceOnUse"
 ```
 
 * Not calling this at all implies the default value of w which is 100, probably **NOT** what you want.
@@ -106,7 +114,8 @@ In anycase, the text size will be adjusted automatically.
 #### h [:link:](#h-link)[🔍][h]
 
 ```js
-lexiconRainbow.h([h]) {Number} //ex: lexiconRainbow.h(200) --> the created svg will have an height of 200 in units of userSpaceOnUse"
+lexiconRainbow.h([h]) {Number} 
+//ex: lexiconRainbow.h(200) --> the created svg will have an height of 200 in units of userSpaceOnUse"
 ```
 
 * Not calling this at all implies the default value of h which is 100, probably **NOT** what you want.
@@ -114,16 +123,33 @@ lexiconRainbow.h([h]) {Number} //ex: lexiconRainbow.h(200) --> the created svg w
 * :+1: You might want to set the width larger than the height something like 600 to 200 or maybe something close to golden ratio (w = ~1.618*h).
 In anycase, the text size will be adjusted automatically.
 
-#### h [:link:](#h-link)[🔍][h]
+#### sW [:link:](#sw-link)[🔍][sW]
 
 ```js
-lexiconRainbow.h([h]) {Number} //ex: lexiconRainbow.h(200) --> the created svg will have an height of 200 in units of userSpaceOnUse"
+lexiconRainbow.sW([styleWidth]) {String|Number} 
+//ex: lexiconRainbow.sW("1000px") --> the created svg will have a viewport width of 1000 pixels"
 ```
 
-* Not calling this at all implies the default value of h which is 100, probably **NOT** what you want.
-* Sets the height of the created svg's [viewBox][w3c-viewbox] attribute to the specified value and returns the `lexiconRainbow` instance.
-* :+1: You might want to set the width larger than the height something like 600 to 200 or maybe something close to golden ratio (w = ~1.618*h).
-In anycase, the text size will be adjusted automatically.
+* Not calling this at all implies the default value of sW which is "100px", probably **NOT** what you want.
+* Specifying a number is assumed to indicate pixels as units.
+* Sets the viewport width of the created svg to the specified value and returns the `lexiconRainbow` instance.
+* :+1: Keep the aspect ratio same as your specified w and h values. For instance, if you have a width of 1000 and a height of 500
+and you specified sW to be "400px", then make sure your sH is set to "200px". Deviating from this ratio too much will eventually
+distort the image as the [preserveAspectRatio][w3c-preserveAspectRatio] is always set to "none".
+
+#### sH [:link:](#sh-link)[🔍][sH]
+
+```js
+lexiconRainbow.sH([styleHeight]) {String|Number} 
+//ex: lexiconRainbow.sH("400px") --> the created svg will have a viewport height of 400 pixels"
+```
+
+* Not calling this at all implies the default value of sH which is "100px", probably **NOT** what you want.
+* Specifying a number is assumed to indicate pixels as units.
+* Sets the viewport height of the created svg to the specified value and returns the `lexiconRainbow` instance.
+* :+1: Keep the aspect ratio same as your specified w and h values. For instance, if you have a width of 1000 and a height of 500
+and you specified sW to be "400px", then make sure your sH is set to "200px". Deviating from this ratio too much will eventually
+distort the image as the [preserveAspectRatio][w3c-preserveAspectRatio] is always set to "none".
 
 
 
@@ -137,6 +163,7 @@ In anycase, the text size will be adjusted automatically.
 [MUTAFRAME]: http://deogen2.mutaframe.com/ 
 
 [w3c-viewbox]: https://www.w3.org/TR/SVG/coords.html#ViewBoxAttribute
+[w3c-preserveAspectRatio]: https://www.w3.org/TR/SVG/coords.html#PreserveAspectRatioAttribute
 
 [toggleGUI]: ../dev/lexiconRainbow.d3v4.dev.js#L112
 [toggleAxis]: ../dev/lexiconRainbow.d3v4.dev.js#L135
@@ -150,3 +177,5 @@ In anycase, the text size will be adjusted automatically.
 [y]: ../dev/lexiconRainbow.d3v4.dev.js#149
 [w]: ../dev/lexiconRainbow.d3v4.dev.js#150
 [h]: ../dev/lexiconRainbow.d3v4.dev.js#151
+[sW]: ../dev/lexiconRainbow.d3v4.dev.js#152
+[sH]: ../dev/lexiconRainbow.d3v4.dev.js#153
