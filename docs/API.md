@@ -30,8 +30,8 @@ lexiconRainbow.toggleAxis([bool]) {Boolean|String} //ex: lexiconRainbow.toggleAx
 * Togges the axis on or off. 
 * No argument supplied means as if `false` has been specified.
 * If the argument is a truthy value AND a color string(hex, rgb, rgba or one of html color names), then the axis is turned on with that color.
-* This is not meant to be called by the developer but it actually called by [`lexiconRainbow.changeScale`]("../dev/lexiconRainbow.d3v4.dev.js#L1763")
-which is dynamically added after calling [`lexiconRainbow.append`]("../dev/lexiconRainbow.d3v4.dev.js#L989").
+* This is not meant to be called by the developer but it actually called by [`lexiconRainbow.changeScale`](../dev/lexiconRainbow.d3v4.dev.js#L1763)
+which is dynamically added after calling [`lexiconRainbow.append`](../dev/lexiconRainbow.d3v4.dev.js#L989).
 
 
 
