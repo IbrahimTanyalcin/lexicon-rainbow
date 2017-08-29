@@ -54,8 +54,13 @@ Phrase | Definition
 :link: |link to related doc, if not then *this*
 :mag:  |link to script
 xyz.(a)|single argument *a*
-xyz.(a[,b[,c]])|optinal arguments *b* and *c*
+xyz.(a[,b[,c]]) {a'|a'',b',c'}|optional arguments *b* and *c* with argument a having variable type(s) a' or a'',b having b' and c having c'.*
 {x} | a variable *y* with typeof *y* === "x"
+lexiconRainbow | lexicon-rainbow **instance**
+LexiconRainbow | lexicon-rainbow **constructor**
+
+<sub>*: Possible variable types: "number", "string", "function", "boolean".
+For clear distinction '{}' represents object literal while '[]' represents an array literal.<sub/>
 
 ### Repository folder structure
 
@@ -257,8 +262,13 @@ $ node node_modules/lexicon-rainbow/tests/nodejsTest.js
 or you can move to the directory of the lexicon rainbow and call:
 
 ```shell
-$ node run test
+$ npm run test
 ```
+OR
+```shell
+$ npm test
+```
+
 
 The test file ```requires``` module and prints out all enumerable properties of the exported object.
 This library is not for use on server side (because you cannot manipulate the DOM). 
