@@ -6,7 +6,9 @@ This document describes the methods you can call on the LexiconRainbow instance.
 ## QUICSTART
 Refer to the [API][QUICSTART] section of the [README][README] to have an idea of a general use case. Just a hint:
 * `.append` and `.render` methods are always called **LAST**.
-* Look out for the :warning: signs, they usually mark methods that is not inteded to be called by you but rather documented for completeness.
+* Look out for the :warning: signs, they usually mark methods that is **NOT** inteded to be called by you but rather documented for completeness.
+* Look out for the :+1: signs, they usually point out to something that might worth a try.
+* Look out for the :-1: signs, they usually point out to something that might **NOT** be good to try.
 
 ### INPUT DATA STRUCTURE
 
@@ -21,7 +23,7 @@ lexiconRainbow.toggleGUI([bool]) {Boolean} //ex: lexiconRainbow.toggleGUI(false)
 
 * Togges the [GUI][GUI] on or off. 
 * No argument supplied means as if `false` has been specified.
-* This is not meant to be called by the developer but it actually called by [`lexiconRainbow.GUI`][.GUI].
+* :warning: This is not meant to be called by the developer but it actually called by [`lexiconRainbow.GUI`][.GUI].
 
 #### toggleAxis [:link:](#toggleaxis-link)[🔍][toggleAxis]
 
@@ -32,7 +34,7 @@ lexiconRainbow.toggleAxis([bool]) {Boolean|String} //ex: lexiconRainbow.toggleAx
 * Togges the axis on or off. 
 * No argument supplied means as if `false` has been specified.
 * If the argument is a truthy value AND a color string(hex, rgb, rgba or one of html color names), then the axis is turned on with that color.
-* This is not meant to be called by the developer but it actually called by [`lexiconRainbow.changeScale`][changeScale]
+* :warnin: This is not meant to be called by the developer but it actually called by [`lexiconRainbow.changeScale`][changeScale]
 which is dynamically added after calling [`lexiconRainbow.append`][append].
 
 #### setViewBox [:link:](#setviewbox-link)[🔍][setViewBox]
@@ -76,7 +78,7 @@ lexiconRainbow.x([x]) {Number} //ex: lexiconRainbow.x(10) --> the created svg wi
 
 * Not calling this at all implies the default value of x which is 0.
 * Sets the origin-x coordinate of the created svg's [viewBox][w3c-viewbox] attribute to the specified value and returns the `lexiconRainbow` instance.
-* :warning: Setting this effectively shifts the viewBox right or left, potentially concealing other elements. There is no reason to call this method unless
+* :-1: Setting this effectively shifts the viewBox right or left, potentially concealing other elements. There is no reason to call this method unless
 you deliberately want to offset.
 
 #### y [:link:](#y-link)[🔍][y]
@@ -87,7 +89,7 @@ lexiconRainbow.y([y]) {Number} //ex: lexiconRainbow.y(10) --> the created svg wi
 
 * Not calling this at all implies the default value of y which is 0.
 * Sets the origin-y coordinate of the created svg's [viewBox][w3c-viewbox] attribute to the specified value and returns the `lexiconRainbow` instance.
-* :warning: Setting this effectively shifts the viewBox down or up, potentially concealing other elements. There is no reason to call this method unless
+* :-1: Setting this effectively shifts the viewBox down or up, potentially concealing other elements. There is no reason to call this method unless
 you deliberately want to offset.
 
 #### w [:link:](#w-link)[🔍][w]
@@ -98,7 +100,7 @@ lexiconRainbow.w([w]) {Number} //ex: lexiconRainbow.w(600) --> the created svg w
 
 * Not calling this at all implies the default value of w which is 100, probably **NOT** what you want.
 * Sets the width of the created svg's [viewBox][w3c-viewbox] attribute to the specified value and returns the `lexiconRainbow` instance.
-* :warning: You might want to set the width larger than the height something like 600 to 200 or maybe something close to golden ratio (w = ~1.618*h).
+* :+1: You might want to set the width larger than the height something like 600 to 200 or maybe something close to golden ratio (w = ~1.618*h).
 In anycase, the text size will be adjusted automatically.
 
 #### h [:link:](#h-link)[🔍][h]
@@ -109,7 +111,18 @@ lexiconRainbow.h([h]) {Number} //ex: lexiconRainbow.h(200) --> the created svg w
 
 * Not calling this at all implies the default value of h which is 100, probably **NOT** what you want.
 * Sets the height of the created svg's [viewBox][w3c-viewbox] attribute to the specified value and returns the `lexiconRainbow` instance.
-* :warning: You might want to set the width larger than the height something like 600 to 200 or maybe something close to golden ratio (w = ~1.618*h).
+* :+1: You might want to set the width larger than the height something like 600 to 200 or maybe something close to golden ratio (w = ~1.618*h).
+In anycase, the text size will be adjusted automatically.
+
+#### h [:link:](#h-link)[🔍][h]
+
+```js
+lexiconRainbow.h([h]) {Number} //ex: lexiconRainbow.h(200) --> the created svg will have an height of 200 in units of userSpaceOnUse"
+```
+
+* Not calling this at all implies the default value of h which is 100, probably **NOT** what you want.
+* Sets the height of the created svg's [viewBox][w3c-viewbox] attribute to the specified value and returns the `lexiconRainbow` instance.
+* :+1: You might want to set the width larger than the height something like 600 to 200 or maybe something close to golden ratio (w = ~1.618*h).
 In anycase, the text size will be adjusted automatically.
 
 
