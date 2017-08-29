@@ -54,7 +54,7 @@ Phrase | Definition
 :link: |link to related doc, if not then *this*
 :mag:  |link to script
 xyz.(a)|single argument *a*
-xyz.(a[,b[,c]]) {a'|a'',b',c'}|optional arguments *b* and *c* with argument a having variable type(s) a' or a'',b having b' and c having c'.*
+xyz.(a[,b[,c]]) {a'\|a'',b',c'}|optional arguments *b* and *c* with argument a having variable type(s) a' or a'',b having b' and c having c'.*
 {x} | a variable *y* with typeof *y* === "x"
 lexiconRainbow | lexicon-rainbow **instance**
 LexiconRainbow | lexicon-rainbow **constructor**
