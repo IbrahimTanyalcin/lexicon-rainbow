@@ -278,7 +278,7 @@ To use this library with other libraries on the server side to be later used for
 <br>
 
 ## API
-For a detailed list of available methods, refer to [API.md](./docs/API.md).
+For a detailed list of available methods, refer to [API.md](./API.md).
 
 The general pattern for invoking lexicon-rainbow is as follows:
 
