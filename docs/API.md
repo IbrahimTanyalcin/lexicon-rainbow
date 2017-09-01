@@ -278,76 +278,73 @@ are internal variables and refer to the index of the current ordinal/linear data
 <table>
 	<thead>
 		<tr>
-			<td>when</td>
-			<td colspan="3">arguments</td>
+			<th>when</th>
+			<th colspan="3">arguments</th>
 		</tr>
 	</thead>
-	<tr>
-		<td></td>
-		<td>data object</td>
-		<td>type</td>
-		<td>eventType</td>
-	</tr>
-	<tr>
-		<td>The first time render function is called</td>
-		<td>
-			<pre>{
+	<tbody>
+		<tr>
+			<td></td>
+			<td>data object</td>
+			<td>type</td>
+			<td>eventType</td>
+		</tr>
+		<tr>
+			<td>The first time render function is called</td>
+			<td>
+				<pre>{
 linear: _input_.linear[linearID],
 ordinal: _input_.ordinal[ordinalID]
-}
-			</pre>
-		</td>
-		<td>"onload"</td>
-		<td>null</td>
-	</tr>
-	<tr>
-		<td>User hovers on an item on the ordinal scale</td>
-		<td>
-			<pre>{
-				name: d<sup>*</sup>,
-				item: _input_.linear[linearID].categories[d]
-			}
-			</pre>
-		</td>
-		<td>"onpick"</td>
-		<td>d3.event.type</td>
-	</tr>
-	<tr>
-		<td>None of the categories in the ordinal scale matches the ones in the linear scale: nothing to show.</td>
-		<td>null</td>
-		<td>"onmismatch"</td>
-		<td>null</td>
-	</tr>
-	<tr>
-		<td>User hovers on a link/ribbon</td>
-		<td>
-			<pre>{
-				name: names[ii]<sup>**</sup>,
-				item: dd<sup>***</sup>,
-				parent: _input_.linear[linearID].categories[d],
-				index: ii<sup>**</sup>
-			}
-			</pre>
-		</td>
-		<td>"onpick"</td>
-		<td>event.type<sup>****</sup></td>
-	</tr>
-	<tr>
-		<td>Either through the GUI or programmatic access the ordinal or the linear data object is changed</td>
-		<td>
-			<pre>_input_.linear[linearID]
-			or
-			_input_.ordinal[ordinalID]
-			</pre>
-		</td>
-		<td>
-			<pre>"onrenderLinear" 
-			or
-			"onrenderOrdinal"
-			</pre>
-		</td>
-		<td>null</td>
-	</tr>
+}</pre>
+			</td>
+			<td>"onload"</td>
+			<td>null</td>
+		</tr>
+		<tr>
+			<td>User hovers on an item on the ordinal scale</td>
+			<td>
+				<pre>{
+name: d<sup>*</sup>,
+item: _input_.linear[linearID].categories[d]
+}</pre>
+			</td>
+			<td>"onpick"</td>
+			<td>d3.event.type</td>
+		</tr>
+		<tr>
+			<td>None of the categories in the ordinal scale matches the ones in the linear scale: nothing to show.</td>
+			<td>null</td>
+			<td>"onmismatch"</td>
+			<td>null</td>
+		</tr>
+		<tr>
+			<td>User hovers on a link/ribbon</td>
+			<td>
+				<pre>{
+name: names[ii]<sup>**</sup>,
+item: dd<sup>***</sup>,
+parent: _input_.linear[linearID].categories[d],
+index: ii<sup>**</sup>
+}</pre>
+			</td>
+			<td>"onpick"</td>
+			<td>event.type<sup>****</sup></td>
+		</tr>
+		<tr>
+			<td>Either through the GUI or programmatic access the ordinal or the linear data object is changed</td>
+			<td>
+				<pre>_input_.linear[linearID]
+or
+_input_.ordinal[ordinalID]</pre>
+			</td>
+			<td>
+				<pre>"onrenderLinear" 
+or
+"onrenderOrdinal"</pre>
+			</td>
+			<td>null</td>
+		</tr>
+	</tbody>
 </table>
 
 <sup>
