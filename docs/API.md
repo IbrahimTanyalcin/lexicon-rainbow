@@ -348,9 +348,9 @@ or
 </table>
 
 <sup>
-*: d is the 'key' within the category, it is the name you see on the plot.
-**: name of the interval, if specified, otherwise undefined`
-***: value of the current interval
+*: d is the 'key' within the category, it is the name you see on the plot.<br>
+**: name of the interval, if specified, otherwise undefined`<br>
+***: value of the current interval<br>
 ****: For both mobile and desktop, you will receive "onmouseover". 
 For mouseout, in desktop you will receive "mouseout" and mobile, you will receive "touchend".
 </sup>
