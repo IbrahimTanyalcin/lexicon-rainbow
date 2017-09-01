@@ -79,7 +79,7 @@ lexiconRainbow.lexID([id]) {String}
 
 ```js
 lexiconRainbow.x([x]) {Number} 
-//ex: lexiconRainbow.x(10) --> the created svg will have an origin x-offset of 10 in units of userSpaceOnUse"
+//ex: lexiconRainbow.x(10) --> the created svg will have an origin x-offset of 10 in units of userSpaceOnUse
 ```
 
 * Not calling this at all implies the default value of x which is 0.
@@ -91,7 +91,7 @@ you deliberately want to offset.
 
 ```js
 lexiconRainbow.y([y]) {Number} 
-//ex: lexiconRainbow.y(10) --> the created svg will have an origin y-offset of 10 in units of userSpaceOnUse"
+//ex: lexiconRainbow.y(10) --> the created svg will have an origin y-offset of 10 in units of userSpaceOnUse
 ```
 
 * Not calling this at all implies the default value of y which is 0.
@@ -103,7 +103,7 @@ you deliberately want to offset.
 
 ```js
 lexiconRainbow.w([w]) {Number} 
-//ex: lexiconRainbow.w(600) --> the created svg will have a width of 600 in units of userSpaceOnUse"
+//ex: lexiconRainbow.w(600) --> the created svg will have a width of 600 in units of userSpaceOnUse
 ```
 
 * Not calling this at all implies the default value of w which is 100, probably **NOT** what you want.
@@ -115,7 +115,7 @@ In anycase, the text size will be adjusted automatically.
 
 ```js
 lexiconRainbow.h([h]) {Number} 
-//ex: lexiconRainbow.h(200) --> the created svg will have an height of 200 in units of userSpaceOnUse"
+//ex: lexiconRainbow.h(200) --> the created svg will have an height of 200 in units of userSpaceOnUse
 ```
 
 * Not calling this at all implies the default value of h which is 100, probably **NOT** what you want.
@@ -127,7 +127,7 @@ In anycase, the text size will be adjusted automatically.
 
 ```js
 lexiconRainbow.sW([styleWidth]) {String|Number} 
-//ex: lexiconRainbow.sW("1000px") --> the created svg will have a viewport width of 1000 pixels"
+//ex: lexiconRainbow.sW("1000px") --> the created svg will have a viewport width of 1000 pixels
 ```
 
 * Not calling this at all implies the default value of sW which is "100px", probably **NOT** what you want.
@@ -141,7 +141,7 @@ distort the image as the [preserveAspectRatio][w3c-preserveAspectRatio] is alway
 
 ```js
 lexiconRainbow.sH([styleHeight]) {String|Number} 
-//ex: lexiconRainbow.sH("400px") --> the created svg will have a viewport height of 400 pixels"
+//ex: lexiconRainbow.sH("400px") --> the created svg will have a viewport height of 400 pixels
 ```
 
 * Not calling this at all implies the default value of sH which is "100px", probably **NOT** what you want.
@@ -151,9 +151,214 @@ lexiconRainbow.sH([styleHeight]) {String|Number}
 and you specified sW to be "400px", then make sure your sH is set to "200px". Deviating from this ratio too much will eventually
 distort the image as the [preserveAspectRatio][w3c-preserveAspectRatio] is always set to "none".
 
+#### position [:link:](#position-link)[🔍][position]
 
+```js
+lexiconRainbow.position([CSSposition]) {String} 
+//ex: lexiconRainbow.position("absolute") --> the created svg will have a CSS position property of 'absolute'
+```
 
+* Defaults to "relative".
+* Sets the CSS position property of the created svg to the specified string and returns the `lexiconRainbow` instance.
 
+#### color [:link:](#color-link)[🔍][color]
+
+```js
+lexiconRainbow.color([colorName]) {String} 
+//ex: lexiconRainbow.color("LightRed") --> the created svg will have a background rectangle color of 'LightRed'
+```
+
+* Defaults to "DimGray".
+* Sets the fill attribute of the created svg rect to the specified string and returns the `lexiconRainbow` instance.
+* :-1: The background rectangle is hidden by default in lexicon-rainbow. It covers the area behind the plotted elements.
+The method exist to keep methods similar with other lexicon modules.
+
+#### colorScale [:link:](#colorscale-link)[🔍][colorscale]
+
+```js
+lexiconRainbow.colorScale([scaleFunction]) {Function} 
+//ex: lexiconRainbow.colorScale(function(i){return ["#000000","#a00500",#05a000,#0005a0][i % 4]})
+//registers a new function that returns color from an ordinal scale
+```
+
+* Defaults to  `d3.scaleOrdinal(d3.schemeCategory20)`.
+* This is used when the user does not provide any color input.
+
+#### opacity [:link:](#opacity-link)[🔍][opacity]
+
+```js
+lexiconRainbow.opacity([opacity]) {String|Number} 
+//ex: lexiconRainbow.opacity(0.7) --> the created svg will have a background rectangle opacity of '0.7'
+```
+
+* Defaults to 0.
+* Sets the fill-opacity attribute of the created svg rect to the specified string or number and returns the `lexiconRainbow` instance.
+* :-1: The background rectangle is hidden by default in lexicon-rainbow. It covers the area behind the plotted elements.
+The method exist to keep methods similar with other lexicon modules.
+
+#### container [:link:](#container-link)[🔍][container]
+
+```js
+lexiconRainbow.container([CSS-SelectorString|Node]) {String|Object} 
+//ex: lexiconRainbow.container("#myDiv")
+//the created svg will be inserted as the lastChild (at the moment when lexicon.append is called)
+//of a flow content element with the id of "myDiv"
+```
+
+* Defaults to `document.body`.
+* Sets the `parentElement` of the created svg to the specified string or object and returns the `lexiconRainbow` instance.
+* :+1: You do not want to leave this option default. 
+Always specify a container either with the form of a [CSS selector][w3c-cssSelector] or node reference.
+
+#### sTop [:link:](#stop-link)[🔍][stop]
+
+```js
+lexiconRainbow.sTop([Length in CSS units]) {String} 
+//ex: lexiconRainbow.sTop("100px") --> the created svg will have a css top property of 100px.
+```
+
+* Defaults to `0px`.
+* Sets the css top property of the created svg to the specified string and returns the `lexiconRainbow` instance.
+
+#### sLeft [:link:](#sleft-link)[🔍][sleft]
+
+```js
+lexiconRainbow.sLeft([Length in CSS units]) {String} 
+//ex: lexiconRainbow.sLeft("100px") --> the created svg will have a css left property of 100px.
+```
+
+* Defaults to `0px`.
+* Sets the css left property of the created svg to the specified string and returns the `lexiconRainbow` instance.
+
+#### sMargin [:link:](#smargin-link)[🔍][smargin]
+
+```js
+lexiconRainbow.sMargin([Length in CSS units]) {String} 
+//ex: lexiconRainbow.sLeft("100px 50px")
+//the created svg will have a css margin-top/bottom property of 100px and margin-left/right property of 50px.
+```
+
+* Defaults to `0px`.
+* Sets the css margin property of the created svg to the specified string and returns the `lexiconRainbow` instance.
+
+#### input [:link:](#input-link)[🔍][input]
+
+```js
+lexiconRainbow.input([Input]) {Object} 
+//ex: 
+//var sample = {ordinal:[...],linear:[...]};
+//lexiconRainbow.input(sample);
+//the created svg will plot the data specified in the input object.
+```
+
+* Defaults to `undefined`.
+* :+1: This is one of the core methods of the library. LexiconRainbow instance does **NOT** mutate the object that 
+is passed via `.input` method. But if you change the input object, then you need to recall `.render` to reflect these changes. 
+
+#### handleEvent [:link:](#handleevent-link)[🔍][handleevent]
+
+```js
+lexiconRainbow.handleEvent([functionRef]) {function} 
+/*ex: 
+var handleEvent = function(data,type,eventType){
+	if(eventType !== "mouseover"){return}
+	console.log("interval "+data.index+" of "+data.item);
+};
+lexiconRainbow.handleEvent(handleEvent);
+*/
+//the lexiconRainbow instace will pass data to the specified function.
+```
+
+* Defaults to `(function(){})` with this bound to the lexiconRainbow instance.
+* Sets the handleEvent function and returns the `lexiconRainbow` instance.
+* :+1: You bind only single function to the lexiconRainbow instance which handles all event types and data
+handled to it. Check the table below for **when** and **what arguments** are passed. `linearID` and `ordinalID`
+are internal variables and refer to the index of the current ordinal/linear data object. Do not forget that
+`d3.event.type` is the native DOM `event.type`:
+<table>
+	<thead>
+		<tr>
+			<td>when</td>
+			<td colspan="3">arguments</td>
+		</tr>
+	</thead>
+	<tr>
+		<td></td>
+		<td>data object</td>
+		<td>type</td>
+		<td>eventType</td>
+	</tr>
+	<tr>
+		<td>The first time render function is called</td>
+		<td>
+			<pre>{
+				linear: _input_.linear[linearID],
+				ordinal: _input_.ordinal[ordinalID]
+			}
+			</pre>
+		</td>
+		<td>"onload"</td>
+		<td>null</td>
+	</tr>
+	<tr>
+		<td>User hovers on an item on the ordinal scale</td>
+		<td>
+			<pre>{
+				name: d<sup>*</sup>,
+				item: _input_.linear[linearID].categories[d]
+			}
+			</pre>
+		</td>
+		<td>"onpick"</td>
+		<td>d3.event.type</td>
+	</tr>
+	<tr>
+		<td>None of the categories in the ordinal scale matches the ones in the linear scale: nothing to show.</td>
+		<td>null</td>
+		<td>"onmismatch"</td>
+		<td>null</td>
+	</tr>
+	<tr>
+		<td>User hovers on a link/ribbon</td>
+		<td>
+			<pre>{
+				name: names[ii]<sup>**</sup>,
+				item: dd<sup>***</sup>,
+				parent: _input_.linear[linearID].categories[d],
+				index: ii<sup>**</sup>
+			}
+			</pre>
+		</td>
+		<td>"onpick"</td>
+		<td>event.type<sup>****</sup></td>
+	</tr>
+	<tr>
+		<td>Either through the GUI or programmatic access the ordinal or the linear data object is changed</td>
+		<td>
+			<pre>_input_.linear[linearID]
+			or
+			_input_.ordinal[ordinalID]
+			</pre>
+		</td>
+		<td>
+			<pre>"onrenderLinear" 
+			or
+			"onrenderOrdinal"
+			</pre>
+		</td>
+		<td>null</td>
+	</tr>
+</table>
+
+<sup>
+<pre>
+	*: d is the 'key' within the category, it is the name you see on the plot.
+	**: name of the interval, if specified, otherwise undefined`
+	***: value of the current interval
+	****: For both mobile and desktop, you will receive "onmouseover". 
+	For mouseout, in desktop you will receive "mouseout" and mobile, you will receive "touchend". 
+</pre>
+</sup>
 
 
 [README]: https://github.com/IbrahimTanyalcin/lexicon-rainbow/blob/master/docs/README.md
@@ -164,6 +369,7 @@ distort the image as the [preserveAspectRatio][w3c-preserveAspectRatio] is alway
 
 [w3c-viewbox]: https://www.w3.org/TR/SVG/coords.html#ViewBoxAttribute
 [w3c-preserveAspectRatio]: https://www.w3.org/TR/SVG/coords.html#PreserveAspectRatioAttribute
+[w3c-cssSelector]: https://www.w3schools.com/cssref/css_selectors.asp
 
 [toggleGUI]: ../dev/lexiconRainbow.d3v4.dev.js#L112
 [toggleAxis]: ../dev/lexiconRainbow.d3v4.dev.js#L135
@@ -173,9 +379,19 @@ distort the image as the [preserveAspectRatio][w3c-preserveAspectRatio] is alway
 [setViewBox]: ../dev/lexiconRainbow.d3v4.dev.js#L145
 [setCanvasDims]: ../dev/lexiconRainbow.d3v4.dev.js#L146
 [lexID]: ../dev/lexiconRainbow.d3v4.dev.js#L147
-[x]: ../dev/lexiconRainbow.d3v4.dev.js#148
-[y]: ../dev/lexiconRainbow.d3v4.dev.js#149
-[w]: ../dev/lexiconRainbow.d3v4.dev.js#150
-[h]: ../dev/lexiconRainbow.d3v4.dev.js#151
-[sW]: ../dev/lexiconRainbow.d3v4.dev.js#152
-[sH]: ../dev/lexiconRainbow.d3v4.dev.js#153
+[x]: ../dev/lexiconRainbow.d3v4.dev.js#L148
+[y]: ../dev/lexiconRainbow.d3v4.dev.js#L149
+[w]: ../dev/lexiconRainbow.d3v4.dev.js#L150
+[h]: ../dev/lexiconRainbow.d3v4.dev.js#L151
+[sW]: ../dev/lexiconRainbow.d3v4.dev.js#L152
+[sH]: ../dev/lexiconRainbow.d3v4.dev.js#L153
+[position]: ../dev/lexiconRainbow.d3v4.dev.js#L154
+[color]: ../dev/lexiconRainbow.d3v4.dev.js#L155
+[colorScale]: ../dev/lexiconRainbow.d3v4.dev.js#L156
+[opacity]: ../dev/lexiconRainbow.d3v4.dev.js#L157
+[container]: ../dev/lexiconRainbow.d3v4.dev.js#L158
+[stop]: ../dev/lexiconRainbow.d3v4.dev.js#L159
+[sLeft]: ../dev/lexiconRainbow.d3v4.dev.js#L160
+[sMargin]: ../dev/lexiconRainbow.d3v4.dev.js#L161
+[input]: ../dev/lexiconRainbow.d3v4.dev.js#L162
+[handleevent]: ../dev/lexiconRainbow.d3v4.dev.js#L163
