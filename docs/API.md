@@ -285,9 +285,9 @@ are internal variables and refer to the index of the current ordinal/linear data
 	<tbody>
 		<tr>
 			<td></td>
-			<td>data object</td>
-			<td>type</td>
-			<td>eventType</td>
+			<td>data (Object)</td>
+			<td>type (Proprietary String)</td>
+			<td>eventType (DOM event)</td>
 		</tr>
 		<tr>
 			<td>The first time render function is called</td>
