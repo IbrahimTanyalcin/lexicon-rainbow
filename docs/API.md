@@ -292,8 +292,8 @@ are internal variables and refer to the index of the current ordinal/linear data
 		<td>The first time render function is called</td>
 		<td>
 			<pre>{linear: _input_.linear[linearID],
-				ordinal: _input_.ordinal[ordinalID]
-			}
+ordinal: _input_.ordinal[ordinalID]
+}
 			</pre>
 		</td>
 		<td>"onload"</td>
