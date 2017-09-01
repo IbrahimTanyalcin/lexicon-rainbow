@@ -12,6 +12,36 @@ Refer to the [API][QUICSTART] section of the [README][README] to have an idea of
 
 ### INPUT DATA STRUCTURE
 
+### PROPERTIES
+
+#### version [:link:](#version-link)[🔍][version]
+
+```js
+lexiconRainbow.version --> returns the version string
+```
+
+* Returns the version string. 
+
+#### isAppended [:link:](#isappended-link)[🔍][isappended]
+
+```js
+lexiconRainbow.isAppended --> returns the true or false
+```
+
+* If the `append` method has already been called, returns `true` otherwise `false`. 
+
+#### passiveSupported [:link:](#passivesupported-link)[🔍][passivesupported]
+
+```js
+lexiconRainbow.passiveSupported --> returns if passive events are supported
+```
+
+* In certain browsers (Chrome), certain events such as 'touchmove' and 'touchstart' are 'passive' meaning that
+calling `preventDefault` will not have effect. To override this, you can pass an object
+with the 'passive' key set to true instead of the **useCapture** boolean parameter of the
+`window.addEventListener` function. However, one first has to check whether this feature 
+is supported. So you can use `lexiconRainbow.passiveSupported` property as a surrogate for
+feature detection.
 
 ### METHODS
 
@@ -270,7 +300,7 @@ lexiconRainbow.handleEvent(handleEvent);
 ```
 
 * Defaults to `(function(){})` with this bound to the lexiconRainbow instance.
-* Sets the handleEvent function and returns the `lexiconRainbow` instance.
+* Sets the handleEvent function with `this` bound to the **lexiconRainbow instance** and returns the instance.
 * :+1: You bind only single function to the lexiconRainbow instance which handles all event types and data
 handled to it. Check the table below for **when** and **what arguments** are passed. `linearID` and `ordinalID`
 are internal variables and refer to the index of the current ordinal/linear data object. Do not forget that
@@ -401,10 +431,10 @@ lexiconRainbow.append([bool]) {Boolean|String|Number|Object|Function}
 //ex: lexiconRainbow.append(true) --> gives a default look to the plot and returns the lexiconRainbow instance
 ```
 
-* This method is **NOT** called by default. .
-* If called with any argument, appends a style node to the `document.head` with the attribute `data-lexType='lexiconRainbow'`.
-* It is a collection of styles and a font-family that I think fits the project. The style is appended only **ONCE**,
-if it has been appended previously, it is not added again.
+* This method is **NOT** called by default but you **MUST** call it at some point before calling `render`.
+* Any truthy value passed will insert before the svg an invisible canvas to help SVG scaling
+because in internet explorer SVGs are not scaled properly as the window innerWidth and innerHeight changes.
+Therefore passing in a truthy argument is not necessary in Firefox, Safari or Chrome.
 * :+1: Call this method **AFTER** any callable methods and **BEFORE** the `render` method.
 
 #### render [:link:](#render-link)[🔍][render]
@@ -477,8 +507,31 @@ is set to the specified string value if possible and then fadedin if previously 
 [this](http://bl.ocks.org/ibrahimtanyalcin/2e478e178470c385656a90d3a4629220) example. If you want to change
 the area that is shown without the GUI, you can pass an optional object that has the keys x,y,w,h which 
 stand for origin-x, origin-y, width and height offsets for the viewBox respectively. For instance, 
-{x:-50,w:100} enlarges the viewBox from left and right by 50 units in userSpaceOnUse. If a key is not present,
+{x:-50,w:100} enlarges the viewBox from left and right by 50 units in **userSpaceOnUse**. If a key is not present,
 then it is assumed to be 0.
+
+### PROGRAMMATIC ACCESS
+Sometimes it is desirable to craft predefined buttons to set different views of the input data.
+It might be that not every data object inside the ordinal scale works with the current linear scale etc.
+In those cases, you can attach the below functions to html buttons or other elements to trigger when
+'click' or 'touchend' etc event is dispatched.
+
+#### ordinalG.update [:link:](#ordinalgupdate-link)[🔍][ordinalgupdate]
+
+```js
+lexiconRainbow.orginalG.update(4) --> updates the ordinal scale to match the 5th data object.
+```
+
+* Updates the ordinal scale and calls the [`render`][render].
+
+#### linearG.update [:link:](#lineargupdate-link)[🔍][lineargupdate]
+
+```js
+lexiconRainbow.linearG.update(2) --> updates the linear scale to match the 3rd data object.
+```
+
+* Updates the linear scale and calls the [`render`][render]. 
+
 
 
 [README]: https://github.com/IbrahimTanyalcin/lexicon-rainbow/blob/master/docs/README.md
@@ -524,3 +577,6 @@ then it is assumed to be 0.
 [rendersolidcurve]: ../dev/lexiconRainbow.d3v4.dev.js#L1281
 [unwarp]: ../dev/lexiconRainbow.d3v4.dev.js#L2040
 [gui]: ../dev/lexiconRainbow.d3v4.dev.js#L2147
+[version]: ../dev/lexiconRainbow.d3v4.dev.js#L2146
+[isappended]: ../dev/lexiconRainbow.d3v4.dev.js#L988
+
