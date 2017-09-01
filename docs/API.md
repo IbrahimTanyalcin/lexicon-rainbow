@@ -522,7 +522,7 @@ In those cases, you can attach the below functions to html buttons or other elem
 lexiconRainbow.orginalG.update(4) --> updates the ordinal scale to match the 5th data object.
 ```
 
-* Updates the ordinal scale and calls the [`render`][render].
+* Updates the ordinal scale and calls the [`render`](#render-link).
 
 #### linearG.update [:link:](#lineargupdate-link)[🔍][lineargupdate]
 
@@ -530,7 +530,7 @@ lexiconRainbow.orginalG.update(4) --> updates the ordinal scale to match the 5th
 lexiconRainbow.linearG.update(2) --> updates the linear scale to match the 3rd data object.
 ```
 
-* Updates the linear scale and calls the [`render`][render]. 
+* Updates the linear scale and calls the [`render`](#render-link). 
 
 
 
@@ -579,4 +579,8 @@ lexiconRainbow.linearG.update(2) --> updates the linear scale to match the 3rd d
 [gui]: ../dev/lexiconRainbow.d3v4.dev.js#L2147
 [version]: ../dev/lexiconRainbow.d3v4.dev.js#L2146
 [isappended]: ../dev/lexiconRainbow.d3v4.dev.js#L988
+[passivesupported]: ../dev/lexiconRainbow.d3v4.dev.js#L2132
+[ordinalgupdate]: ../dev/lexiconRainbow.d3v4.dev.js#L1532
+[lineargupdate]: ../dev/lexiconRainbow.d3v4.dev.js#L1539
+
 
