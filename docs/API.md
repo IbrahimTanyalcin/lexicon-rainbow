@@ -284,10 +284,10 @@ are internal variables and refer to the index of the current ordinal/linear data
 	</thead>
 	<tbody>
 		<tr>
-			<td></td>
-			<td>data (Object)</td>
-			<td>type (Proprietary String)</td>
-			<td>eventType (DOM event)</td>
+			<th></th>
+			<th>data (Object)</th>
+			<th>type (Proprietary String)</th>
+			<th>eventType (DOM event)</th>
 		</tr>
 		<tr>
 			<td>The first time render function is called</td>
