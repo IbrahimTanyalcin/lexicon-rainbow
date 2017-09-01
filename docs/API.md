@@ -278,8 +278,8 @@ are internal variables and refer to the index of the current ordinal/linear data
 <table>
 	<thead>
 		<tr>
-			<th><b>when</b></th>
-			<th colspan="3"><b>arguments</b></th>
+			<th><h4>when</h4></th>
+			<th colspan="3"><h4>arguments</h4></th>
 		</tr>
 	</thead>
 	<tbody>
