@@ -355,6 +355,131 @@ or
 For mouseout, in desktop you will receive "mouseout" and mobile, you will receive "touchend".
 </sup>
 
+#### dispersion [:link:](#dispersion-link)[🔍][dispersion]
+
+```js
+lexiconRainbow.dispersion([number]) {Number} 
+//ex: lexiconRainbow.dispersion(0) --> sharp-ended links for single values
+```
+
+* Defaults to 0.01 (means 0.01 * width of the viewbox in **userSpaceOnUse**).
+* :+1: This controls how spread the links will be for intervals that are **NOT** a range.
+For instance if a link goes to 3, by default it will be spread on both sides about
+0.01*width of the viewbox. Making dispersion 0 results in an example like
+[here][http://bl.ocks.org/ibrahimtanyalcin/3ec054bc6dc485c46631c5ef1d28dbe9] .
+
+#### enableOnPick [:link:](#enableonpick-link)[🔍][enableonpick]
+
+```js
+lexiconRainbow.enableOnPick([bool]) {Boolean|String|Number|Object|Function} 
+//ex: lexiconRainbow.enableOnPick(false) --> no "onpick" event
+```
+
+* Defaults to `true`.
+* Any truthy value is considered to be `true`.
+* :+1: In internet explorer or firefox, when there are too many links going out from
+1 item, you might have flicker issues. Also a lot of path string interpolations can be 
+expensive so you might want to turn this off. If you are asking what is an "onpick"
+event, look [here][handleevent].
+
+#### forceStyle [:link:](#forcestyle-link)[🔍][forcestyle]
+
+```js
+lexiconRainbow.forceStyle()
+//ex: lexiconRainbow.forceStyle() --> gives a default look to the plot and returns the lexiconRainbow instance
+```
+
+* This method is **NOT** called by default. .
+* If called with any argument, appends a style node to the `document.head` with the attribute `data-lexType='lexiconRainbow'`.
+* It is a collection of styles and a font-family that I think fits the project. The style is appended only **ONCE**,
+if it has been appended previously, it is not added again.
+
+#### append [:link:](#append-link)[🔍][append]
+
+```js
+lexiconRainbow.append([bool]) {Boolean|String|Number|Object|Function} 
+//ex: lexiconRainbow.append(true) --> gives a default look to the plot and returns the lexiconRainbow instance
+```
+
+* This method is **NOT** called by default. .
+* If called with any argument, appends a style node to the `document.head` with the attribute `data-lexType='lexiconRainbow'`.
+* It is a collection of styles and a font-family that I think fits the project. The style is appended only **ONCE**,
+if it has been appended previously, it is not added again.
+* :+1: Call this method **AFTER** any callable methods and **BEFORE** the `render` method.
+
+#### render [:link:](#render-link)[🔍][render]
+
+```js
+lexiconRainbow.render() 
+//ex: lexiconRainbow.render() --> renders the scene and returns undefined
+```
+
+* Renders the scene and returns **undefined**.
+* :+1: Call this method **LAST**.
+* :+1: If the underlying input object changes, you can call it one more time to reflect upon the changes.
+
+#### renderOrdinal [:link:](#renderordinal-link)[🔍][renderordinal]
+
+```js
+lexiconRainbow.renderOrdinal(ordinalData,container,scale)  {[..],[..],[..]}
+```
+
+* Renders the objects in the ordinal scale and returns undefined.
+* ordinalData is a sorted list of category names in the ordinal scale,
+container is a **d3 selection** and scale is a array with two values:
+lower bound and upper bound of the domain in floats or integers.
+* :warning: This method is **NOT** meant to be called by the developer but rather documented for completeness. 
+It is called by the `render` method.
+
+#### renderSolidCurve [:link:](#rendersolidcurve-link)[🔍][rendersolidcurve]
+
+```js
+lexiconRainbow.renderSolidCurve(ordinalData,container,scale)  {[..],[..],[..]}
+```
+
+* Renders the objects in the linear scale (the links/ribbons) and returns undefined.
+* ordinalData is a sorted list of category names in the ordinal scale,
+container is a **d3 selection** and scale is a array with two values:
+lower bound and upper bound of the domain in floats or integers.
+* :warning: This method is **NOT** meant to be called by the developer but rather documented for completeness. 
+It is called by the `render` method.
+
+#### unwarp [:link:](#unwarp-link)[🔍][unwarp]
+
+```js
+//create instance
+window.someInstance = new LexiconRainbow;
+//render and do something with it
+someInstance...render();
+//when you are done, start a fadeout animation and delete the object in the end.
+someInstance.unwarp(function(){delete window.someInstance}) {Function}
+```
+
+* Fades away the plotted svg and removes it in the end. If a function or a function reference is passed, 
+that function is invoked at the 'end' event of the transition.
+* :+1: Beware that this only removes the svg and not the object that created it (the lexiconRainbow instance).
+Thus, if you store the instance as a property of another object, make sure you delete it later as shown 
+in the example. Also make sure that the hosting object is not frozen or its property descriptor set to
+`configurable: false`. Alternatively if you stored the instance inside a variable, make sure it is not
+observable anymore.
+
+#### GUI [:link:](#gui-link)[🔍][gui]
+
+```js
+lexiconRainbow.GUI([Bool[,Offset]]) {Bool|String,{x:..,y:..,w:..,h:..}}
+```
+
+* If `true` is passed then shows the GUI which is the default view and returns the lexiconRainbow instance.
+If `false` is passed then removes the GUI and returns the lexiconRainbow instance. If the first argument is
+truthy **AND** a string such as "rgb(x,y,z)"/"rgba(x,y,z,a)"/"#xxyyzz"/"LightRed", then the color of the GUI
+is set to the specified string value if possible and then fadedin if previously was hidden.
+* :+1: If you want to have an idea of how the plot looks without a GUI, have a look at the second plot of
+[this](http://bl.ocks.org/ibrahimtanyalcin/2e478e178470c385656a90d3a4629220) example. If you want to change
+the area that is shown without the GUI, you can pass an optional object that has the keys x,y,w,h which 
+stand for origin-x, origin-y, width and height offsets for the viewBox respectively. For instance, 
+{x:-50,w:100} enlarges the viewBox from left and right by 50 units in userSpaceOnUse. If a key is not present,
+then it is assumed to be 0.
+
 
 [README]: https://github.com/IbrahimTanyalcin/lexicon-rainbow/blob/master/docs/README.md
 [LEGEND]: https://github.com/IbrahimTanyalcin/lexicon-rainbow#legends
@@ -390,3 +515,12 @@ For mouseout, in desktop you will receive "mouseout" and mobile, you will receiv
 [sMargin]: ../dev/lexiconRainbow.d3v4.dev.js#L161
 [input]: ../dev/lexiconRainbow.d3v4.dev.js#L162
 [handleevent]: ../dev/lexiconRainbow.d3v4.dev.js#L163
+[dispersion]: ../dev/lexiconRainbow.d3v4.dev.js#L164
+[enableonpick]: ../dev/lexiconRainbow.d3v4.dev.js#L165
+[forcestyle]: ../dev/lexiconRainbow.d3v4.dev.js#L168
+[append]: ../dev/lexiconRainbow.d3v4.dev.js#L989
+[render]: ../dev/lexiconRainbow.d3v4.dev.js#L1071
+[renderordinal]: ../dev/lexiconRainbow.d3v4.dev.js#L1086
+[rendersolidcurve]: ../dev/lexiconRainbow.d3v4.dev.js#L1281
+[unwarp]: ../dev/lexiconRainbow.d3v4.dev.js#L2040
+[gui]: ../dev/lexiconRainbow.d3v4.dev.js#L2147
