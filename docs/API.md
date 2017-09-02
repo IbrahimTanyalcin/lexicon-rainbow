@@ -11,7 +11,95 @@ Refer to the [API][QUICSTART] section of the [README][README] to have an idea of
 * Look out for the :-1: signs, they usually point out to something that might **NOT** be good to try.
 
 ### INPUT DATA STRUCTURE
+As shown in [**this example**][MINIMAL], a minimal data structure looks like below:
+```js
+{
+	"ordinal": [
+		{
+			"name": "A Minimal Set",
+			"categories": {
+				"A": 1,
+				"B": 2,
+				"C": 3
+			}
+		}
+	],
+	"linear": [
+		{
+			"domain": [-10,10],
+			"name": "A Minimal Set",
+			"categories": {
+				"A": {intervals:[-9,-4]},
+				"B": {intervals:[[-2,2]]},
+				"C": {intervals:8}
+			}
+		}
+	]
+}
+```
 
+The main input object is an object with 2 keys:
+`{ordinal:[dataObject..],linear:[dataObject..]}`
+* The ordinal key hosts objects that control what is shown on the top of the plot, namely the ['items'](./README.md#anatomy).
+* The linear key host objects that control the links/ribbons, how they are drawn and stacked and also the axis.
+
+Each key references an array of **dataObjects**. If a dataObject is under the ordinal key,
+then it is an ordinal dataObject. Likewise, if a dataObject is under the linear key,
+then it is a linear dataObject. This for instance is an ordinal data object from the previous example:
+```js
+{
+	"name": "A Minimal Set",
+	"categories": {
+		"A": 1,
+		"B": 2,
+		"C": 3
+	}
+}
+```
+This also, is a bit more complicated ordinal data object:
+```js
+{
+	"colors": {
+		"Clinton":["LightBlue","LightBlue","Blue","DarkBlue"],
+		"Trump": ["Pink","Pink","Red","DarkRed"],
+		"Others": ["Green","Green","LightGreen","DarkGreen"]
+	},
+	"name": "All candidates - Eq",
+	"categories": {
+		"Clinton": 1,
+		"Trump": 2,
+		"Others": 3
+	},
+	"mode":"stackEqual",
+	"Info": "Pooled vote counts, but equal separation on the top scale"
+}
+```
+And here is a linear data object
+```js
+{
+	"domain": [
+		0,
+		140000000
+	],
+	"format":".3s",
+	"name": "All candidates(C,T,O)",
+	"categories": {
+		"Clinton": {intervals:[
+			65853516
+		],names:["Clinton"]},
+		"Trump": {intervals:[
+			62984824
+		],names:["Trump"]},
+		"Others": {intervals:[
+			7801446
+		],names:["Others"]}
+	},
+	"glyph": "./usFlag.png",
+	"mode":"stack",
+	"gMode":"stack",
+	"Info": "Total vote counts stacked"
+}
+```
 ### PROPERTIES
 
 #### version [:link:](#version-link)[🔍][version]
@@ -539,6 +627,7 @@ lexiconRainbow.linearG.update(2) --> updates the linear scale to match the 3rd d
 [QUICSTART]: https://github.com/IbrahimTanyalcin/lexicon-rainbow#api
 [GUI]: https://github.com/IbrahimTanyalcin/lexicon-rainbow#anatomy
 [MUTAFRAME]: http://deogen2.mutaframe.com/ 
+[MINIMAL]: http://bl.ocks.org/ibrahimtanyalcin/6e2e775cb954ecf89e6b379b5fa4c510
 
 [w3c-viewbox]: https://www.w3.org/TR/SVG/coords.html#ViewBoxAttribute
 [w3c-preserveAspectRatio]: https://www.w3.org/TR/SVG/coords.html#PreserveAspectRatioAttribute
