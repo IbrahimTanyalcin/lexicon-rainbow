@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+<script src="http://d3js.org/d3.v4.min.js"></script>
+<script src="../../dev/lexiconRainbow.d3v4.dev.js"></script>
+<script src="./loadData.js"></script>
+<style type ="text/css">
+html {
+	background-color:White;
+}
+html * {
+	box-sizing:border-box;
+}
+body{
+	margin: 0px;
+	background-color:White;
+}
+body:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+.row {
+	float:left;
+	width:100%;
+	font-size:16px;
+	position:relative;
+	overflow:hidden;
+	background-color:transparent;
+}
+.row:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+.row:first-child, .row:last-of-type {
+	min-height:300px;
+	text-align:center;
+	font-size:30px;
+	font-family:advent-pro,Sans Serif,Arial;
+}
+.row:first-child span {
+	display:inline-block;
+	width:90%;
+	position:absolute;
+	left:0;
+	right:0;
+	bottom:20px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.row:first-child span:first-child {
+	bottom:100px;
+	white-space:pre;
+}
+.row:last-of-type {
+	text-align: justify;
+	padding-left:30%;
+	padding-right:30%;
+}
+.row:last-of-type span:first-of-type {
+	display:inline-block;
+	width:100%;
+	text-align:center;
+	position:relative;
+	left:0;
+	right:0;
+	top:20px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.row:last-of-type:after {
+	display:inline-block;
+	width:100%;
+	content:"";
+	clear:both;
+}
+#containerDiv {
+	width:70%;
+	margin:auto;
+	position:relative;
+}
+button {
+	border: 1px solid DarkSlateGray;
+	border-radius: 5px;
+	padding: 20px;
+	font-family: Arial;
+	font-size: 1.5rem;
+	max-width:20%;
+	color: DarkSlateGray;
+	background-color:transparent;
+	outline:none;
+	overflow:hidden;
+	box-shadow:0px 0px 0px transparent;
+	transition:box-shadow 0.25s ease;
+}
+button:hover {
+	box-shadow:3px 3px 9px Black;
+}
+@media screen and (max-width:800px) {
+	.row:last-of-type {
+		padding-left:10%;
+		padding-right:10%;
+	}
+	button {
+		max-width:40%;
+	}
+}
+</style>
+<!--[if IE]>
+<link rel="stylesheet" type="text/css" href="./IE.css"></link>
+<![endif]-->
+</head>
+<body>
+<div class="row">
+	<span id="moverSpan">&nbsp;</span>
+	<span id="topSpan"></span>
+</div>
+<div class="row">
+	<div id="containerDiv">
+	</div>
+</div>
+<div class="row">
+	<span id="botSpan"></span>&nbsp;
+</div>
+<script type="text/javascript">
+
+!function(){
+	
+	////////////////////////////////////////////////////////////////////
+	/////////////////CREATE INSTANCE OF LEXICON RAINBOW/////////////////
+	////////////////////////////////////////////////////////////////////
+
+	var instance = new LexiconRainbow;
+	instance
+	.container("#containerDiv")
+	.dispersion(0)
+	.forceStyle()
+	.w(600).h(200)
+	.sW("100%").sH("auto")
+	.position("relative")
+	.sTop("0px")
+	.sLeft("0px")
+	.sMargin("0px auto 0px auto")
+	.handleEvent(handleEvent)
+	.lexID("lexiconRainbow")
+	.input(sample)
+	.GUI(false,{x:-20,w:40})
+	.append(true)
+	.render();
+		
+		
+	////////////////////////////////////////////////////////////////////
+	//////////////////////////MAKE SOME BUTTONS/////////////////////////
+	////////////////////////////////////////////////////////////////////
+	!function(data,container){
+		container.appendChild(document.createElement("br"));
+		Array.apply(null,Array(2)).forEach(function(d,i){
+			var btn = document.createElement("button");
+			btn.textContent = data[i][0];
+			btn.__ordinal = data[i][1];
+			btn.__linear = data[i][2];
+			container.appendChild(btn);
+			container.appendChild(document.createTextNode(" "));
+		})
+		container.addEventListener("click",function(e){
+			if(e.target.tagName !== "BUTTON"){return}
+			instance.ordinalG.update(e.target.__ordinal);
+			instance.linearG.update(e.target.__linear);
+		},false)
+	}([["Trump",2,8],["Clinton",3,14]],document.body.querySelector("div.row:last-of-type"))
+
+	
+	////////////////////////////////////////////////////////////////////
+	/////////////////////////ATTACH THE HANDLER/////////////////////////
+	////////////////////////////////////////////////////////////////////	
+		
+	var topspan = document.getElementById("topSpan");
+	var botspan = document.getElementById("botSpan");
+	var moverspan = document.getElementById("moverSpan");
+	function handleEvent (data,type,eventType) {
+		switch (type) {
+			case "onload":
+				topSpan.textContent = data.ordinal.Info;
+				botSpan.textContent = data.linear.Info;
+				return;
+			case "onhighlight":
+				if(eventType==="mouseover") {
+					var dd = typeof data.item === "object" ? "Value: "+Math.abs(data.item[1]-data.item[0]) : "Value: "+dd;
+					var name = typeof data.name !== undefined ? "Name: "+data.name+", " : "";
+					moverspan.textContent = name+dd;
+				} else {
+					moverspan.textContent = " ";
+				}
+				return;
+			case "onrenderLinear":
+				botSpan.textContent = data.Info;
+				return;
+			case "onrenderOrdinal":
+				topSpan.textContent = data.Info;
+				return;
+		}
+	}
+}()
+</script>
+</body>
+</html>
