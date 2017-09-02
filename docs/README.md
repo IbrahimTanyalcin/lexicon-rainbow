@@ -19,8 +19,10 @@
 * [Usage](#usage)
 * [Installation](#installation)
 * [Youtube](#youtube)
+* [Known Issues](#known-issues)
 * [Acknowledgement](#acknowledgement)
 * [Support](#support)
+
 
 <hr>
 
@@ -40,6 +42,9 @@
 
 >## [2016 US elections][VOTES]:
 >[<img src="../examples/USvotes/USvotes.jpg">][VOTES] 
+
+>## [Programmatic Access][PROGRAMMATIC]:
+>[<img src="../examples/USvotes_programmatic/USvotes_programmatic.jpg">][PROGRAMMATIC] 
 
 <br>
 
@@ -100,12 +105,18 @@ root
 |   |   |-- index_v4.html <sub>(d3 v4 example)</sub> <a href="../examples/ServerDownTime/index_v4.html">🔍</a>
 |   |   |-- server.png <sub>(Glyph)</sub> <a href="../examples/ServerDownTime/server.png">🔍</a>
 |   |   `-- serverDownTime.jpg <sub>(Output of the example)</sub> <a href="../examples/ServerDownTime/serverDownTime.jpg">🔍</a>
-|   `-- USvotes
-|      |-- index_v3.html <sub>(d3 v3 example)</sub> <a href="../examples/USvotes/index_v3.html">🔍</a>
-|      |-- index_v4.html <sub>(d3 v4 example)</sub> <a href="../examples/USvotes/index_v4.html">🔍</a>
-|      |-- loadData.js <sub>(Load data via script tag)</sub> <a href="../examples/USvotes/loadData.js">🔍</a>
-|      |-- usFlag.png <sub>(Glyph)</sub> <a href="../examples/USvotes/usFlag.png">🔍</a>
-|      `-- USvotes.jpg <sub>(Output of the example)</sub> <a href="../examples/USvotes/USvotes.jpg">🔍</a>
+|   |-- USvotes
+|   |   |-- index_v3.html <sub>(d3 v3 example)</sub> <a href="../examples/USvotes/index_v3.html">🔍</a>
+|   |   |-- index_v4.html <sub>(d3 v4 example)</sub> <a href="../examples/USvotes/index_v4.html">🔍</a>
+|   |   |-- loadData.js <sub>(Load data via script tag)</sub> <a href="../examples/USvotes/loadData.js">🔍</a>
+|   |   |-- usFlag.png <sub>(Glyph)</sub> <a href="../examples/USvotes/usFlag.png">🔍</a>
+|   |   `-- USvotes.jpg <sub>(Output of the example)</sub> <a href="../examples/USvotes/USvotes.jpg">🔍</a>
+|	`-- USvotes_programmatic
+|       |-- index_v3.html <sub>(d3 v3 example)</sub> <a href="../examples/USvotes_programmatic/index_v3.html">🔍</a>
+|       |-- index_v4.html <sub>(d3 v4 example)</sub> <a href="../examples/USvotes_programmatic/index_v4.html">🔍</a>
+|       |-- loadData.js <sub>(Load data via script tag)</sub> <a href="../examples/USvotes_programmatic/loadData.js">🔍</a>
+|       |-- usFlag.png <sub>(Glyph)</sub> <a href="../examples/USvotes_programmatic/usFlag.png">🔍</a>
+|       `-- USvotes_programmatic.jpg <sub>(Output of the example)</sub> <a href="../examples/USvotes_programmatic/USvotes_programmatic.jpg">🔍</a>
 |-- img
 |   `-- anatomy.png <sub>(Parts of the visualization)</sub> <a href="../img/anatomy.png">🔍</a>
 |-- tests
@@ -330,6 +341,16 @@ Static figures only gives an idea. You can go to my [youtube channel](https://ww
 
 <br>
 
+## Known Issues
+* When there are too many links coming out from one item, you might have flicker issues,
+as the event.target/elementFromPoint does not point to the right element. For the time being
+consider turning off [`enableOnpick`](./API.md#enableonpick-link).
+* In lexicon-rainbow d3v3 version, if your data object has the "axis" field set, the **tick path**
+won't get colored due to [stroke style](../dev/lexiconRainbow.d3v3.dev.js#L139) not set. 
+This will be fixed in the next patch. 
+
+<br>
+
 ## Acknowledgement
 * People
   * [Tuncer Can](https://www.linkedin.com/in/tuncercan/) for server side maintanance and file hosting
@@ -357,3 +378,4 @@ support for this project you can contribute to my [PATREON](https://www.patreon.
 [SERVER]: http://bl.ocks.org/ibrahimtanyalcin/2e478e178470c385656a90d3a4629220
 [VOTES]: http://bl.ocks.org/ibrahimtanyalcin/f0bf54f88c6859c985ee98bc5e56ae6f
 [MUTAFRAME]: http://deogen2.mutaframe.com/
+[PROGRAMMATIC]: http://bl.ocks.org/ibrahimtanyalcin/f2067bef081d84b85e3fb077f3272a90
