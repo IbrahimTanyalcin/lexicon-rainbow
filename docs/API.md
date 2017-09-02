@@ -44,8 +44,8 @@ The main input object is an object with 2 keys:
 * The linear key host objects that control the links/ribbons, how they are drawn and stacked and also the axis.
 
 Each key references an array of **dataObjects**. If a dataObject is under the ordinal key,
-then it is an ordinal dataObject. Likewise, if a dataObject is under the linear key,
-then it is a linear dataObject. This for instance is an ordinal data object from the previous example:
+then it is an **ordinal dataObject**. Likewise, if a dataObject is under the linear key,
+then it is a **linear dataObject**. This for instance is an ordinal data object from the previous example:
 ```js
 {
 	"name": "A Minimal Set",
@@ -100,6 +100,29 @@ And here is a linear data object
 	"Info": "Total vote counts stacked"
 }
 ```
+
+If you use the inbuilt GUI, you will realize two controllers marked with
+'activate ordinal scale control' and 'activate linear scale control' [HERE](./README.md#anatomy).
+When you click on them, you can use the mouse/touch to drag and choose the dataObject for the activated scale.
+
+Each dataObject has special keys that change how the information is plotted. Available keys depend on whether
+the dataObject is an ordinal or a linear one:
+
+* **ordinal dataObjects**:
+  * **name**: name of the dataObject, this will appear on the GUI
+  * **categories**: an object with keys of the items that will be displayed. 
+  Each key will be shown on the ordinal scale. The values of these keys are used to **sort** the order
+  the items will be plotted:
+    * All values are coerced from string to number if possible.
+	* If it is a single value, than this value is used for sorted.
+	* If it is an array, then this array is reduced and THEN sorted. For example, 
+	an array with [1,5,[6,9]] is first transformed to [[1,1],[5,5],[6,9]] and finally
+	reduced to 1+1+5+5+6+9/6 = 4.5. The resulting value is used for sorting.
+	* If value of the key is an object, then a field with the name 'intervals' is looked
+	and previous steps are performed.
+  * **colors**: Can be a single color name or an array of color names:
+  
+* linear dataObjects:
 ### PROPERTIES
 
 #### version [:link:](#version-link)[🔍][version]
