@@ -111,7 +111,7 @@ root
 |   |   |-- loadData.js <sub>(Load data via script tag)</sub> <a href="../examples/USvotes/loadData.js">🔍</a>
 |   |   |-- usFlag.png <sub>(Glyph)</sub> <a href="../examples/USvotes/usFlag.png">🔍</a>
 |   |   `-- USvotes.jpg <sub>(Output of the example)</sub> <a href="../examples/USvotes/USvotes.jpg">🔍</a>
-|	`-- USvotes_programmatic
+|   `-- USvotes_programmatic
 |       |-- index_v3.html <sub>(d3 v3 example)</sub> <a href="../examples/USvotes_programmatic/index_v3.html">🔍</a>
 |       |-- index_v4.html <sub>(d3 v4 example)</sub> <a href="../examples/USvotes_programmatic/index_v4.html">🔍</a>
 |       |-- loadData.js <sub>(Load data via script tag)</sub> <a href="../examples/USvotes_programmatic/loadData.js">🔍</a>
