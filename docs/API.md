@@ -117,24 +117,8 @@ the dataObject is an ordinal or a linear one:
 			"name": "A Minimal Set",
 			//some other keys..
   ```
-  * **categories** <a id = "str_ordinal_categories" href = "#str_ordinal_categories">#</a>: an object with keys of the items that will be displayed:
-  ```js
-  {
-	"ordinal": [
-		{
-			"categories": {
-				item1: 5,
-				item2: "5",
-				item3: [5,[5,5]]
-				item4: {
-					intervals: [5,[5,5]],
-					someOtherKey: "someOtherValue"
-				}
-			},
-			//some other keys..
-  ```  
-  Each key will be shown on the ordinal scale. The values of these keys are used to **sort** the order
-  the items will be plotted:
+  * **categories** <a id = "str_ordinal_categories" href = "#str_ordinal_categories">#</a>: an object with keys of the items that will be displayed.
+  Each key will be shown on the ordinal scale. The values of these keys are used to **sort** the order the items that will be plotted:
     1. All values are coerced from string to number if possible.
 	1. If it is a single value, than this value is used for sorted.
 	1. If it is an array, then this array is reduced and THEN sorted. For example, 
@@ -142,6 +126,21 @@ the dataObject is an ordinal or a linear one:
 	reduced to 1+1+5+5+6+9/6 = 4.5. The resulting value is used for sorting.
 	1. If value of the key is an object, then a field with the name 'intervals' is looked
 	and previous steps are performed.
+	```js
+	{
+		"ordinal": [
+			{
+				"categories": {
+					item1: 5,
+					item2: "5",
+					item3: [5,[5,5]]
+					item4: {
+						intervals: [5,[5,5]],
+						someOtherKey: "someOtherValue"
+					}
+				},
+				//some other keys..
+	```  
   * **colors** <a id = "str_ordinal_colors" href = "#str_ordinal_colors">#</a>: Can be a single color name or an array of color names:
     1. If a single color name as string is provided ("LightGray" or "#bb0011" etc.), then the item color,
 	ribbon color, and stroke color (when you hover on the item) are set to this value.
