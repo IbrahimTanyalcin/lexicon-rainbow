@@ -184,7 +184,7 @@ the dataObject is an ordinal or a linear one:
 * ### linear dataObjects:
   * **name** <a id = "str_linear_name" href = "#str_linear_name"><b>#</b></a>: name of the dataObject, this will appear on the GUI at the bottom-left.
   ```js
-  {
+  ],
   "linear": [
 	  {
 		  "name": "A Linear dataObject",
