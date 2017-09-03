@@ -110,7 +110,14 @@ the dataObject is an ordinal or a linear one:
 
 * ### ordinal dataObjects:
   * **name** <a id = "str_ordinal_name" href = "#str_ordinal_name">#</a>: name of the dataObject, this will appear on the GUI
-  * **categories**: an object with keys of the items that will be displayed. 
+  ```js
+  {
+	"ordinal": [
+		{
+			"name": "A Minimal Set",
+			//some other keys..
+  ```
+  * **categories** <a id = "str_ordinal_categories" href = "#str_ordinal_categories">#</a>: an object with keys of the items that will be displayed. 
   Each key will be shown on the ordinal scale. The values of these keys are used to **sort** the order
   the items will be plotted:
     1. All values are coerced from string to number if possible.
@@ -120,7 +127,7 @@ the dataObject is an ordinal or a linear one:
 	reduced to 1+1+5+5+6+9/6 = 4.5. The resulting value is used for sorting.
 	1. If value of the key is an object, then a field with the name 'intervals' is looked
 	and previous steps are performed.
-  * **colors**: Can be a single color name or an array of color names:
+  * **colors** <a id = "str_ordinal_colors" href = "#str_ordinal_colors">#</a>: Can be a single color name or an array of color names:
     1. If a single color name as string is provided ("LightGray" or "#bb0011" etc.), then the item color,
 	ribbon color, and stroke color (when you hover on the item) are set to this value.
 	1. If an array is provided and it has a single value then previous step is applied.
@@ -131,6 +138,7 @@ the dataObject is an ordinal or a linear one:
 	1. If more than 3 colors are provided, then the item color will be the first, the stroke color
 	will be the last and the links will have a color of `[1+n%(l-2)]` where n is the link index as
 	given in the intervals array and l is the length of the colors array.
+  * 
   
 * linear dataObjects:
 ### PROPERTIES
@@ -667,6 +675,7 @@ lexiconRainbow.linearG.update(2) --> updates the linear scale to match the 3rd d
 [w3c-cssSelector]: https://www.w3schools.com/cssref/css_selectors.asp
 
 [str_ordinal]: #ordinal-dataobjects
+[str_linear]: #linear-dataobjects
 
 [toggleGUI]: ../dev/lexiconRainbow.d3v4.dev.js#L112
 [toggleAxis]: ../dev/lexiconRainbow.d3v4.dev.js#L135
