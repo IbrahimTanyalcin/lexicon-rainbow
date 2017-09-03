@@ -109,7 +109,7 @@ Each dataObject has special keys that change how the information is plotted. Ava
 the dataObject is an ordinal or a linear one:
 
 * ### ordinal dataObjects:
-  * **name**: name of the dataObject, this will appear on the GUI
+  * **name** <a id = "str_ordinal_name" href = "#">#</a>: name of the dataObject, this will appear on the GUI
   * **categories**: an object with keys of the items that will be displayed. 
   Each key will be shown on the ordinal scale. The values of these keys are used to **sort** the order
   the items will be plotted:
@@ -121,6 +121,16 @@ the dataObject is an ordinal or a linear one:
 	1. If value of the key is an object, then a field with the name 'intervals' is looked
 	and previous steps are performed.
   * **colors**: Can be a single color name or an array of color names:
+    1. If a single color name as string is provided ("LightGray" or "#bb0011" etc.), then the item color,
+	ribbon color, and stroke color (when you hover on the item) are set to this value.
+	1. If an array is provided and it has a single value then previous step is applied.
+	If the array has 2 values, the item and the link colors will be the first value and the stroke color
+	will be the last value. 
+	1. If the array has 3 values, the item color will be the first value, the 
+	link color will be the second and the stroke color will be the last.
+	1. If more than 3 colors are provided, then the item color will be the first, the stroke color
+	will be the last and the links will have a color of `[1+n%(l-2)]` where n is the link index as
+	given in the intervals array and l is the length of the colors array.
   
 * linear dataObjects:
 ### PROPERTIES
@@ -655,6 +665,8 @@ lexiconRainbow.linearG.update(2) --> updates the linear scale to match the 3rd d
 [w3c-viewbox]: https://www.w3.org/TR/SVG/coords.html#ViewBoxAttribute
 [w3c-preserveAspectRatio]: https://www.w3.org/TR/SVG/coords.html#PreserveAspectRatioAttribute
 [w3c-cssSelector]: https://www.w3schools.com/cssref/css_selectors.asp
+
+[str_ordinal]: #ordinal-dataobjects
 
 [toggleGUI]: ../dev/lexiconRainbow.d3v4.dev.js#L112
 [toggleAxis]: ../dev/lexiconRainbow.d3v4.dev.js#L135
