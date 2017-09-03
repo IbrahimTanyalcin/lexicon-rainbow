@@ -109,7 +109,7 @@ Each dataObject has special keys that change how the information is plotted. Ava
 the dataObject is an ordinal or a linear one:
 
 * ### ordinal dataObjects:
-  * **name** <a id = "str_ordinal_name" href = "#str_ordinal_name">#</a>: name of the dataObject, this will appear on the GUI
+  * **name** <a id = "str_ordinal_name" href = "#str_ordinal_name"><b>#</b></a>: name of the dataObject, this will appear on the GUI
   ```js
   {
   "ordinal": [
@@ -117,7 +117,7 @@ the dataObject is an ordinal or a linear one:
 		  "name": "A Minimal Set",
 		  //some other keys..
   ```
-  * **categories** <a id = "str_ordinal_categories" href = "#str_ordinal_categories">#</a>: an object with keys of the items that will be displayed.
+  * **categories** <a id = "str_ordinal_categories" href = "#str_ordinal_categories"><b>#</b></a>: an object with keys of the items that will be displayed.
   Each key will be shown on the ordinal scale. The values of these keys are used to **sort** the order the items that will be plotted:
     1. All values are coerced from string to number if possible.
 	1. If it is a single value, than this value is used for sorted.
@@ -141,7 +141,7 @@ the dataObject is an ordinal or a linear one:
 			  },
 			  //some other keys..
   ```  
-  * **colors** <a id = "str_ordinal_colors" href = "#str_ordinal_colors">#</a>: Can be a single color name or an array of color names:
+  * **colors** <a id = "str_ordinal_colors" href = "#str_ordinal_colors"><b>#</b></a>: Can be a single color name or an array of color names:
     1. If a single color name as string is provided ("LightGray" or "#bb0011" etc.), then the item color,
 	ribbon color, and stroke color (when you hover on the item) are set to this value.
 	1. If an array is provided and it has a single value then previous step is applied.
@@ -164,7 +164,7 @@ the dataObject is an ordinal or a linear one:
 			  },
 			  //some other keys..
   ```  
-  * **mode** <a id = "str_ordinal_mode" href = "#str_ordinal_mode">#</a>: Controls how the links are organized on the 
+  * **mode** <a id = "str_ordinal_mode" href = "#str_ordinal_mode"><b>#</b></a>: Controls how the links are organized on the 
   ordinal scale end (the top part of the plot). The default configuration is regardless of whether you have many links
   or not, each link spans the entire length of the item. Using the mode, you can either stack them equally or proportional 
   to their span. You can specify **one of** two values: "stackEqual" or "stack". Let's assume two links:
@@ -176,8 +176,8 @@ the dataObject is an ordinal or a linear one:
 	1. If the mode is "stack" then link1 will have 1.5 times the span of the link2 (|4-1|/|-3--5|). Their order will be the same 
 	as specified in the intervals key of the [correspoding category in the linear dataObject][#str-linear-categories].
 	1. If the mode is "stackEqual", then all links will have the same span. Their order will be the same as described as above.
-  * exteding the dataObject <a id = "str_ordinal_extend" href = "#str_ordinal_extend">#</a>: Apart from the key names described in this
-  section, you can pretty much add any other property to the dataObject. Some of the [synthetic lexicon-rainbow events][#handleevent-link] allows you
+  * exteding the dataObject <a id = "str_ordinal_extend" href = "#str_ordinal_extend"><b>#</b></a>: Apart from the key names described in this
+  section, you can pretty much add any other property to the dataObject. Some of the [synthetic lexicon-rainbow events](#handleevent-link) allows you
   to access the entire dataObject so that you can make use of the extended properties.
   
 * linear dataObjects:
