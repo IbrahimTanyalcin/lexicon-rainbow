@@ -117,7 +117,22 @@ the dataObject is an ordinal or a linear one:
 			"name": "A Minimal Set",
 			//some other keys..
   ```
-  * **categories** <a id = "str_ordinal_categories" href = "#str_ordinal_categories">#</a>: an object with keys of the items that will be displayed. 
+  * **categories** <a id = "str_ordinal_categories" href = "#str_ordinal_categories">#</a>: an object with keys of the items that will be displayed:
+  ```js
+  {
+	"ordinal": [
+		{
+			"categories": {
+				item1: 5,
+				item2: "5",
+				item3: [5,[5,5]]
+				item4: {
+					intervals: [5,[5,5]],
+					someOtherKey: "someOtherValue"
+				}
+			},
+			//some other keys..
+  ```  
   Each key will be shown on the ordinal scale. The values of these keys are used to **sort** the order
   the items will be plotted:
     1. All values are coerced from string to number if possible.
