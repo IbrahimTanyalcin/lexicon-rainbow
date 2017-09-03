@@ -108,7 +108,7 @@ When you click on them, you can use the mouse/touch to drag and choose the dataO
 Each dataObject has special keys that change how the information is plotted. Available keys depend on whether
 the dataObject is an ordinal or a linear one:
 
-* ##### ordinal dataObjects:
+* #### ordinal dataObjects:
   * **name**: name of the dataObject, this will appear on the GUI
   * **categories**: an object with keys of the items that will be displayed. 
   Each key will be shown on the ordinal scale. The values of these keys are used to **sort** the order
