@@ -109,7 +109,7 @@ Each dataObject has special keys that change how the information is plotted. Ava
 the dataObject is an ordinal or a linear one:
 
 * ### ordinal dataObjects:
-  * **name** <a id = "str_ordinal_name" href = "#str_ordinal_name"><b font-size = "2em">#</b></a>: name of the dataObject, this will appear on the GUI
+  * **name** <a id = "str_ordinal_name" href = "#str_ordinal_name"><h2>#</h2></a>: name of the dataObject, this will appear on the GUI
   ```js
   {
   "ordinal": [
