@@ -110,7 +110,7 @@ the dataObject is an ordinal or a linear one:
 
 * ### ordinal dataObjects:
   * **name** <a id = "str_ordinal_name" href = "#str_ordinal_name">#</a>: name of the dataObject, this will appear on the GUI
-  ```js
+  >```js
   {
 	"ordinal": [
 		{
