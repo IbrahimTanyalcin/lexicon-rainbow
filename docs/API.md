@@ -116,7 +116,7 @@ the dataObject is an ordinal or a linear one:
 		{
 			"name": "A Minimal Set",
 			//some other keys..
-  ```
+  >```
   * **categories** <a id = "str_ordinal_categories" href = "#str_ordinal_categories">#</a>: an object with keys of the items that will be displayed. 
   Each key will be shown on the ordinal scale. The values of these keys are used to **sort** the order
   the items will be plotted:
