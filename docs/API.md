@@ -56,7 +56,7 @@ then it is a **linear dataObject**. This for instance is an ordinal data object 
 	}
 }
 ```
-This also, is a bit more complicated ordinal data object:
+This also, is a bit more complicated ordinal data object <a id = "str_ordinal_example" href = "#str_ordinal_example"></a>:
 ```js
 {
 	"colors": {
@@ -178,7 +178,8 @@ the dataObject is an ordinal or a linear one:
 	1. If the mode is "stackEqual", then all links will have the same span. Their order will be the same as described as above.
   * exteding the dataObject <a id = "str_ordinal_extend" href = "#str_ordinal_extend"><b>#</b></a>: Apart from the key names described in this
   section, you can pretty much add any other property to the dataObject. Some of the [synthetic lexicon-rainbow events](#handleevent-link) allows you
-  to access the entire dataObject so that you can make use of the extended properties.
+  to access the entire dataObject so that you can make use of the extended properties. For example [here](#str_ordinal_example) the dataObject is
+  entended by adding "Info" field.
   
 * ### linear dataObjects:
 ### PROPERTIES
