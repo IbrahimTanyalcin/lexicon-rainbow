@@ -109,7 +109,7 @@ Each dataObject has special keys that change how the information is plotted. Ava
 the dataObject is an ordinal or a linear one:
 
 * ### ordinal dataObjects:
-  * **name** <a id = "str_ordinal_name" href = "#str_ordinal_name"><b>#</b></a>: name of the dataObject, this will appear on the GUI
+  * **name** <a id = "str_ordinal_name" href = "#str_ordinal_name"><b font-size = "2em">#</b></a>: name of the dataObject, this will appear on the GUI
   ```js
   {
   "ordinal": [
@@ -180,7 +180,7 @@ the dataObject is an ordinal or a linear one:
   section, you can pretty much add any other property to the dataObject. Some of the [synthetic lexicon-rainbow events](#handleevent-link) allows you
   to access the entire dataObject so that you can make use of the extended properties.
   
-* linear dataObjects:
+* ### linear dataObjects:
 ### PROPERTIES
 
 #### version [:link:](#version-link)[🔍][version]
