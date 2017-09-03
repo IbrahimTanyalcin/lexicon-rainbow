@@ -113,12 +113,12 @@ the dataObject is an ordinal or a linear one:
   * **categories**: an object with keys of the items that will be displayed. 
   Each key will be shown on the ordinal scale. The values of these keys are used to **sort** the order
   the items will be plotted:
-    * All values are coerced from string to number if possible.
-	* If it is a single value, than this value is used for sorted.
-	* If it is an array, then this array is reduced and THEN sorted. For example, 
+    1 All values are coerced from string to number if possible.
+	2 If it is a single value, than this value is used for sorted.
+	3 If it is an array, then this array is reduced and THEN sorted. For example, 
 	an array with [1,5,[6,9]] is first transformed to [[1,1],[5,5],[6,9]] and finally
 	reduced to 1+1+5+5+6+9/6 = 4.5. The resulting value is used for sorting.
-	* If value of the key is an object, then a field with the name 'intervals' is looked
+	4 If value of the key is an object, then a field with the name 'intervals' is looked
 	and previous steps are performed.
   * **colors**: Can be a single color name or an array of color names:
   
