@@ -174,8 +174,11 @@ the dataObject is an ordinal or a linear one:
 	Link2: [-5,-3]
 	
 	1. If the mode is "stack" then link1 will have 1.5 times the span of the link2 (|4-1|/|-3--5|). Their order will be the same 
-	as specified in the intervals key of the [**correspoding category in the linear dataObject**][#str-linear-categories].
+	as specified in the intervals key of the [correspoding category in the linear dataObject][#str-linear-categories].
 	1. If the mode is "stackEqual", then all links will have the same span. Their order will be the same as described as above.
+  * exteding the dataObject <a id = "str_ordinal_extend" href = "#str_ordinal_extend">#</a>: Apart from the key names described in this
+  section, you can pretty much add any other property to the dataObject. Some of the [synthetic lexicon-rainbow events][#handleevent-link] allows you
+  to access the entire dataObject so that you can make use of the extended properties.
   
 * linear dataObjects:
 ### PROPERTIES
@@ -717,6 +720,7 @@ lexiconRainbow.linearG.update(2) --> updates the linear scale to match the 3rd d
 [str_ordinal_categories]: #str_ordinal_categories
 [str_ordinal_colors]: #str_ordinal_colors
 [str_ordinal_mode]: #str_ordinal_mode
+[str_ordinal_extend]: #str_ordinal_extend
 
 [toggleGUI]: ../dev/lexiconRainbow.d3v4.dev.js#L112
 [toggleAxis]: ../dev/lexiconRainbow.d3v4.dev.js#L135
