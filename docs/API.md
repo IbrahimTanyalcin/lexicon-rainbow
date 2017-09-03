@@ -194,19 +194,16 @@ the dataObject is an ordinal or a linear one:
   Each key will have links eminating from the correspoding item on the linear scale. The values inside the 'intervals' key will dictate how the links are drawn:
     1. Within the category key, an intervals key is looked.
 	1. If the intervals key is provided, its value should be an array of intervals such as:
-	
 	[1,[3,6],2]
 	1. Single values are treated as arrays. For example [4,[1,3]] is considered same as [[4,4],[1,3]]. (Beware that the **mode** 
 	key can change this behavior)
 	1. If the value of the intervals key is a single value such as 5, then it is considered to be a single element array
 	like [5].
 	1. If there is **NO** intervals key inside the category, then the value refers to a **reference**. The reference is the dataObject's index.
-	
 	For example if `input.linear[3].categories.someItem` has no 'intervals' key and its value is 2, then it is equivalent to:
-	
 	`input.linear[2].categories.someItem.intervals`.
 	
-	Below is a casual example:
+  A casual example:
   ```js
   ],
 	  "linear": [
