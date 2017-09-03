@@ -152,7 +152,25 @@ the dataObject is an ordinal or a linear one:
 	1. If more than 3 colors are provided, then the item color will be the first, the stroke color
 	will be the last and the links will have a color of `[1+n%(l-2)]` where n is the link index as
 	given in the intervals array and l is the length of the colors array.
-  * 
+```js
+{
+	"ordinal": [
+		{
+			"colors": {
+				item1: "#ffffff",
+				item2: "Red",
+				item3: ["Red","Green","Blue"]
+				item4: ["Red","Green","DarkGreen","LightGreen","rgba(0,200,40,0.3)","Blue"]
+			},
+			//some other keys..
+```  
+  * **mode** <a id = "str_ordinal_mode" href = "#str_ordinal_mode">#</a>: Controls how the links are organized on the 
+  ordinal scale end (the top part of the plot). The default configuration is regardless of whether you have many links
+  or not, each link spans the entire length of the item. Using the mode, you can either stack them equally or proportional 
+  to their span. You can specify **one of** two values: "stackEqual" or "stack". Let's assume two links:
+	
+	Link1: [1,4]
+	Link2: [-5,-3]
   
 * linear dataObjects:
 ### PROPERTIES
@@ -690,6 +708,10 @@ lexiconRainbow.linearG.update(2) --> updates the linear scale to match the 3rd d
 
 [str_ordinal]: #ordinal-dataobjects
 [str_linear]: #linear-dataobjects
+[str_ordinal_name]: #str_ordinal_name
+[str_ordinal_categories]: #str_ordinal_categories
+[str_ordinal_colors]: #str_ordinal_colors
+[str_ordinal_mode]: #str_ordinal_mode
 
 [toggleGUI]: ../dev/lexiconRainbow.d3v4.dev.js#L112
 [toggleAxis]: ../dev/lexiconRainbow.d3v4.dev.js#L135
