@@ -126,21 +126,21 @@ the dataObject is an ordinal or a linear one:
 	reduced to 1+1+5+5+6+9/6 = 4.5. The resulting value is used for sorting.
 	1. If value of the key is an object, then a field with the name 'intervals' is looked
 	and previous steps are performed.
-```js
-{
-	"ordinal": [
-		{
-			"categories": {
-				item1: 5,
-				item2: "5",
-				item3: [5,[5,5]]
-				item4: {
-					intervals: [5,[5,5]],
-					someOtherKey: "someOtherValue"
-				}
-			},
-			//some other keys..
-```  
+  ```js
+  {
+	  "ordinal": [
+		  {
+			  "categories": {
+				  item1: 5,
+				  item2: "5",
+				  item3: [5,[5,5]]
+				  item4: {
+					  intervals: [5,[5,5]],
+					  someOtherKey: "someOtherValue"
+				  }
+			  },
+			  //some other keys..
+  ```  
   * **colors** <a id = "str_ordinal_colors" href = "#str_ordinal_colors">#</a>: Can be a single color name or an array of color names:
     1. If a single color name as string is provided ("LightGray" or "#bb0011" etc.), then the item color,
 	ribbon color, and stroke color (when you hover on the item) are set to this value.
@@ -152,25 +152,30 @@ the dataObject is an ordinal or a linear one:
 	1. If more than 3 colors are provided, then the item color will be the first, the stroke color
 	will be the last and the links will have a color of `[1+n%(l-2)]` where n is the link index as
 	given in the intervals array and l is the length of the colors array.
-```js
-{
-	"ordinal": [
-		{
-			"colors": {
-				item1: "#ffffff",
-				item2: "Red",
-				item3: ["Red","Green","Blue"]
-				item4: ["Red","Green","DarkGreen","LightGreen","rgba(0,200,40,0.3)","Blue"]
-			},
-			//some other keys..
-```  
+  ```js
+  {
+	  "ordinal": [
+		  {
+			  "colors": {
+				  item1: "#ffffff",
+				  item2: "Red",
+				  item3: ["Red","Green","Blue"]
+				  item4: ["Red","Green","DarkGreen","LightGreen","rgba(0,200,40,0.3)","Blue"]
+			  },
+			  //some other keys..
+  ```  
   * **mode** <a id = "str_ordinal_mode" href = "#str_ordinal_mode">#</a>: Controls how the links are organized on the 
   ordinal scale end (the top part of the plot). The default configuration is regardless of whether you have many links
   or not, each link spans the entire length of the item. Using the mode, you can either stack them equally or proportional 
   to their span. You can specify **one of** two values: "stackEqual" or "stack". Let's assume two links:
 	
 	Link1: [1,4]
+	
 	Link2: [-5,-3]
+	
+	1. If the mode is "stack" then link1 will have 1.5 times the span of the link2 (|4-1|/|-3--5|). Their order will be the same 
+	as specified in the intervals key of the [**correspoding category in the linear dataObject**][#str-linear-categories].
+	1. If the mode is "stackEqual", then all links will have the same span. Their order will be the same as described as above.
   
 * linear dataObjects:
 ### PROPERTIES
