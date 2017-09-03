@@ -114,7 +114,7 @@ the dataObject is an ordinal or a linear one:
   {
 	"ordinal": [
 		{
-			**"name"**: "A Minimal Set",
+			"name": "A Minimal Set",
 			//some other keys..
   ```
   * **categories** <a id = "str_ordinal_categories" href = "#str_ordinal_categories">#</a>: an object with keys of the items that will be displayed. 
