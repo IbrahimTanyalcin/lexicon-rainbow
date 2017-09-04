@@ -215,6 +215,77 @@ the dataObject is an ordinal or a linear one:
 			  },
 			  //some other keys..
   ```  
+  A reference:
+   ```js
+  ],
+	  "linear": [
+		  .
+		  .
+		  },
+		  {
+			  "categories": {
+				  item1: "2" //Strings are coerced to number, 2 refers to 'input.linear[2].item1.intervals'
+			  },
+			  //some other keys..
+  ```  
+  * **domain** <a id = "str_linear_domain" href = "#str_linear_domain"><b>#</b></a>: Specifies the range of the linear scale such as 
+  [-5,5] or [0,10]. It must be an array of 2 values: a lower bound and an upper bound.
+  ```js
+  ],
+  "linear": [
+	  {
+		  "domain": [0,10],
+		  //some other keys..
+  ```
+  * **axis** <a id = "str_linear_axis" href = "#str_linear_axis"><b>#</b></a>: Controls whether you want to show the axis or not
+  or have it other than the default color 'AntiqueWhite'.
+    1. If an untruthy value is provided then the axis is hidden at the 'end' event of the axis transition.
+	1. If a truthy value is provided than it is faded back with the current color.
+	1. If a truthy value is provided and the value is a color string such as 
+  ```js
+  ],
+  "linear": [
+	  {
+		  "axis": false,
+		  //some other keys..
+  ```
+  * **format** <a id = "str_linear_format" href = "#str_linear_format"><b>#</b></a>: Defines the format of the axis if any. Takes
+  the same arguments as d3.format.
+  ```js
+  ],
+  "linear": [
+	  {
+		  "format": ".3s",
+		  //some other keys..
+  ```
+  * **glyph** <a id = "str_linear_glyph" href = "#str_linear_glyph"><b>#</b></a>: Shows a image on the left hand side of the 
+  GUI that describes what the linear scale is showing. You can either specify the path (relative/absolute) of the image or false
+  to turn it off.
+  ```js
+  ],
+  "linear": [
+	  {
+		  "glyph": "./sample.png",
+		  //some other keys..
+  ```
+  * **mode** <a id = "str_linear_glyph" href = "#str_linear_glyph"><b>#</b></a>: Controls how the links are drawn.
+    1. This key can accept either a string or an array.
+	1. If the value is a string, then it can take one of 2 values: 'stack' or 'intervalize'.
+	1. If the value is 'stack', then the links are taken out of context and placed side by side with respect to the first interval.
+	For example if the 'invervals' value of a category is [[1,3],[7,9],[10,11]] and the mode is 'stack', then the values are transformed to
+	[[0,2],[2,4],[4,5]]. The first interval is placed at origin (0 by default) and the span of the other intervals (absolute value of difference between first
+	and last value) are added to the ending value of the first interval. The order is kept the same. The origin is always 0 meaning that [5,[2,3]]
+	is first transformed to [[0,5],[2,3]] and then to [[0,5],[5,6]]. For this option to work, set the [dispersion][#dispersion-link] to 0.
+	Mode 'stack' is usefull when you have many positive real numbers such as 46.45.. and you do not want to specify them as [0,46.45] and so on. Take a look
+	at this <a href="http://bl.ocks.org/ibrahimtanyalcin/f2067bef081d84b85e3fb077f3272a90"><b>EXAMPLE</b></a>, the votes of Clinton,
+	Trump or the cities are written in number primitives rather than arrays.
+	1. If the value is 'intervalize' then the links are taken out of context and placed at the origin with their span staying the same. For example 
+	[[1,3],[7,9],[10,11]] will be transformed to [[0,2],[0,2],[0,1]]. 
+	1. If the value is an array, then the first value of the array is used to set the mode and the last value is used to set the offset. For example if the value is
+	['intervalize',100] and the 'invervals' is  [[1,3],[7,9],[10,11]]. Then the final intervals will be [[100,102],[100,102],[100,101]]. Offset can be applied to
+	both 'stack' and 'intervalize' and it can be negative or positive.
+  * **gMode** 
+  
 ### PROPERTIES
 
 #### version [:link:](#version-link)[🔍][version]
@@ -757,6 +828,10 @@ lexiconRainbow.linearG.update(2) --> updates the linear scale to match the 3rd d
 [str_ordinal_extend]: #str_ordinal_extend
 [str_linear_name]: #str_linear_name
 [str_linear_categories]: #str_linear_categories
+[str_linear_domain]: #str_linear_domain
+[str_linear_axis]: #str_linear_axis
+[str_linear_format]: #str_linear_format
+[str_linear_glyph]: #str_linear_glyph
 
 [toggleGUI]: ../dev/lexiconRainbow.d3v4.dev.js#L112
 [toggleAxis]: ../dev/lexiconRainbow.d3v4.dev.js#L135
