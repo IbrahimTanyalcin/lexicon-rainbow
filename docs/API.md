@@ -190,9 +190,9 @@ the dataObject is an ordinal or a linear one:
 		  "name": "A Linear dataObject",
 		  //some other keys..
   ```
-  * **categories** <a id = "str_linear_categories" href = "#str_linear_categories"><b>#</b></a>: an object with keys of the items that will have their links displayed.
+  * **categories** <a id = "str_linear_categories" href = "#str_linear_categories"><b>#</b></a>: an object with keys of the <a href="#what_is_item"><b>items</b></a> that will have their links displayed.
   Each key will have links eminating from the correspoding item on the linear scale. The values inside the 'intervals' key will dictate how the links are drawn:
-    1. Within the category key, an intervals key is looked.
+    1. Within the category key (item1 in the below example), an intervals key is looked.
 	1. If the intervals key is provided, its value should be an array of intervals such as:
 	[1,[3,6],2]
 	1. Single values are treated as arrays. For example [4,[1,3]] is considered same as [[4,4],[1,3]]. (Beware that the **mode** 
@@ -215,7 +215,7 @@ the dataObject is an ordinal or a linear one:
 			  },
 			  //some other keys..
   ```  
-  A reference:
+  A reference:<a href="#what_is_item" id="what_is_item"></a>
    ```js
   ],
 	  "linear": [
@@ -269,14 +269,16 @@ the dataObject is an ordinal or a linear one:
 		  "glyph": "./sample.png",
 		  //some other keys..
   ```
-  * **mode** <a id = "str_linear_glyph" href = "#str_linear_glyph"><b>#</b></a>: Controls how the links are drawn.
+  * **mode** <a id = "str_linear_mode" href = "#str_linear_mode"><b>#</b></a>: Controls how the links are drawn [WITHIN THE SAME ITEM](#what_is_item).
+  2 values can be specified: 'stack' or 'intervalize'. If a truthy value is provided that does not equal to both, then it is considered to be same as 
+  'stack'.
     1. This key can accept either a string or an array.
 	1. If the value is a string, then it can take one of 2 values: 'stack' or 'intervalize'.
 	1. If the value is 'stack', then the links are taken out of context and placed side by side with respect to the first interval.
 	For example if the 'invervals' value of a category is [[1,3],[7,9],[10,11]] and the mode is 'stack', then the values are transformed to
 	[[0,2],[2,4],[4,5]]. The first interval is placed at origin (0 by default) and the span of the other intervals (absolute value of difference between first
 	and last value) are added to the ending value of the first interval. The order is kept the same. The origin is always 0 meaning that [5,[2,3]]
-	is first transformed to [[0,5],[2,3]] and then to [[0,5],[5,6]]. For this option to work, set the [dispersion][#dispersion-link] to 0.
+	is first transformed to [[0,5],[2,3]] and then to [[0,5],[5,6]]. For this option to work, set the [dispersion](#dispersion-link) to 0.
 	Mode 'stack' is usefull when you have many positive real numbers such as 46.45.. and you do not want to specify them as [0,46.45] and so on. Take a look
 	at this <a href="http://bl.ocks.org/ibrahimtanyalcin/f2067bef081d84b85e3fb077f3272a90"><b>EXAMPLE</b></a>, the votes of Clinton,
 	Trump or the cities are written in number primitives rather than arrays.
@@ -285,7 +287,16 @@ the dataObject is an ordinal or a linear one:
 	1. If the value is an array, then the first value of the array is used to set the mode and the last value is used to set the offset. For example if the value is
 	['intervalize',100] and the 'invervals' is  [[1,3],[7,9],[10,11]]. Then the final intervals will be [[100,102],[100,102],[100,101]]. Offset can be applied to
 	both 'stack' and 'intervalize' and it can be negative or positive.
-  * **gMode** 
+  ```js
+  ],
+  "linear": [
+	  {
+		  "mode": ["stack",20],
+		  //some other keys..
+  ```	
+  * **gMode** <a id = "str_linear_gmode" href = "#str_linear_gmode"><b>#</b></a>: Stands for **global mode**. Similar to [mode](#str_linear_mode) but rather than
+  controlling how links are drawn with respect to each other **within** the same [item](#what_is_item), it controls how links are drawn with respect to items. 2 values can be 
+  provided: 'stack' and 'justify'. If a truthy value is provided that does not equal to both, then it is considered to be same as 'stack'.
   
 ### PROPERTIES
 
@@ -833,6 +844,10 @@ lexiconRainbow.linearG.update(2) --> updates the linear scale to match the 3rd d
 [str_linear_axis]: #str_linear_axis
 [str_linear_format]: #str_linear_format
 [str_linear_glyph]: #str_linear_glyph
+[str_linear_mode]: #str_linear_mode
+[str_linear_gmode]: #str_linear_gmode
+
+[what_is_item]:#what_is_item
 
 [toggleGUI]: ../dev/lexiconRainbow.d3v4.dev.js#L112
 [toggleAxis]: ../dev/lexiconRainbow.d3v4.dev.js#L135
