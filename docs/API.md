@@ -215,7 +215,7 @@ the dataObject is an ordinal or a linear one:
 			  },
 			  //some other keys..
   ```  
-  A reference:<a href="#what_is_item" id="what_is_item"></a>
+  A reference:<a href="#what_is_item" id="what_is_item"></a><a href="#what_is_reference" id="what_is_reference"></a>
    ```js
   ],
 	  "linear": [
@@ -308,7 +308,72 @@ the dataObject is an ordinal or a linear one:
 	[-5,45]. Then each item's intervals are displayed in its 'offsetted domain'. For instance first item will operate between -5,5, second item
 	will operate between 5,15 and so on. So an interval of [0,3] in item1's 'intervals' key will stay unchanged, while if it would belong to item2,
 	it would be transformed to [10,13]. You can combine this with the **'mode'** key to create different layouts.
-  * **sort** 
+  * **sort** <a id = "str_linear_sort" href = "#str_linear_sort"><b>#</b></a>: Sorts the intervals based on a criteria. **ALWAYS** create a reference
+  of your dataObject before you sort, otherwise it will not behave as expected. From [this](http://bl.ocks.org/ibrahimtanyalcin/f2067bef081d84b85e3fb077f3272a90) example:
+  ```js
+    .
+	.
+	},
+	{
+		"domain": [
+			0,
+			65853516
+		],
+		"format":".3s",
+		"name": "C-states",
+		"categories": {
+			"Clinton": {intervals:[
+					1161167,1338870,4504975,653669,357735,2268839,1367716,
+				539260,348526,2189316,2394164,2926441,1382536,
+				729547,116454,380494,8753788,897572,235603,
+				282830,1877963,266891,189765,3090729,1033126,
+				427005,628854,780154,1677928,1995196,485131,
+				1071068,177709,284494,2148278,385234,4556124,
+				93758,420375,1002106,252525,855373,117458,
+				870695,3877868,310676,178573,1981473,1742718,
+				188794,55973
+			],names:["Arizona","Colorado","Florida","Lowa","Maine","Michigan",
+			"Minnesota","Nevada","New Hampshire","North Carolina","Ohio","Pennsylvania",
+			"Wisconsin","Alabama","Alaska","Arkansas","California","Connecticut",
+			"Delaware","District of Columbia","Georgia","Hawaii","Idaho","Illinois",
+			"Indiana","Kansas","Kentucky","Lousiana","Maryland","Massachusetts",
+			"Mississippi","Misouri","Montana","Nebraska","New Jersey","New Mexico",
+			"New York","North Dakota","Oklahoma","Oregon","Rhode Island","South Carolina",
+			"South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington",
+			"West Virginia","Wyoming"]}
+		},
+		"glyph": "./usFlag.png",
+		"mode":"stack",
+		"Info": "Clinton - state votes stacked"
+	},
+	.
+	.
+  ```
+  the above linear dataObject has the actual data and has an index of 2 (2nd dataObject inside the 'linear' key). 
+  If you now want to sort the intervals based on the names, create a reference like below:
+  ```js
+  .
+  .
+  },
+  {
+	"domain": [
+		0,
+		65853516
+	],
+	"axis":"DarkSlateGray",
+	"format":".3s",
+	"name": "C-states-sort (s>)",
+	"categories": {
+		"Clinton": 2
+	},
+	"sort":"s>",
+	"glyph": "./usFlag.png",
+	"mode":"stack",
+	"Info": "Clinton - state votes stacked and sorted by increasing alphabetical order"
+  },
+  .
+  .
+  ```
   
 ### PROPERTIES
 
@@ -860,6 +925,7 @@ lexiconRainbow.linearG.update(2) --> updates the linear scale to match the 3rd d
 [str_linear_gmode]: #str_linear_gmode
 
 [what_is_item]:#what_is_item
+[what_is_reference]:#what_is_reference
 
 [toggleGUI]: ../dev/lexiconRainbow.d3v4.dev.js#L112
 [toggleAxis]: ../dev/lexiconRainbow.d3v4.dev.js#L135
