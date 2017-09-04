@@ -224,7 +224,8 @@ the dataObject is an ordinal or a linear one:
 		  },
 		  {
 			  "categories": {
-				  item1: "2" //Strings are coerced to number, 2 refers to 'input.linear[2].item1.intervals'
+				  item1: "2" //Strings are coerced to number,
+							 //2 refers to 'input.linear[2].item1.intervals'
 			  },
 			  //some other keys..
   ```  
