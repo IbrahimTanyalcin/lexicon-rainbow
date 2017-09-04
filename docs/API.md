@@ -270,7 +270,7 @@ the dataObject is an ordinal or a linear one:
 		  //some other keys..
   ```
   * **mode** <a id = "str_linear_mode" href = "#str_linear_mode"><b>#</b></a>: Controls how the links are drawn [WITHIN THE SAME ITEM](#what_is_item).
-  2 values can be specified: 'stack' or 'intervalize'. If a truthy value is provided that does not equal to both, then it is considered to be same as 
+  2 values can be specified: 'stack' or 'intervalize'. If a truthy value is provided that does not equal to both, then it is considered to be the same as 
   'stack'.
     1. This key can accept either a string or an array.
 	1. If the value is a string, then it can take one of 2 values: 'stack' or 'intervalize'.
@@ -296,7 +296,7 @@ the dataObject is an ordinal or a linear one:
   ```	
   * **gMode** <a id = "str_linear_gmode" href = "#str_linear_gmode"><b>#</b></a>: Stands for **global mode**. Similar to [mode](#str_linear_mode) but rather than
   controlling how links are drawn with respect to each other **within** the same [item](#what_is_item), it controls how links are drawn with respect to items. 2 values can be 
-  provided: 'stack' and 'justify'. If a truthy value is provided that does not equal to both, then it is considered to be same as 'stack'.
+  provided: 'stack' and 'justify'. If a truthy value is provided that does not equal to both, then it is considered to be the same as 'stack'.
   
 ### PROPERTIES
 
