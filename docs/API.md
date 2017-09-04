@@ -43,7 +43,7 @@ The main input object is an object with 2 keys:
 * The ordinal key hosts objects that control what is shown on the top of the plot, namely the ['items'](./README.md#anatomy).
 * The linear key host objects that control the links/ribbons, how they are drawn and stacked and also the axis.
 
-Each key references an array of **dataObjects**. If a dataObject is under the ordinal key,
+Each key references an array of **dataObjects** <a id = "what_is_dataobject" href = "#what_is_dataobject"></a>. If a dataObject is under the ordinal key,
 then it is an **ordinal dataObject**. Likewise, if a dataObject is under the linear key,
 then it is a **linear dataObject**. This for instance is an ordinal data object from the previous example:
 ```js
@@ -309,7 +309,7 @@ the dataObject is an ordinal or a linear one:
 	will operate between 5,15 and so on. So an interval of [0,3] in item1's 'intervals' key will stay unchanged, while if it would belong to item2,
 	it would be transformed to [10,13]. You can combine this with the **'mode'** key to create different layouts.
   * **sort** <a id = "str_linear_sort" href = "#str_linear_sort"><b>#</b></a>: Sorts the intervals based on a criteria. **ALWAYS** create a reference
-  of your dataObject before you sort, otherwise it will not behave as expected. From [this](http://bl.ocks.org/ibrahimtanyalcin/f2067bef081d84b85e3fb077f3272a90) example:
+  of your [dataObject](#what_is_dataobject) before you sort, otherwise it will not behave as expected. From [this](http://bl.ocks.org/ibrahimtanyalcin/f2067bef081d84b85e3fb077f3272a90) example:
   ```js
     .
 	.
@@ -349,7 +349,7 @@ the dataObject is an ordinal or a linear one:
 	.
 	.
   ```
-  the above linear dataObject has the actual data and has an index of 2 (2nd dataObject inside the 'linear' key). 
+  the above linear [dataObject](#what_is_dataobject) has the actual data and has an index of 2 (2nd dataObject inside the 'linear' key). 
   If you now want to sort the intervals based on the names, create a reference like below:
   ```js
   .
@@ -374,7 +374,14 @@ the dataObject is an ordinal or a linear one:
   .
   .
   ```
-  
+  The values for the 'sort' key can be one of the following:
+    1. ">": sort ascending based on the last value of the interval ([1,5] > [3,4])
+	1. "<": sort descending based on the last value of the interval ([1,5] < [3,4])
+	1. "|>|": sort ascending based on the span of the interval ([-1,5] > [1,5])
+	1. "|<|": sort descending based on the span of the interval ([-1,5] < [1,5])
+	1. "s>": sort ascending based on the 'name' of the interval if any, otherwise do not change the order.
+	1. "s<": sort descending based on the 'name' of the interval if any, otherwise do not change the order.
+  * **partition**: 
 ### PROPERTIES
 
 #### version [:link:](#version-link)[🔍][version]
