@@ -10,6 +10,11 @@ Refer to the [API][QUICSTART] section of the [README][README] to have an idea of
 * Look out for the :+1: signs, they usually point out to something that might worth a try.
 * Look out for the :-1: signs, they usually point out to something that might **NOT** be good to try.
 
+##NAVIGATION
+* [INPUT DATA STRUCTURE](#input-data-structure) - understand what kind of input to provide
+* [PROPERTIES](#properties) - *version*, *isAppended*, feature detection
+* [METHODS](#methods) - available methods to call before rendering
+
 ### INPUT DATA STRUCTURE
 As shown in [**this example**][MINIMAL], a minimal data structure looks like below:
 ```js
@@ -381,7 +386,10 @@ the dataObject is an ordinal or a linear one:
 	1. "|<|": sort descending based on the span of the interval ([-1,5] < [1,5])
 	1. "s>": sort ascending based on the 'name' of the interval if any, otherwise do not change the order.
 	1. "s<": sort descending based on the 'name' of the interval if any, otherwise do not change the order.
-  * **partition**: 
+  * **partition**: Creates a rectangular shading behind each item like a table as in [this](http://bl.ocks.org/IbrahimTanyalcin/raw/35d404d513420d84570eb0a418c87856/)
+  example. It can take 2 values: 'color' or `true`. Any truthy value that does not equal to 'color' is considered to be
+  `true`. A `true` value specifies an alternating banded pattern of light gray and dark gray. If the value is 'color', then the 
+  shaded area inherits its color from the [color](#str_ordinal_colors) of the item.
 ### PROPERTIES
 
 #### version [:link:](#version-link)[🔍][version]
