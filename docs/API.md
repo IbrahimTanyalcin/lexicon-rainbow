@@ -269,7 +269,7 @@ the dataObject is an ordinal or a linear one:
 		  "glyph": "./sample.png",
 		  //some other keys..
   ```
-  * **mode** <a id = "str_linear_mode" href = "#str_linear_mode"><b>#</b></a>: Controls how the links are drawn [WITHIN THE SAME ITEM](#what_is_item).
+  * **mode** <a id = "str_linear_mode" href = "#str_linear_mode"><b>#</b></a>: Controls how the links are drawn within the same item ([item?](#what_is_item)).
   2 values can be specified: 'stack' or 'intervalize'. If a truthy value is provided that does not equal to both, then it is considered to be the same as 
   'stack'.
     1. This key can accept either a string or an array.
@@ -297,6 +297,18 @@ the dataObject is an ordinal or a linear one:
   * **gMode** <a id = "str_linear_gmode" href = "#str_linear_gmode"><b>#</b></a>: Stands for **global mode**. Similar to [mode](#str_linear_mode) but rather than
   controlling how links are drawn with respect to each other **within** the same [item](#what_is_item), it controls how links are drawn with respect to items. 2 values can be 
   provided: 'stack' and 'justify'. If a truthy value is provided that does not equal to both, then it is considered to be the same as 'stack'.
+    1. If the value is 'stack', then all intervals of the current [item](#what_is_item) are offset by the previous item. For example take two intervals, [[3,5],[1,2]]
+	from item 1 and [[0,1],7] from item 2. If the gMode is 'stack' then the intervals will be converted to [[3,5],[1,2]] (first item, no previous item, so no change) and 
+	[[5,6],12] (all increased by 5). You can combine this with the **'mode'** key to create different layouts.
+	1. If the value is 'justify', then your linear [domain](#str_linear_domain) is remapped using:
+	```js
+		domain.map(function(d,i,a){return i === 0 ? d : a[i-1]+l*abs(d-a[i-1])})
+	```
+	where l is item count and abs is the absolute value. So if you have 5 items to show and your domain is [-5,5] then remapped domain will be
+	[-5,45]. Then each item's intervals are displayed in its 'offsetted domain'. For instance first item will operate between -5,5, second item
+	will operate between 5,15 and so on. So an interval of [0,3] in item1's 'intervals' key will stay unchanged, while if it would belong to item2,
+	it would be transformed to [10,13]. You can combine this with the **'mode'** key to create different layouts.
+  * **sort** 
   
 ### PROPERTIES
 
