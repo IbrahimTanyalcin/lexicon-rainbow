@@ -125,7 +125,7 @@ the dataObject is an ordinal or a linear one:
   * **categories** <a id = "str_ordinal_categories" href = "#str_ordinal_categories"><b>#</b></a>: an object with keys of the items that will be displayed.
   Each key will be shown on the ordinal scale. The values of these keys are used to **sort** the order the items that will be plotted:
     1. All values are coerced from string to number if possible.
-	1. If it is a single value, than this value is used for sorted.
+	1. If it is a single value, than this value is used for sorting.
 	1. If it is an array, then this array is reduced and THEN sorted. For example, 
 	an array with [1,5,[6,9]] is first transformed to [[1,1],[5,5],[6,9]] and finally
 	reduced to 1+1+5+5+6+9/6 = 4.5. The resulting value is used for sorting.
@@ -179,9 +179,9 @@ the dataObject is an ordinal or a linear one:
 	Link2: [-5,-3]
 	
 	1. If the mode is "stack" then link1 will have 1.5 times the span of the link2 (|4-1|/|-3--5|). Their order will be the same 
-	as specified in the intervals key of the [correspoding category in the linear dataObject][#str-linear-categories].
+	as specified in the intervals key of the [correspoding category in the linear dataObject](#str-linear-categories).
 	1. If the mode is "stackEqual", then all links will have the same span. Their order will be the same as described as above.
-  * exteding the dataObject <a id = "str_ordinal_extend" href = "#str_ordinal_extend"><b>#</b></a>: Apart from the key names described in this
+  * **exteding the dataObject** <a id = "str_ordinal_extend" href = "#str_ordinal_extend"><b>#</b></a>: Apart from the key names described in this
   section, you can pretty much add any other property to the dataObject. Some of the [synthetic lexicon-rainbow events](#handleevent-link) allows you
   to access the entire dataObject so that you can make use of the extended properties. For example [here](#str_ordinal_example) the dataObject is
   entended by adding "Info" field.
@@ -196,7 +196,7 @@ the dataObject is an ordinal or a linear one:
 		  //some other keys..
   ```
   * **categories** <a id = "str_linear_categories" href = "#str_linear_categories"><b>#</b></a>: an object with keys of the <a href="#what_is_item"><b>items</b></a> that will have their links displayed.
-  Each key will have links eminating from the correspoding item on the linear scale. The values inside the 'intervals' key will dictate how the links are drawn:
+  Each key will have links eminating from the correspoding item towards the linear scale. The values inside the 'intervals' key will dictate how the links are drawn:
     1. Within the category key (item1 in the below example), an intervals key is looked.
 	1. If the intervals key is provided, its value should be an array of intervals such as:
 	[1,[3,6],2]
@@ -247,7 +247,8 @@ the dataObject is an ordinal or a linear one:
   or have it other than the default color 'AntiqueWhite'.
     1. If an untruthy value is provided then the axis is hidden at the 'end' event of the axis transition.
 	1. If a truthy value is provided than it is faded back with the current color.
-	1. If a truthy value is provided and the value is a color string such as 
+	1. If a truthy value is provided and the value is a color string such as "Green" or "#ff00ff", then the axis is faded back 
+	if hidden previously and the color is transitioned to the specified value.
   ```js
   ],
   "linear": [
@@ -300,16 +301,16 @@ the dataObject is an ordinal or a linear one:
 		  //some other keys..
   ```	
   * **gMode** <a id = "str_linear_gmode" href = "#str_linear_gmode"><b>#</b></a>: Stands for **global mode**. Similar to [mode](#str_linear_mode) but rather than
-  controlling how links are drawn with respect to each other **within** the same [item](#what_is_item), it controls how links are drawn with respect to items. 2 values can be 
+  controlling how links are drawn with respect to each other **within** the same [item](#what_is_item), it controls how links are drawn **between** items. 2 values can be 
   provided: 'stack' and 'justify'. If a truthy value is provided that does not equal to both, then it is considered to be the same as 'stack'.
     1. If the value is 'stack', then all intervals of the current [item](#what_is_item) are offset by the previous item. For example take two intervals, [[3,5],[1,2]]
-	from item 1 and [[0,1],7] from item 2. If the gMode is 'stack' then the intervals will be converted to [[3,5],[1,2]] (first item, no previous item, so no change) and 
+	from item 1 and [[0,1],7] from item 2. If the gMode is 'stack' then the intervals will be converted to [[3,5],[1,2]] (first item --> there is no previous item --> so no change) and 
 	[[5,6],12] (all increased by 5). You can combine this with the **'mode'** key to create different layouts.
 	1. If the value is 'justify', then your linear [domain](#str_linear_domain) is remapped using:
 	```js
 		domain.map(function(d,i,a){return i === 0 ? d : a[i-1]+l*abs(d-a[i-1])})
 	```
-	where l is item count and abs is the absolute value. So if you have 5 items to show and your domain is [-5,5] then remapped domain will be
+	where `l` is item count and `abs` is the absolute value. So if you have 5 items to show and your domain is [-5,5] then remapped domain will be
 	[-5,45]. Then each item's intervals are displayed in its 'offsetted domain'. For instance first item will operate between -5,5, second item
 	will operate between 5,15 and so on. So an interval of [0,3] in item1's 'intervals' key will stay unchanged, while if it would belong to item2,
 	it would be transformed to [10,13]. You can combine this with the **'mode'** key to create different layouts.
@@ -386,7 +387,8 @@ the dataObject is an ordinal or a linear one:
 	1. "|<|": sort descending based on the span of the interval ([-1,5] < [1,5])
 	1. "s>": sort ascending based on the 'name' of the interval if any, otherwise do not change the order.
 	1. "s<": sort descending based on the 'name' of the interval if any, otherwise do not change the order.
-  * **partition**: Creates a rectangular shading behind each item like a table as in [this](http://bl.ocks.org/IbrahimTanyalcin/35d404d513420d84570eb0a418c87856/)
+  * **partition**: This is option  is designed to work in conjunction with `"gMode":"justify"`. 
+  Creates a rectangular shading behind each item like a table as in [this](http://bl.ocks.org/IbrahimTanyalcin/35d404d513420d84570eb0a418c87856/)
   example. It can take 2 values: 'color' or `true`. Any truthy value that does not equal to 'color' is considered to be
   `true`. A `true` value specifies an alternating banded pattern of light gray and dark gray. If the value is 'color', then the 
   shaded area inherits its color from the [color](#str_ordinal_colors) of the item.
