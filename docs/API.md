@@ -206,7 +206,7 @@ the dataObject is an ordinal or a linear one:
 	like [5].
 	1. If there is **NO** intervals key inside the category, then the value refers to a **reference**. The reference is the dataObject's index.
 	For example if `input.linear[3].categories.someItem` has no 'intervals' key and its value is 2, then it is equivalent to:
-	`input.linear[2].categories.someItem.intervals`.
+	`input.linear[2].categories.someItem`.
 	
   A casual example:
   ```js
@@ -230,7 +230,7 @@ the dataObject is an ordinal or a linear one:
 		  {
 			  "categories": {
 				  item1: "2" //Strings are coerced to number,
-					     //2 refers to 'input.linear[2].item1.intervals'
+					     //2 refers to 'input.linear[2].item1'
 			  },
 			  //some other keys..
   ```  
@@ -355,7 +355,7 @@ the dataObject is an ordinal or a linear one:
 	.
 	.
   ```
-  the above linear [dataObject](#what_is_dataobject) has the actual data and has an index of 2 (2nd dataObject inside the 'linear' key). 
+  the above linear [dataObject](#what_is_dataobject) has the actual data and let's say it has an index of 2 (2nd dataObject inside the 'linear' key). 
   If you now want to sort the intervals based on the names, create a reference like below:
   ```js
   .
@@ -380,6 +380,7 @@ the dataObject is an ordinal or a linear one:
   .
   .
   ```
+  Now `"Clinton":2` refers to `input.linear[2].categories.Clinton`.
   The values for the 'sort' key can be one of the following:
     1. ">": sort ascending based on the last value of the interval ([1,5] > [3,4])
 	1. "<": sort descending based on the last value of the interval ([1,5] < [3,4])
