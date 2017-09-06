@@ -11,7 +11,9 @@
     "interactive",
 	"mapping",
 	"d3",
-	"javascript"
+	"javascript",
+	"biojs",
+	"bionode"
   ],
   "main": "dev/lexiconRainbow.d3v4.dev.js",
   "jsnext:main": "dev/lexiconRainbow.d3v4.dev.js",
@@ -29,7 +31,7 @@
 	  "url": "ibrahimtanyalcin.com",
 	  "email": "tanyalcin.ibrahim@gmail.com"
   },
-  "license": "Adapted BSD 3-Clause License",
+  "license": "Adapted BSD 3-Clause",
   "devDependencies": {
     "eslint": "^4.3.0",
     "eslint-config-standard": "^10.2.1",
