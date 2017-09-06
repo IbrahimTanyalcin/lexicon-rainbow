@@ -51,7 +51,7 @@
 <br>
 
 ## NPM
-If you are reading this document from NPM, relative links might not work, instead refer to the
+If you are reading this document from NPM, relative links and images might not work, instead refer to the
 <a href="https://github.com/IbrahimTanyalcin/lexicon-rainbow" title="Github Readme"><b>GITHUB README</b></a>.
 
 ## Guidelines
