@@ -2,7 +2,9 @@
 
 [![Build Status](https://travis-ci.org/IbrahimTanyalcin/lexicon-rainbow.svg?branch=master)](https://travis-ci.org/IbrahimTanyalcin/lexicon-rainbow) 
 [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/lexicon-rainbow)
+[![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/lexicon-rainbow)
 <a href="https://www.patreon.com/ibrahimTanyalcin" title="Patreon donate"><img src="https://img.shields.io/badge/patreon-donate-yellow.svg" alt="Patreon donate" /></a>
+
 
 <br>
 
