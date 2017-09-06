@@ -9,6 +9,7 @@
 <hr>
 
 * [How do I use it ?](#how-do-i-use-it-)
+* [NPM](#npm)
 * [API](#api)
 * [UMD](#umd)
 * [Examples](#minimal-example)
@@ -48,6 +49,10 @@
 >[<img src="../examples/USvotes_programmatic/USvotes_programmatic.jpg">][PROGRAMMATIC] 
 
 <br>
+
+## NPM
+If you are reading this document from NPM, relative links might not work, instead refer to the
+<a href="https://github.com/IbrahimTanyalcin/lexicon-rainbow" title="Github Readme"><b>GITHUB README</b></a>.
 
 ## Guidelines
 
