@@ -122,12 +122,20 @@ root
 |   |   |-- loadData.js <sub>(Load data via script tag)</sub> <a href="../examples/USvotes/loadData.js">🔍</a>
 |   |   |-- usFlag.png <sub>(Glyph)</sub> <a href="../examples/USvotes/usFlag.png">🔍</a>
 |   |   `-- USvotes.jpg <sub>(Output of the example)</sub> <a href="../examples/USvotes/USvotes.jpg">🔍</a>
-|   `-- USvotes_programmatic
-|       |-- index_v3.html <sub>(d3 v3 example)</sub> <a href="../examples/USvotes_programmatic/index_v3.html">🔍</a>
-|       |-- index_v4.html <sub>(d3 v4 example)</sub> <a href="../examples/USvotes_programmatic/index_v4.html">🔍</a>
-|       |-- loadData.js <sub>(Load data via script tag)</sub> <a href="../examples/USvotes_programmatic/loadData.js">🔍</a>
-|       |-- usFlag.png <sub>(Glyph)</sub> <a href="../examples/USvotes_programmatic/usFlag.png">🔍</a>
-|       `-- USvotes_programmatic.jpg <sub>(Output of the example)</sub> <a href="../examples/USvotes_programmatic/USvotes_programmatic.jpg">🔍</a>
+|   |-- USvotes_programmatic
+|   |   |-- index_v3.html <sub>(d3 v3 example)</sub> <a href="../examples/USvotes_programmatic/index_v3.html">🔍</a>
+|   |   |-- index_v4.html <sub>(d3 v4 example)</sub> <a href="../examples/USvotes_programmatic/index_v4.html">🔍</a>
+|   |   |-- loadData.js <sub>(Load data via script tag)</sub> <a href="../examples/USvotes_programmatic/loadData.js">🔍</a>
+|   |   |-- usFlag.png <sub>(Glyph)</sub> <a href="../examples/USvotes_programmatic/usFlag.png">🔍</a>
+|   |    `-- USvotes_programmatic.jpg <sub>(Output of the example)</sub> <a href="../examples/USvotes_programmatic/USvotes_programmatic.jpg">🔍</a>
+|   `-- Protein
+|       |-- index_v3.html <sub>(d3 v3 example)</sub> <a href="../examples/Protein/index_v3.html">🔍</a>
+|       |-- index_v4.html <sub>(d3 v4 example)</sub> <a href="../examples/Protein/index_v4.html">🔍</a>
+|       |-- protein1.jpeg <sub>(Glyph)</sub> <a href="../examples/Protein/protein1.jpeg">🔍</a>
+|       |-- protein2.jpg <sub>(Glyph)</sub> <a href="../examples/Protein/protein2.jpg">🔍</a>
+|       |-- protein3.png <sub>(Glyph)</sub> <a href="../examples/Protein/protein3.png">🔍</a>
+|       `-- rainbow.gif <sub>(Output of the example)</sub> <a href="../examples/Protein/rainbow.gif">🔍</a>
+|-- snippets <sub>(Code samples for BioJS)</sub>
 |-- img
 |   `-- anatomy.png <sub>(Parts of the visualization)</sub> <a href="../img/anatomy.png">🔍</a>
 |-- tests
