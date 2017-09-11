@@ -1,6 +1,6 @@
 {
   "name": "lexicon-rainbow",
-  "version": "0.0.8",
+  "version": "0.0.10",
   "description": "Lexicon-Rainbow Visualization Module",
     "keywords": [
     "visualization",
@@ -20,7 +20,13 @@
   "scripts": {
 	"prepublishOnly": "node tests/nodejsTest.js",
     "test": "node tests/nodejsTest.js",
-	"postinstall": "node tests/nodejsTest.js"
+	"postinstall": "node tests/nodejsTest.js",
+	"custom-start": "./node_modules/.bin/eslint ./dev/lexiconRainbow.d3v4.dev.js && npm run custom-next-1",
+	"custom-next-1": "./node_modules/.bin/eslint ./dev/lexiconRainbow.d3v3.dev.js && npm run custom-next-2",
+	"custom-next-2":"./node_modules/.bin/js-beautify ./dev/lexiconRainbow.d3v4.dev.js --config ./jsbeautifyrc.json -o ./pretty/lexiconRainbow.d3v4.pretty.js && npm run custom-next-3",
+	"custom-next-3":"./node_modules/.bin/js-beautify ./dev/lexiconRainbow.d3v3.dev.js --config ./jsbeautifyrc.json -o ./pretty/lexiconRainbow.d3v3.pretty.js && npm run custom-next-4",
+	"custom-next-4":"./node_modules/.bin/uglifyjs ./dev/lexiconRainbow.d3v4.dev.js -c -m -o ./min/lexiconRainbow.d3v4.min.js && npm run custom-next-5", 
+	"custom-next-5":"./node_modules/.bin/uglifyjs ./dev/lexiconRainbow.d3v3.dev.js -c -m -o ./min/lexiconRainbow.d3v3.min.js && echo ':files generated:'" 
   },
   "repository": {
 	  "type": "git",
