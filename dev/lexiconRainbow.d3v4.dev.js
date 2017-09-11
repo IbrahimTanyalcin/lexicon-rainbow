@@ -79,6 +79,7 @@
 		var currentHovered = null;
 		var glyphBlurStd = 0.01;
 		var enableOnPick = true;
+		var shapeRendering = "auto";
 		var canvas = undefined;
 		////////////////////////////////////////////////////////////////////
 		//////////////////INNER VARIABLE ACCESS FROM PROTO//////////////////
@@ -91,7 +92,10 @@
 						"attrY":function(g,v){if(g){return attrY}else{return attrY = v;}},
 						"attrW":function(g,v){if(g){return attrW}else{return attrW = v;}},
 						"attrH":function(g,v){if(g){return attrH}else{return attrH = v;}},
-						"canvas":function(g,v){if(g){return canvas}else{return canvas = v;}}
+						"canvas":function(g,v){if(g){return canvas}else{return canvas = v;}},
+						"shapeRendering":function(g,v){if(g){return shapeRendering}else{return shapeRendering = v;}},
+						"input":function(g,v){if(g){return _input_}else{return _input_ = v;}},
+						"handleEvent":function(g,v){if(g){return handleEvent}else{return handleEvent = v;}}
 						};
 			for (var i in list) {
 				getNSet(obj,i);
@@ -1022,7 +1026,8 @@
 				.style("left",ieScale ? "0px" : left)
 				.style("overflow","hidden")
 				.style("line-height","normal")
-				.style("margin",ieScale ? "0px" : styleMargin);
+				.style("margin",ieScale ? "0px" : styleMargin)
+				.style("shape-rendering",shapeRendering);
 			d3.select("#"+ID).append("svg:rect").attr("id",function(){return ID+"_rect";}).attr("x",function(){return (attrX+attrW)/2;}).attr("y",function(){return (attrY+attrH)/2;}).attr("width",0).attr("height",0).attr("rx",15).attr("ry",15).attr("fill-opacity",bOpacity).attr("fill",bColor);
 			warp(ID+"_rect",attrW,attrH);
 			//viewport = d3.select("#"+ID).append("g"); items in back
@@ -1069,7 +1074,7 @@
 		var AAColors = {R:"#8694fa",K:"#baaafc",E:"#f93333",D:"#fb7979",I:"#ffff4f",L:"#ffff79",V:"#ffffab",A:"#ffffc9",C:"#e3f9ad",H:"#d5f6fb",M:"#c3ed27",N:"#ee72a7",Q:"#f9c3e3",F:"#c7c88a",Y:"#7dafb9",W:"#85b0cd",S:"#ca9ec8",T:"#f0e4ef",G:"#c0c0c0",P:"#f1f2f3"};
 		
 		this.render = function (scale) {
-			!this.loaded ? (this.loaded = true,handleEvent({linear:_input_.linear[linearID],ordinal:_input_.ordinal[ordinalID]},"onload",null)) : void(0);
+			!this.loaded ? (this.loaded = true,handleEvent({linear:_input_.linear[linearID],ordinal:_input_.ordinal[ordinalID]},"onload",null,true)) : void(0);
 			var ordinalData = sortObject(_input_.ordinal[ordinalID].categories);
 			var temporary = documentById(ID+"_temporary");
 			temporary ? temporary.parentNode.removeChild(temporary) : void(0);
@@ -1146,41 +1151,23 @@
 			//update
 				//g
 			.merge(selection)
+			.on("touchstart",function(d,i){
+				this.touchCount = this.touchCount === undefined ? 0 : ++this.touchCount%2;
+				if(!this.touchCount) {
+					_this_.onpickStart(enableOnPick,d3.event,this,attrW,attrH,width,scaleInTransition,function(){highlightSolidCurve(container,i,d,undefined).__lexiconExtend__()},handleEvent,_input_,linearID,d,i)
+				}
+			})
+			.on("touchend",function(d,i){
+				if(this.touchCount){
+					_this_.onpickEnd(enableOnPick,d3.event,this,attrW,attrH,width,scaleInTransition,function(){highlightSolidCurve(container,i,d,undefined).__lexiconShrink__()},handleEvent,_input_,linearID,d,i)
+				}
+				d3.event.preventDefault();//do not need rest of mouse events if touch is supported
+			})
 			.on("mouseenter",function(d,i){
-				if(!enableOnPick){return}
-				/*clientX and clientY can result in rounding errors so adding +1 solves that. Sometimes accidentally rect 
-				with GUI is taken as elementFromPoint*/
-				if(d3.select(document.elementFromPoint(d3.event.clientX+1,d3.event.clientY)).classed("partition")){return}
-				var thisG = d3.select(this);
-				thisG.transition("draw").ease(d3.easeLinear).attr("transform",function(){return "translate("+(0.25*attrW+i*width)+",0)"}).delay(0).duration(250);
-				thisG.select("rect.main").transition("extend").ease(d3.easeLinear).attr("height",0.20*attrH).delay(0).duration(250);
-				thisG.select("rect.partition").transition("pushDown").ease(d3.easeLinear).attr("transform","translate(0,"+(0.20*attrH)+")").delay(0).duration(250);
-				scaleInTransition ? void(0) : window.requestAnimationFrame(function(){highlightSolidCurve(container,i,d,undefined).__lexiconExtend__()});
-				handleEvent({name:d,item:_input_.linear[linearID].categories[d]},"onpick",d3.event.type);
+				_this_.onpickStart(enableOnPick,d3.event,this,attrW,attrH,width,scaleInTransition,function(){highlightSolidCurve(container,i,d,undefined).__lexiconExtend__()},handleEvent,_input_,linearID,d,i)
 			})
 			.on("mouseleave",function(d,i){
-				if(!enableOnPick){return}
-				if(d3.select(document.elementFromPoint(d3.event.clientX+1,d3.event.clientY)).classed("partition")){return}
-				//event.relatedTarget or elementFromPoint is completely wrong in ie11 --> gives you the ownerSVG (???!)
-				//combining user space coordinates with getBBox wont work effectively either. setTimeout above is a mundane solution for only ie11.
-				//if(this.contains(d3.event.relatedTarget)){return} Kunkkaaaaaa..!?, ow sorry Exploraaaaaaaaarrrr!!!
-				//if(~Array.prototype.indexOf.call(this.childNodes,d3.event.relatedTarget)){return} //this still wont work propertly with ie11 either.
-				/*###DISCLAIMER###
-					After dealing about 1 month to solve the ie11 flicker issue, I have unfortunately concluded that:
-					ie is INDEED not a decent browser... I apologize from all the developers and the hours they put to make it,
-					I would want to say no hard feelings but I really dont care at this point, you guys at MS did a bad job 
-					at making a decent browser. Your priority should not be creating an inhouse implementation
-					that looks ok to you, THATS MY JOB, your job at MS is to IMPLEMENT THE SPEC.
-					Your second priority should be to check your competitors browser implementation and see how
-					freqeuent they dispatch the browser events, if your average competitor dispatches events
-					more frequently, GUESS WHAT, maybe you should too...
-				*/
-				var thisG = d3.select(this);
-				thisG.transition("draw").attr("transform",function(){return "translate("+(0.25*attrW+i*width)+","+(0.10*attrH)+")"}).delay(0).duration(500);
-				thisG.select("rect.main").transition("extend").attr("height",0.10*attrH).delay(0).duration(500);
-				thisG.select("rect.partition").transition("pushDown").attr("transform","translate(0,"+(0.10*attrH)+")").delay(0).duration(250);
-				scaleInTransition ? void(0) : window.requestAnimationFrame(function(){highlightSolidCurve(container,i,d,undefined).__lexiconShrink__()});
-				handleEvent({name:d,item:_input_.linear[linearID].categories[d]},"onpick",d3.event.type);
+				_this_.onpickEnd(enableOnPick,d3.event,this,attrW,attrH,width,scaleInTransition,function(){highlightSolidCurve(container,i,d,undefined).__lexiconShrink__()},handleEvent,_input_,linearID,d,i)
 			})
 			.transition()
 			.attr("transform",function(d,i){return "translate("+(0.25*attrW+i*width)+","+(0.10*attrH)+")"})
@@ -1337,7 +1324,7 @@
 			for (var u = container.node().querySelectorAll("."+ID+"_ordinalSolidCurves"),j=0,k=u.length;j<k;++j){
 				if(u[j].querySelectorAll("path:not([toBeRemoved])").length !== 0){return}
 			}
-			handleEvent(null,"onmismatch",null);
+			handleEvent(null,"onmismatch",null,true);
 		
 		
 			function renderCurves (d,i) {
@@ -1446,12 +1433,12 @@
 						event.preventDefault();
 						event.stopPropagation();
 						cleanHover();
-						handleEvent({name: names ? isRef && doExistSort ? names[indexPlaceHolder[ii]] : names[ii] : names,item:dd,parent:categories$d$,index: isObjIntervals ? ii : undefined},"onhighlight",event.type);
+						handleEvent({name: names ? isRef && doExistSort ? names[indexPlaceHolder[ii]] : names[ii] : names,item:dd,parent:categories$d$,index: isObjIntervals ? ii : undefined},"onhighlight",event.type,false);
 					};
 					clonedNode.addEventListener("mouseout",clonedNode.gesture,false);
 					clonedNode.addEventListener("touchend",clonedNode.gesture,false);
 					this.parentNode.appendChild(clonedNode);
-					handleEvent({name: names ? isRef && doExistSort ? names[indexPlaceHolder[ii]] : names[ii] : names,item:dd,parent:categories$d$,index: isObjIntervals ? ii : undefined},"onhighlight",/*d3.event.type*/"mouseover");
+					handleEvent({name: names ? isRef && doExistSort ? names[indexPlaceHolder[ii]] : names[ii] : names,item:dd,parent:categories$d$,index: isObjIntervals ? ii : undefined},"onhighlight",/*d3.event.type*/"mouseover",true);
 				})
 				.on("touchstart",function(dd,ii){
 					d3.select(this).on("mouseover").bind(this,dd,ii)();
@@ -1649,7 +1636,7 @@
 					selection
 					.exit()
 					.remove();
-					_this_[type+"G"].counter() !== current ? (handleEvent(_input_[type][current],"onrender"+type.charAt(0).toUpperCase()+type.slice(1),null),_this_[type+"G"].update(current)) : void(0);
+					_this_[type+"G"].counter() !== current ? _this_.update(type,current) : void(0);
 					
 					that.__ready__ = true;
 				})
@@ -1758,7 +1745,7 @@
 			scaleMainBot = d3.scaleLinear().domain(_input_.linear[0].domain).range([0,0.70*attrW]);
 			axisMainBot = d3.axisBottom().scale(scaleMainBot).ticks(5).tickSize(-0.025*attrH,0).tickPadding(4).tickFormat(_input_.linear[0].format ? d3.format(_input_.linear[0].format) : null);
 			
-			var axisG = container.append("g").attr("id",ID+"_lexMainAxisBot").attr("class","global_lexMainAxes").attr("class","global_lexScaleAxes").attr("transform","translate("+(0.25*attrW-0.5)+","+(0.8*attrH+5)+")").call(axisMainBot);
+			var axisG = container.append("g").attr("id",ID+"_lexMainAxisBot").attr("class","global_lexMainAxes").attr("class","global_lexScaleAxes").attr("transform","translate("+(0.25*attrW-0.5)+","+(0.8*attrH+0.025*attrH)+")").call(axisMainBot);
 			//##############################################################SCALE###################################################################################
 			_this_.changeScale = function(domain,format){
 				format = format || null;
@@ -2143,7 +2130,22 @@
 		})()
 	}
 	var prt = LexiconRainbow.prototype;
-	prt.version = "v0.0.8";
+	prt.version = "v0.0.9";
+	prt.shapeRendering = function(v){
+		if(arguments.length && !this.isAppended) {
+			this.getNSet.shapeRendering = v;
+			return this;
+		} else if (arguments.length && this.isAppended) {
+			throw new Error("Cannot set shape-rendering after render method is called already");
+		} else {
+			return this.getNSet.shapeRendering;
+		}
+	}
+	prt.update = function(type,current) {
+		var internal = this.getNSet;
+		internal.handleEvent(internal.input[type][current],"onrender"+type.charAt(0).toUpperCase()+type.slice(1),null,true);
+		this[type+"G"].update(current);
+	}
 	prt.GUI = function(bool,o){
 		switch(this.isAppended) {
 			case false:
@@ -2193,6 +2195,38 @@
 		function guiOnCanvas(w,h){
 			this.getNSet.canvas.attr("width",w).attr("height",h)
 		}
+	}
+	prt.getClientXY = function(e){
+		return {x:e.clientX || e.changedTouches[0].clientX,y:e.clientY || e.changedTouches[0].clientY}
+	}
+	prt.onpickStart = function(enableOnPick,e,oNode,attrW,attrH,width,scaleInTransition,request,handle,input,linearID,d,i) {
+		if(!enableOnPick || scaleInTransition){return}
+		/*clientX and clientY can result in rounding errors so adding +1 solves that. Sometimes accidentally rect 
+		with GUI is taken as elementFromPoint*/
+		var client = this.getClientXY(e);
+		if(d3.select(document.elementFromPoint(client.x+1,client.y)).classed("partition")){return}
+		var thisG = d3.select(oNode);
+		thisG.transition("draw").ease(d3.easeLinear).attr("transform",function(){return "translate("+(0.25*attrW+i*width)+",0)"}).delay(0).duration(250);
+		thisG.select("rect.main").transition("extend").ease(d3.easeLinear).attr("height",0.20*attrH).delay(0).duration(250);
+		thisG.select("rect.partition").transition("pushDown").ease(d3.easeLinear).attr("transform","translate(0,"+(0.20*attrH)+")").delay(0).duration(250);
+		enableOnPick !== "noLineAnim" ? window.requestAnimationFrame(request) : void(0);
+		handle({name:d,item:input.linear[linearID].categories[d]},"onpick",e.type,true);
+	}
+	prt.onpickEnd  = function(enableOnPick,e,oNode,attrW,attrH,width,scaleInTransition,request,handle,input,linearID,d,i) {
+		//alert("mouseleave!");
+		if(!enableOnPick || scaleInTransition){return}
+		var client = this.getClientXY(e);
+		if(d3.select(document.elementFromPoint(client.x+1,client.y)).classed("partition")){return}
+		/*event.relatedTarget or elementFromPoint is completely wrong in ie11 --> gives you the ownerSVG (???!)
+		combining user space coordinates with getBBox wont work effectively either. setTimeout above is a mundane solution for only ie11.
+		if(this.contains(d3.event.relatedTarget)){return} Kunkkaaaaaa..!?, ow sorry Exploraaaaaaaaarrrr!!!
+		if(~Array.prototype.indexOf.call(this.childNodes,d3.event.relatedTarget)){return} //this still wont work propertly with ie11 either.*/
+		var thisG = d3.select(oNode);
+		thisG.transition("draw").attr("transform",function(){return "translate("+(0.25*attrW+i*width)+","+(0.10*attrH)+")"}).delay(0).duration(500);
+		thisG.select("rect.main").transition("extend").attr("height",0.10*attrH).delay(0).duration(500);
+		thisG.select("rect.partition").transition("pushDown").attr("transform","translate(0,"+(0.10*attrH)+")").delay(0).duration(250);
+		enableOnPick !== "noLineAnim" ? window.requestAnimationFrame(request) : void(0);
+		handle({name:d,item:input.linear[linearID].categories[d]},"onpick",e.type,false);
 	}
 	return LexiconRainbow;
 }));
