@@ -32,6 +32,9 @@
 
 <br>
 
+>## [One Model, Many Views][PROTEIN]:
+>[<img src="../examples/Protein/rainbow.gif">][PROTEIN] 
+
 >## [Minimal example][MINIMAL]:
 >[<img src="../examples/Minimal/minimal.jpg">][MINIMAL] 
 
@@ -387,3 +390,4 @@ support for this project you can contribute to my [PATREON](https://www.patreon.
 [VOTES]: http://bl.ocks.org/ibrahimtanyalcin/f0bf54f88c6859c985ee98bc5e56ae6f
 [MUTAFRAME]: http://deogen2.mutaframe.com/
 [PROGRAMMATIC]: http://bl.ocks.org/ibrahimtanyalcin/f2067bef081d84b85e3fb077f3272a90
+[PROTEIN]:http://bl.ocks.org/ibrahimtanyalcin/37c3e06f97cda2881acbfcbb4d77e3ab
