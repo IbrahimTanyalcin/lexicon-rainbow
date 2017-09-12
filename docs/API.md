@@ -179,7 +179,7 @@ the dataObject is an ordinal or a linear one:
 	Link2: [-5,-3]
 	
 	1. If the mode is "stack" then link1 will have 1.5 times the span of the link2 (|4-1|/|-3--5|). Their order will be the same 
-	as specified in the intervals key of the [correspoding category in the linear dataObject](#str-linear-categories).
+	as specified in the intervals key of the [correspoding category in the linear dataObject](#str_linear_categories).
 	1. If the mode is "stackEqual", then all links will have the same span. Their order will be the same as described as above.
   * **exteding the dataObject** <a id = "str_ordinal_extend" href = "#str_ordinal_extend"><b>#</b></a>: Apart from the key names described in this
   section, you can pretty much add any other property to the dataObject. Some of the [synthetic lexicon-rainbow events](#handleevent-link) allows you
@@ -682,15 +682,21 @@ lexiconRainbow.handleEvent(handleEvent);
 
 * Defaults to `(function(){})` with this bound to the lexiconRainbow instance.
 * Sets the handleEvent function with `this` bound to the **lexiconRainbow instance** and returns the instance.
+* The lexiconRainbow instance passes 4 arguments to this function: 
+  * *data* : an event specific data object that allows to access parts of your main input
+  * *type* : a proprietary string that describes the event
+  * *event.type* : this is your native `DOMevent.type`
+  * *state* : Events are both ways, for instance you can mouseover as well as mouseout from a link. Rather than listening to `event.type`, you can check for this boolean argument which is true if active (mouseover, touchstart etc) or false otherwise.
 * :+1: You bind only single function to the lexiconRainbow instance which handles all event types and data
 handled to it. Check the table below for **when** and **what arguments** are passed. `linearID` and `ordinalID`
 are internal variables and refer to the index of the current ordinal/linear data object. Do not forget that
-`d3.event.type` is the native DOM `event.type`:
+`d3.event.type` is the native DOM `event.type`.
+* :-1: The handleEvent function is designed to have `this` point to the lexiconRainbow instance. So do **NOT** pass an already bound function to it.
 <table>
 	<thead>
 		<tr>
 			<th><h3>when</h3></th>
-			<th colspan="3"><h3>arguments</h3></th>
+			<th colspan="4"><h3>arguments</h3></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -699,6 +705,7 @@ are internal variables and refer to the index of the current ordinal/linear data
 			<th>data (Object)</th>
 			<th>type (Proprietary String)</th>
 			<th>eventType (DOM event)</th>
+			<th>state (Proprietary Boolean)</th>
 		</tr>
 		<tr>
 			<td>The first time render function is called</td>
@@ -710,6 +717,7 @@ ordinal: _input_.ordinal[ordinalID]
 			</td>
 			<td>"onload"</td>
 			<td>null</td>
+			<td>true</td>
 		</tr>
 		<tr>
 			<td>User hovers on an item on the ordinal scale</td>
@@ -721,12 +729,14 @@ item: _input_.linear[linearID].categories[d]
 			</td>
 			<td>"onpick"</td>
 			<td>d3.event.type</td>
+			<td>true/false</td>
 		</tr>
 		<tr>
 			<td>None of the categories in the ordinal scale matches the ones in the linear scale: nothing to show.</td>
 			<td>null</td>
 			<td>"onmismatch"</td>
 			<td>null</td>
+			<td>true</td>
 		</tr>
 		<tr>
 			<td>User hovers on a link/ribbon</td>
@@ -738,8 +748,9 @@ parent: _input_.linear[linearID].categories[d],
 index: ii<sup>**</sup>
 }</pre>
 			</td>
-			<td>"onpick"</td>
+			<td>"onhighlight"</td>
 			<td>event.type<sup>****</sup></td>
+			<td>true/false</td>
 		</tr>
 		<tr>
 			<td>Either through the GUI or programmatic access the ordinal or the linear data object is changed</td>
@@ -754,6 +765,7 @@ or
 "onrenderOrdinal"</pre>
 			</td>
 			<td>null</td>
+			<td>true</td>
 		</tr>
 	</tbody>
 </table>
@@ -765,6 +777,56 @@ or
 ****: For both mobile and desktop, you will receive "onmouseover". 
 For mouseout, in desktop you will receive "mouseout" and mobile, you will receive "touchend".
 </sup>
+
+And here is a function that you can take and use the bits you care about:
+
+```js
+function handleEvent (data,type,eventType,state) {
+	switch (type) {
+		case "onload":
+			/*do some work the first time the instance is rendered,
+			state is always true in this case*/
+			.
+			.
+			break;
+		case "onhighlight":
+			if(state) {
+				//do some work when user touches or mouseovers a link
+			} else {
+				//do some work when user touchends or mouseouts a link
+			}
+			break;
+		case "pick":
+			if(state) {
+				//do some work when user touches or mouseovers a category
+			} else {
+				//do some work when user touchends or mouseouts a category
+			}
+			break;
+		case "onrenderLinear":
+			/*do some work each time linear dataObject is changed 
+			through inbuilt GUI or programmatic access, state
+			is always true*/
+			.
+			.
+			break;
+		case "onrenderOrdinal":
+			/*do some work each time ordinal dataObject is changed 
+			through inbuilt GUI or programmatic access, state 
+			is always true*/
+			.
+			.
+			break;
+		case "mismatch":
+			/*do some work when none of the categories in the ordinal 
+			dataObject matches the ones in the linear dataObject, 
+			so there is nothing to show. The state is always true*/
+			.
+			.
+			break;
+	}
+}
+```
 
 #### dispersion [:link:](#dispersion-link)[🔍][dispersion]
 
@@ -784,10 +846,13 @@ For instance if a link goes to 3, by default it will be spread on both sides abo
 ```js
 lexiconRainbow.enableOnPick([bool]) {Boolean|String|Number|Object|Function} 
 //ex: lexiconRainbow.enableOnPick(false) --> no "onpick" event
+//ex: lexiconRainbow.enableOnPick('noLineAnim') --> "onpick" event 
+//without drawing lines around the links
 ```
 
 * Defaults to `true`.
 * Any truthy value is considered to be `true`.
+* A special case "noLineAnim" allows the firing of the "onpick" event without line interpolations (taxing on the CPU).
 * :+1: In internet explorer or firefox, when there are too many links going out from
 1 item, you might have flicker issues. Also a lot of path string interpolations can be 
 expensive so you might want to turn this off. If you are asking what is an "onpick"
@@ -874,7 +939,7 @@ in the example. Also make sure that the hosting object is not frozen or its prop
 `configurable: false`. Alternatively if you stored the instance inside a variable, make sure it is not
 observable anymore.
 
-#### GUI [:link:](#gui-link)[🔍][gui]
+#### GUI [:link:](#gui-link)[🔍][gui_code]
 
 ```js
 lexiconRainbow.GUI([Bool[,Offset]]) {Bool|String,{x:..,y:..,w:..,h:..}}
@@ -891,11 +956,36 @@ stand for origin-x, origin-y, width and height offsets for the viewBox respectiv
 {x:-50,w:100} enlarges the viewBox from left and right by 50 units in **userSpaceOnUse**. If a key is not present,
 then it is assumed to be 0.
 
+#### shapeRendering [:link:](#shaperendering-link)[🔍][shaperendering]
+
+```js
+lexiconRainbow.shapeRendering("crispEdges") 
+//ex: lexiconRainbow.shapeRendering("auto") --> sets the shape-rendering attribute 
+//if the lexiconRainbow instance is not yet appended
+```
+
+* Sets the shape-rendering attribute of the rendered svg if the lexiconRainbow instance is not yet appended (`.append` not called).
+* If no arguments supplied, returns the current shapeRendering which defaults to "auto".
+* If the lexiconRainbow instance has already been rendered and this method is called with an argument, throws an error.
+* :+1: If you are using straight lines in your project like this or this example, then set it to "crispEdges".
+
 ### PROGRAMMATIC ACCESS
 Sometimes it is desirable to craft predefined buttons to set different views of the input data.
 It might be that not every data object inside the ordinal scale works with the current linear scale etc.
 In those cases, you can attach the below functions to html buttons or other elements to trigger when
 'click' or 'touchend' etc event is dispatched.
+
+#### lexiconRainbow.update [:link:](#lexiconrainbowupdate-link)[🔍][lexiconrainbowupdate]
+
+```js
+lexiconRainbow.update(type,count) {String, Number} 
+//ex: lexiconRainbow.update('linear',2) --> updates the linear scale to match the 3rd data object.
+//ex: lexiconRainbow.update('ordinal',5) --> updates the ordinal scale to match the 6th data object.
+```
+
+* Calls one of the below methods depending on the `type` argument and fires either
+`onrenderLinear` or `onrenderOrdinal` event.
+* :+1: Use this method for updating unless you do not want to fire the associated event.
 
 #### ordinalG.update [:link:](#ordinalgupdate-link)[🔍][ordinalgupdate]
 
@@ -903,7 +993,9 @@ In those cases, you can attach the below functions to html buttons or other elem
 lexiconRainbow.orginalG.update(4) --> updates the ordinal scale to match the 5th data object.
 ```
 
-* Updates the ordinal scale and calls the [`render`](#render-link).
+* Updates the ordinal scale and calls the [`render`](#render-link). Does **NOT** fire the `onrenderOrdinal` event.
+* :warning: This method is **NOT** meant to be called by the developer but rather documented for completeness. Do not
+call this method unless you deliberately do not want to fire any events. 
 
 #### linearG.update [:link:](#lineargupdate-link)[🔍][lineargupdate]
 
@@ -911,8 +1003,9 @@ lexiconRainbow.orginalG.update(4) --> updates the ordinal scale to match the 5th
 lexiconRainbow.linearG.update(2) --> updates the linear scale to match the 3rd data object.
 ```
 
-* Updates the linear scale and calls the [`render`](#render-link). 
-
+* Updates the linear scale and calls the [`render`](#render-link). Does **NOT** fire the `onrenderLinear` event.
+* :warning: This method is **NOT** meant to be called by the developer but rather documented for completeness. Do not
+call this method unless you deliberately do not want to fire any events. 
 
 
 [README]: https://github.com/IbrahimTanyalcin/lexicon-rainbow/blob/master/docs/README.md
@@ -976,11 +1069,12 @@ lexiconRainbow.linearG.update(2) --> updates the linear scale to match the 3rd d
 [renderordinal]: ../dev/lexiconRainbow.d3v4.dev.js#L1091
 [rendersolidcurve]: ../dev/lexiconRainbow.d3v4.dev.js#L1268
 [unwarp]: ../dev/lexiconRainbow.d3v4.dev.js#L2027
-[gui]: ../dev/lexiconRainbow.d3v4.dev.js#L2149
+[gui_code]: ../dev/lexiconRainbow.d3v4.dev.js#L2149
 [version]: ../dev/lexiconRainbow.d3v4.dev.js#L2133
 [isappended]: ../dev/lexiconRainbow.d3v4.dev.js#L992
 [passivesupported]: ../dev/lexiconRainbow.d3v4.dev.js#L2119
 [ordinalgupdate]: ../dev/lexiconRainbow.d3v4.dev.js#L1519
 [lineargupdate]: ../dev/lexiconRainbow.d3v4.dev.js#L1526
-
+[shaperendering]: ../dev/lexiconRainbow.d3v4.dev.js#L2134
+[lexiconrainbowupdate]: ../dev/lexiconRainbow.d3v4.dev.js#L2144
 
