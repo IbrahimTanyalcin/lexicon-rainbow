@@ -755,14 +755,14 @@ index: ii<sup>**</sup>
 		<tr>
 			<td>Either through the GUI or programmatic access the ordinal or the linear data object is changed</td>
 			<td>
-				<code>_input_.linear[linearID]
-or
+				<code>_input_.linear[linearID]<br>
+or<br>
 _input_.ordinal[ordinalID]</code>
 			</td>
 			<td>
-				<code>"onrenderLinear" 
-or
-"onrenderOrdinal"</code>
+				"onrenderLinear"<br>
+or<br>
+"onrenderOrdinal"
 			</td>
 			<td>null</td>
 			<td>true</td>
