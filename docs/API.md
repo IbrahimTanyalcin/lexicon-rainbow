@@ -755,8 +755,8 @@ index: ii<sup>**</sup>
 		<tr>
 			<td>Either through the GUI or programmatic access the ordinal or the linear data object is changed</td>
 			<td>
-				<code>_input_.linear[linearID]<br>
-or<br>
+				<code>_input_.linear[linearID]
+or
 _input_.ordinal[ordinalID]</code>
 			</td>
 			<td>
