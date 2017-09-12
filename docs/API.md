@@ -621,7 +621,7 @@ lexiconRainbow.container([CSS-SelectorString|Node]) {String|Object}
 * :+1: You do not want to leave this option default. 
 Always specify a container either with the form of a [CSS selector][w3c-cssSelector] or node reference.
 
-#### sTop [:link:](#stop-link)[🔍][stop]
+#### sTop [:link:](#stop-link)[🔍][sTop]
 
 ```js
 lexiconRainbow.sTop([Length in CSS units]) {String} 
@@ -945,43 +945,42 @@ lexiconRainbow.linearG.update(2) --> updates the linear scale to match the 3rd d
 [what_is_item]:#what_is_item
 [what_is_reference]:#what_is_reference
 
-[toggleGUI]: ../dev/lexiconRainbow.d3v4.dev.js#L112
-[toggleAxis]: ../dev/lexiconRainbow.d3v4.dev.js#L135
-[.GUI]: ../dev/lexiconRainbow.d3v4.dev.js#L2147
-[changeScale]: ../dev/lexiconRainbow.d3v4.dev.js#L1763
-[append]: ../dev/lexiconRainbow.d3v4.dev.js#L989
-[setViewBox]: ../dev/lexiconRainbow.d3v4.dev.js#L145
-[setCanvasDims]: ../dev/lexiconRainbow.d3v4.dev.js#L146
-[lexID]: ../dev/lexiconRainbow.d3v4.dev.js#L147
-[x]: ../dev/lexiconRainbow.d3v4.dev.js#L148
-[y]: ../dev/lexiconRainbow.d3v4.dev.js#L149
-[w]: ../dev/lexiconRainbow.d3v4.dev.js#L150
-[h]: ../dev/lexiconRainbow.d3v4.dev.js#L151
-[sW]: ../dev/lexiconRainbow.d3v4.dev.js#L152
-[sH]: ../dev/lexiconRainbow.d3v4.dev.js#L153
-[position]: ../dev/lexiconRainbow.d3v4.dev.js#L154
-[color]: ../dev/lexiconRainbow.d3v4.dev.js#L155
-[colorScale]: ../dev/lexiconRainbow.d3v4.dev.js#L156
-[opacity]: ../dev/lexiconRainbow.d3v4.dev.js#L157
-[container]: ../dev/lexiconRainbow.d3v4.dev.js#L158
-[stop]: ../dev/lexiconRainbow.d3v4.dev.js#L159
-[sLeft]: ../dev/lexiconRainbow.d3v4.dev.js#L160
-[sMargin]: ../dev/lexiconRainbow.d3v4.dev.js#L161
-[input]: ../dev/lexiconRainbow.d3v4.dev.js#L162
-[handleevent]: ../dev/lexiconRainbow.d3v4.dev.js#L163
-[dispersion]: ../dev/lexiconRainbow.d3v4.dev.js#L164
-[enableonpick]: ../dev/lexiconRainbow.d3v4.dev.js#L165
-[forcestyle]: ../dev/lexiconRainbow.d3v4.dev.js#L168
-[append]: ../dev/lexiconRainbow.d3v4.dev.js#L989
-[render]: ../dev/lexiconRainbow.d3v4.dev.js#L1071
-[renderordinal]: ../dev/lexiconRainbow.d3v4.dev.js#L1086
-[rendersolidcurve]: ../dev/lexiconRainbow.d3v4.dev.js#L1281
-[unwarp]: ../dev/lexiconRainbow.d3v4.dev.js#L2040
-[gui]: ../dev/lexiconRainbow.d3v4.dev.js#L2147
-[version]: ../dev/lexiconRainbow.d3v4.dev.js#L2146
-[isappended]: ../dev/lexiconRainbow.d3v4.dev.js#L988
-[passivesupported]: ../dev/lexiconRainbow.d3v4.dev.js#L2132
-[ordinalgupdate]: ../dev/lexiconRainbow.d3v4.dev.js#L1532
-[lineargupdate]: ../dev/lexiconRainbow.d3v4.dev.js#L1539
+[toggleGUI]: ../dev/lexiconRainbow.d3v4.dev.js#L116
+[toggleAxis]: ../dev/lexiconRainbow.d3v4.dev.js#L139
+[.GUI]: ../dev/lexiconRainbow.d3v4.dev.js#L2149
+[changeScale]: ../dev/lexiconRainbow.d3v4.dev.js#L1750
+[append]: ../dev/lexiconRainbow.d3v4.dev.js#L993
+[setViewBox]: ../dev/lexiconRainbow.d3v4.dev.js#L149
+[setCanvasDims]: ../dev/lexiconRainbow.d3v4.dev.js#L150
+[lexID]: ../dev/lexiconRainbow.d3v4.dev.js#L151
+[x]: ../dev/lexiconRainbow.d3v4.dev.js#L152
+[y]: ../dev/lexiconRainbow.d3v4.dev.js#L153
+[w]: ../dev/lexiconRainbow.d3v4.dev.js#L154
+[h]: ../dev/lexiconRainbow.d3v4.dev.js#L155
+[sW]: ../dev/lexiconRainbow.d3v4.dev.js#L156
+[sH]: ../dev/lexiconRainbow.d3v4.dev.js#L157
+[position]: ../dev/lexiconRainbow.d3v4.dev.js#L158
+[color]: ../dev/lexiconRainbow.d3v4.dev.js#L159
+[colorScale]: ../dev/lexiconRainbow.d3v4.dev.js#L160
+[opacity]: ../dev/lexiconRainbow.d3v4.dev.js#L161
+[container]: ../dev/lexiconRainbow.d3v4.dev.js#L162
+[stop]: ../dev/lexiconRainbow.d3v4.dev.js#L163
+[sLeft]: ../dev/lexiconRainbow.d3v4.dev.js#L164
+[sMargin]: ../dev/lexiconRainbow.d3v4.dev.js#L165
+[input]: ../dev/lexiconRainbow.d3v4.dev.js#L166
+[handleevent]: ../dev/lexiconRainbow.d3v4.dev.js#L167
+[dispersion]: ../dev/lexiconRainbow.d3v4.dev.js#L168
+[enableonpick]: ../dev/lexiconRainbow.d3v4.dev.js#L169
+[forcestyle]: ../dev/lexiconRainbow.d3v4.dev.js#L172
+[render]: ../dev/lexiconRainbow.d3v4.dev.js#L1076
+[renderordinal]: ../dev/lexiconRainbow.d3v4.dev.js#L1091
+[rendersolidcurve]: ../dev/lexiconRainbow.d3v4.dev.js#L1268
+[unwarp]: ../dev/lexiconRainbow.d3v4.dev.js#L2027
+[gui]: ../dev/lexiconRainbow.d3v4.dev.js#L2149
+[version]: ../dev/lexiconRainbow.d3v4.dev.js#L2133
+[isappended]: ../dev/lexiconRainbow.d3v4.dev.js#L992
+[passivesupported]: ../dev/lexiconRainbow.d3v4.dev.js#L2119
+[ordinalgupdate]: ../dev/lexiconRainbow.d3v4.dev.js#L1519
+[lineargupdate]: ../dev/lexiconRainbow.d3v4.dev.js#L1526
 
 
