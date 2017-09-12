@@ -83,7 +83,7 @@
 		],
 		"linear": [
 			{
-				"glyph":"./protein1.jpeg",
+				"glyph":"//cdn.rawgit.com/IbrahimTanyalcin/lexicon-rainbow/726908df/img/protein1.jpeg",
 				"domain": [0,1000],
 				"name": "Protein-1",
 				"categories": {
@@ -95,7 +95,7 @@
 				}
 			},
 			{
-				"glyph":"./protein2.jpg",
+				"glyph":"//cdn.rawgit.com/IbrahimTanyalcin/lexicon-rainbow/726908df/img/protein2.jpg",
 				"domain": [0,500],
 				"name": "Protein-2",
 				"categories": {
@@ -107,7 +107,7 @@
 				}
 			},
 			{
-				"glyph":"./protein3.png",
+				"glyph":"//cdn.rawgit.com/IbrahimTanyalcin/lexicon-rainbow/726908df/img/protein3.png",
 				"domain": [0,50],
 				"name": "Protein-3",
 				"categories": {
@@ -125,11 +125,11 @@
 	/////////////////////////CREATE AN INSTANCE/////////////////////////
 	////////////////////////////////////////////////////////////////////
 	(new LexiconRainbow)
-	.container("#"+(yourDiv ? yourDiv.id || "rootDiv" : "rootDiv"))
+	.container("#rootDiv")
 	.forceStyle()
 	.w(600)
 	.h(200)
-	.sW("1000px")
+	.sW("90%")
 	.sH("auto")
 	.position("relative")
 	.sTop("0px")
