@@ -126,7 +126,7 @@
 	/////////////////////////CREATE AN INSTANCE/////////////////////////
 	////////////////////////////////////////////////////////////////////
 	(new LexiconRainbow)
-	.container("#rootDiv")
+	.container("#"+(yourDiv ? yourDiv.id || "rootDiv" : "rootDiv"))
 	.forceStyle()
 	.w(600)
 	.h(200)
