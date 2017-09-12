@@ -967,7 +967,7 @@ lexiconRainbow.shapeRendering("crispEdges")
 * Sets the shape-rendering attribute of the rendered svg if the lexiconRainbow instance is not yet appended (`.append` not called).
 * If no arguments supplied, returns the current shapeRendering which defaults to "auto".
 * If the lexiconRainbow instance has already been rendered and this method is called with an argument, throws an error.
-* :+1: If you are using straight lines in your project like this or this example, then set it to "crispEdges".
+* :+1: If you are using straight lines in your project like [this][SERVER] or [this][PROTEIN] example, then set it to "crispEdges".
 
 ### PROGRAMMATIC ACCESS
 Sometimes it is desirable to craft predefined buttons to set different views of the input data.
@@ -1014,6 +1014,8 @@ call this method unless you deliberately do not want to fire any events.
 [GUI]: https://github.com/IbrahimTanyalcin/lexicon-rainbow#anatomy
 [MUTAFRAME]: http://deogen2.mutaframe.com/ 
 [MINIMAL]: http://bl.ocks.org/ibrahimtanyalcin/6e2e775cb954ecf89e6b379b5fa4c510
+[SERVER]: http://bl.ocks.org/ibrahimtanyalcin/2e478e178470c385656a90d3a4629220
+[PROTEIN]:http://bl.ocks.org/ibrahimtanyalcin/37c3e06f97cda2881acbfcbb4d77e3ab
 
 [w3c-viewbox]: https://www.w3.org/TR/SVG/coords.html#ViewBoxAttribute
 [w3c-preserveAspectRatio]: https://www.w3.org/TR/SVG/coords.html#PreserveAspectRatioAttribute
