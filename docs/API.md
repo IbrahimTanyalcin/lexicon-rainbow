@@ -710,10 +710,10 @@ are internal variables and refer to the index of the current ordinal/linear data
 		<tr>
 			<td>The first time render function is called</td>
 			<td>
-				<pre>{
+				<code>{
 linear: _input_.linear[linearID],
 ordinal: _input_.ordinal[ordinalID]
-}</pre>
+}</code>
 			</td>
 			<td>"onload"</td>
 			<td>null</td>
@@ -722,10 +722,10 @@ ordinal: _input_.ordinal[ordinalID]
 		<tr>
 			<td>User hovers on an item on the ordinal scale</td>
 			<td>
-				<pre>{
+				<code>{
 name: d<sup>*</sup>,
 item: _input_.linear[linearID].categories[d]
-}</pre>
+}</code>
 			</td>
 			<td>"onpick"</td>
 			<td>d3.event.type</td>
@@ -741,12 +741,12 @@ item: _input_.linear[linearID].categories[d]
 		<tr>
 			<td>User hovers on a link/ribbon</td>
 			<td>
-				<pre>{
+				<code>{
 name: names[ii]<sup>**</sup>,
 item: dd<sup>***</sup>,
 parent: _input_.linear[linearID].categories[d],
 index: ii<sup>**</sup>
-}</pre>
+}</code>
 			</td>
 			<td>"onhighlight"</td>
 			<td>event.type<sup>****</sup></td>
@@ -755,14 +755,14 @@ index: ii<sup>**</sup>
 		<tr>
 			<td>Either through the GUI or programmatic access the ordinal or the linear data object is changed</td>
 			<td>
-				<pre>_input_.linear[linearID]
+				<code>_input_.linear[linearID]
 or
-_input_.ordinal[ordinalID]</pre>
+_input_.ordinal[ordinalID]</code>
 			</td>
 			<td>
-				<pre>"onrenderLinear" 
+				<code>"onrenderLinear" 
 or
-"onrenderOrdinal"</pre>
+"onrenderOrdinal"</code>
 			</td>
 			<td>null</td>
 			<td>true</td>
