@@ -206,7 +206,7 @@ Drop one of the script tags below in your html file.
 		<td>d3v3</td>
 		<td>
 			<code>
-				<sub>&lt;script src="//cdn.rawgit.com/IbrahimTanyalcin/lexicon-rainbow/5a8fc102/dev/lexiconRainbow.d3v3.dev.js"&gt;&lt;/script&gt;</sub>
+				<sub>&lt;script src="//cdn.rawgit.com/IbrahimTanyalcin/lexicon-rainbow/170be4b9/dev/lexiconRainbow.d3v3.dev.js"&gt;&lt;/script&gt;</sub>
 				<br>
 				<sub>&lt;script src="//ibrahimtanyalcin.com/lexiconRainbow.d3v3.dev.js"&gt;&lt;/script&gt;</sub>
 			</code>
@@ -216,7 +216,7 @@ Drop one of the script tags below in your html file.
 		<td>d3v4</td>
 		<td>
 			<code>
-				<sub>&lt;script src="//cdn.rawgit.com/IbrahimTanyalcin/lexicon-rainbow/5a8fc102/dev/lexiconRainbow.d3v4.dev.js"&gt;&lt;/script&gt;</sub>
+				<sub>&lt;script src="//cdn.rawgit.com/IbrahimTanyalcin/lexicon-rainbow/e2a8a5a0/dev/lexiconRainbow.d3v4.dev.js"&gt;&lt;/script&gt;</sub>
 				<br>
 				<sub>&lt;script src="//ibrahimtanyalcin.com/lexiconRainbow.d3v4.dev.js"&gt;&lt;/script&gt;</sub>
 			</code>
@@ -227,7 +227,7 @@ Drop one of the script tags below in your html file.
 		<td>d3v3</td>
 		<td>
 			<code>
-				<sub>&lt;script src="//cdn.rawgit.com/IbrahimTanyalcin/lexicon-rainbow/5a8fc102/pretty/lexiconRainbow.d3v3.pretty.js"&gt;&lt;/script&gt;</sub>
+				<sub>&lt;script src="//cdn.rawgit.com/IbrahimTanyalcin/lexicon-rainbow/170be4b9/pretty/lexiconRainbow.d3v3.pretty.js"&gt;&lt;/script&gt;</sub>
 				<br>
 				<sub>&lt;script src="//ibrahimtanyalcin.com/lexiconRainbow.d3v3.pretty.js"&gt;&lt;/script&gt;</sub>
 			</code>
@@ -237,7 +237,7 @@ Drop one of the script tags below in your html file.
 		<td>d3v4</td>
 		<td>
 			<code>
-				<sub>&lt;script src="//cdn.rawgit.com/IbrahimTanyalcin/lexicon-rainbow/5a8fc102/pretty/lexiconRainbow.d3v4.pretty.js"&gt;&lt;/script&gt;</sub>
+				<sub>&lt;script src="//cdn.rawgit.com/IbrahimTanyalcin/lexicon-rainbow/170be4b9/pretty/lexiconRainbow.d3v4.pretty.js"&gt;&lt;/script&gt;</sub>
 				<br>
 				<sub>&lt;script src="//ibrahimtanyalcin.com/lexiconRainbow.d3v4.pretty.js"&gt;&lt;/script&gt;</sub>
 			</code>
@@ -248,7 +248,7 @@ Drop one of the script tags below in your html file.
 		<td>d3v3</td>
 		<td>
 			<code>
-				<sub>&lt;script src="//cdn.rawgit.com/IbrahimTanyalcin/lexicon-rainbow/5a8fc102/min/lexiconRainbow.d3v3.min.js"&gt;&lt;/script&gt;</sub>
+				<sub>&lt;script src="//cdn.rawgit.com/IbrahimTanyalcin/lexicon-rainbow/170be4b9/min/lexiconRainbow.d3v3.min.js"&gt;&lt;/script&gt;</sub>
 				<br>
 				<sub>&lt;script src="//ibrahimtanyalcin.com/lexiconRainbow.d3v3.min.js"&gt;&lt;/script&gt;</sub>
 			</code>
@@ -258,7 +258,7 @@ Drop one of the script tags below in your html file.
 		<td>d3v4</td>
 		<td>
 			<code>
-				<sub>&lt;script src="//cdn.rawgit.com/IbrahimTanyalcin/lexicon-rainbow/5a8fc102/min/lexiconRainbow.d3v4.min.js"&gt;&lt;/script&gt;</sub>
+				<sub>&lt;script src="//cdn.rawgit.com/IbrahimTanyalcin/lexicon-rainbow/170be4b9/min/lexiconRainbow.d3v4.min.js"&gt;&lt;/script&gt;</sub>
 				<br>
 				<sub>&lt;script src="//ibrahimtanyalcin.com/lexiconRainbow.d3v4.min.js"&gt;&lt;/script&gt;</sub>
 			</code>
