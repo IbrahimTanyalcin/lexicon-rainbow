@@ -3,8 +3,11 @@
 	/*There are other parts of the DOM that get updated when events are
 	triggered. Unfortunaley, that requires creating elements by js manually*/
 	
-	var script = document.head.appendChild(document.createElement("script"));
-	setTimeout(function(){script.src = "https://rawgit.com/IbrahimTanyalcin/lexicon-rainbow/master/examples/AminoAcids/loadData.js"},0);
+	var script = document.createElement("script");
+	setTimeout(function(){
+		script.src = "https://rawgit.com/IbrahimTanyalcin/lexicon-rainbow/master/examples/AminoAcids/loadData.js";
+		document.head.appendChild(script);
+	},0);
 	script.onload = function(){
 		////////////////////////////////////////////////////////////////////
 		/////////////////CREATE INSTANCE OF LEXICON RAINBOW/////////////////
