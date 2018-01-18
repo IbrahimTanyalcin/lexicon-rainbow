@@ -27,7 +27,7 @@
 				mode: "stack",
 				gMode: "justify",
 				domain: [0,24],
-				glyph: "./server.png",
+				glyph: "https://rawgit.com/IbrahimTanyalcin/lexicon-rainbow/master/examples/ServerDownTime/server.png",
 				categories:{}
 			}
 		]
