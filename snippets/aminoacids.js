@@ -23,17 +23,17 @@
 			.sTop("0px")
 			.sLeft("0px")
 			.sMargin("0px auto 0px auto")
-			.handleEvent(handleEvent)
+			//.handleEvent(handleEvent)
 			.lexID("lexiconRainbow")
 			.input(sample)
 			.append()
 			.render();
 
 		////////////////////////////////////////////////////////////////////
-		/////////////////////////ATTACH THE HANDLER/////////////////////////
+		//////////////////////TO ATTACH THE HANDLER/////////////////////////
 		////////////////////////////////////////////////////////////////////
 		
-		var topspan = document.getElementById("topSpan");
+		/*var topspan = document.getElementById("topSpan");
 		var botspan = document.getElementById("botSpan");
 		var moverspan = document.getElementById("moverSpan");
 		
@@ -59,6 +59,6 @@
 					topSpan.textContent = data.Info;
 					return;
 			}
-		}
+		}*/
 	};
 }()
