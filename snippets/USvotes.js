@@ -1,5 +1,8 @@
 
 !function(){
+	var topspan = rootDiv.appendChild(document.createElement("div"));
+	var botspan = rootDiv.appendChild(document.createElement("div"));
+	var moverspan = rootDiv.appendChild(document.createElement("div"));
 	var script = document.createElement("script");
 	setTimeout(function(){
 		script.src = "https://rawgit.com/IbrahimTanyalcin/lexicon-rainbow/master/examples/USvotes/loadData.js";
@@ -31,9 +34,6 @@
 		/////////////////////////ATTACH THE HANDLER/////////////////////////
 		////////////////////////////////////////////////////////////////////	
 			
-		var topspan = rootDiv.appendChild(document.createElement("div"));
-		var botspan = rootDiv.appendChild(document.createElement("div"));
-		var moverspan = rootDiv.appendChild(document.createElement("div"));
 		function handleEvent (data,type,eventType) {
 			switch (type) {
 				case "onload":
