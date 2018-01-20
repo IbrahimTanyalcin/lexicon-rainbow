@@ -37,8 +37,8 @@
 		function handleEvent (data,type,eventType) {
 			switch (type) {
 				case "onload":
-					topSpan.textContent = data.ordinal.Info;
-					botSpan.textContent = data.linear.Info;
+					topspan.textContent = data.ordinal.Info;
+					botspan.textContent = data.linear.Info;
 					return;
 				case "onhighlight":
 					if(eventType==="mouseover") {
@@ -50,10 +50,10 @@
 					}
 					return;
 				case "onrenderLinear":
-					botSpan.textContent = data.Info;
+					botspan.textContent = data.Info;
 					return;
 				case "onrenderOrdinal":
-					topSpan.textContent = data.Info;
+					topspan.textContent = data.Info;
 					return;
 			}
 		}
